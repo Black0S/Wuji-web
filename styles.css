@@ -168,54 +168,119 @@ h1 {
 
 .fineprint { margin-top: 18px; font-size: 13px; color: var(--muted-2); }
 
-/* ─────────────────────────  La fenêtre dessinée  ───────────────────────── */
+/* ─────────────────────────  La fenêtre dessinée  ─────────────────────────
+
+   Une illustration, pas une capture : tout est dessiné en CSS, aux mesures de
+   Sources/DesignSystem/Tokens.swift — colonne de 202 px, barre de 38 px, lignes de 32 px,
+   rayon de 8 px. Aucun glyphe emprunté à une police de symboles : chevrons, cadenas,
+   bouclier et triangles sont des formes, pour que le dessin tienne partout.            */
 
 .shot { margin: 72px 0 0; }
 
 .win {
   display: flex;
-  height: 460px;
+  height: 470px;
   border: 1px solid var(--line);
-  border-radius: var(--r-l);
+  border-radius: 14px;
   background: var(--surface);
   box-shadow: 0 40px 90px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.03);
   overflow: hidden;
   text-align: left;
+  font-size: 12.5px;
 }
+
+/* ── La colonne ── */
 
 .win-side {
   width: 202px; flex: none;
+  display: flex; flex-direction: column;
   background: var(--bg-alt);
   border-right: 1px solid var(--line);
-  padding: 0 8px 8px;
+  padding: 0 8px;
 }
 
-.lights { display: flex; gap: 8px; padding: 14px 6px 16px; }
+.lights { display: flex; gap: 8px; padding: 14px 6px 14px; }
 .lights i { width: 11px; height: 11px; border-radius: 50%; background: var(--surface-2); }
 
-.side-head {
-  font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--muted-2); padding: 12px 8px 6px;
+/* La ligne de l'espace : son symbole, son nom, et le sélecteur à droite. */
+.space {
+  display: flex; align-items: center; gap: 9px;
+  height: 32px; padding: 0 8px; color: #D7D7DB; font-weight: 500;
 }
+.space-mark {
+  width: 13px; height: 11px; flex: none;
+  border: 1.5px solid var(--muted); border-radius: 2px;
+  position: relative;
+}
+.space-mark::before {
+  content: ""; position: absolute; left: 2.5px; top: -3.5px;
+  width: 5px; height: 2px; background: var(--muted); border-radius: 1px;
+}
+/* Deux chevrons opposés : le sélecteur d'espace. */
+.switch { margin-left: auto; position: relative; width: 8px; height: 13px; flex: none; }
+.switch::before, .switch::after {
+  content: ""; position: absolute; left: 0; width: 8px; height: 4.5px;
+  background: var(--muted-2);
+}
+.switch::before { top: 0;    clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.switch::after  { bottom: 0; clip-path: polygon(0 0, 100% 0, 50% 100%); }
 
-.tabs { display: flex; flex-direction: column; gap: 3px; }
+/* ── Les lignes ── */
 
-.tab {
-  display: flex; align-items: center; gap: 10px;
-  height: 32px; padding: 0 10px;
+.row {
+  display: flex; align-items: center; gap: 9px;
+  height: 32px; padding: 0 8px;
   border-radius: var(--r-s);
-  font-size: 12.5px; color: #D7D7DB;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  color: #D7D7DB;
+  white-space: nowrap; overflow: hidden;
 }
-.tab.sel { background: var(--surface-2); color: #FFF; }
-.tab.dim { color: var(--muted-2); }
-.tab .fav {
+.row em { margin-left: auto; font-style: normal; color: var(--muted-2); font-size: 11.5px; }
+
+.row.new { color: var(--muted); }
+.plus {
+  width: 12px; height: 12px; flex: none;
+  background:
+    linear-gradient(var(--muted), var(--muted)) 50% 50% / 11px 1.5px no-repeat,
+    linear-gradient(var(--muted), var(--muted)) 50% 50% / 1.5px 11px no-repeat;
+}
+
+.tree { display: flex; flex-direction: column; gap: 2px; padding-top: 6px; }
+
+/* Le triangle d'un dossier : il désigne la droite, et tombe quand le dossier s'ouvre. */
+.tri {
+  width: 9px; height: 9px; flex: none;
+  background: var(--muted-2);
+  clip-path: polygon(22% 0, 82% 50%, 22% 100%);
+}
+.tri.open { transform: rotate(90deg); }
+.row.folder { color: #D7D7DB; }
+
+.row.child { padding-left: 24px; }
+.row.tab.sel { background: var(--surface-2); color: #FFF; }
+.row.tab.dim { color: var(--muted-2); }
+
+.fav {
   width: 13px; height: 13px; flex: none; border-radius: 3px;
   background: rgba(255,255,255,.16);
 }
-.tab .glyph { font-size: 12px; color: var(--muted); width: 13px; flex: none; }
+/* Le globe d'une page sans identité vérifiée : un cercle et ses parallèles. */
+.fav.globe {
+  border-radius: 50%; background: none;
+  border: 1.5px solid var(--muted-2);
+  position: relative;
+}
+/* L'équateur, puis un méridien : c'est ce qui fait lire un globe et non un rond. */
+.fav.globe::before {
+  content: ""; position: absolute; left: -1.5px; right: -1.5px; top: 50%;
+  height: 1.5px; background: var(--muted-2); translate: 0 -50%;
+}
+.fav.globe::after {
+  content: ""; position: absolute; inset: -1.5px 2.5px;
+  border: 1.5px solid var(--muted-2); border-radius: 50%;
+}
+
 /* Le haut-parleur d'un onglet qui joue du son : trois barres, dessinées. */
-.tab .snd {
+.snd {
   margin-left: auto; flex: none; width: 10px; height: 9px;
   background:
     linear-gradient(var(--muted), var(--muted)) 0    100% / 1.5px 5px no-repeat,
@@ -223,21 +288,47 @@ h1 {
     linear-gradient(var(--muted), var(--muted)) 8px  100% / 1.5px 6px no-repeat;
 }
 
+/* Les téléchargements, en bas de la colonne : une flèche qui tombe sur un trait. */
+.side-foot { margin-top: auto; padding: 12px 10px; }
+.dlmark { display: block; position: relative; width: 13px; height: 14px; opacity: .55; }
+.dlmark::before {
+  content: ""; position: absolute; inset: 0 0 4px; background: var(--muted);
+  clip-path: polygon(38% 0, 62% 0, 62% 52%, 100% 52%, 50% 100%, 0 52%, 38% 52%);
+}
+.dlmark::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1.5px; background: var(--muted); border-radius: 1px;
+}
+
+/* ── La barre du haut ── */
+
 .win-main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 
 .topbar {
   height: 38px; flex: none;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; gap: 12px;
+  padding: 0 12px;
   border-bottom: 1px solid var(--line-soft);
 }
+
+.navarrows { display: flex; align-items: center; gap: 18px; flex: none; }
+.chev {
+  width: 7px; height: 7px; opacity: .6;
+  border-left: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+}
+.chev.back { transform: rotate(45deg); }
+.chev.fwd  { transform: rotate(-135deg); }
+
 .pill {
-  display: flex; align-items: center; gap: 7px;
-  height: 24px; padding: 0 14px; min-width: 260px;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  height: 24px; padding: 0 14px; margin-inline: auto; max-width: 60%;
   border: 1px solid var(--line); border-radius: 999px;
   background: rgba(255,255,255,.04);
-  font-size: 12px; color: #D7D7DB;
-  justify-content: center;
+  color: #D7D7DB;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+
 /* Le cadenas de la barre : dessiné, pour ne dépendre d'aucune police de symboles. */
 .pill .lock {
   position: relative; flex: none;
@@ -250,6 +341,26 @@ h1 {
   border: 1.5px solid var(--muted); border-bottom: none;
   border-radius: 3px 3px 0 0;
 }
+
+.tools { display: flex; align-items: center; gap: 14px; flex: none; color: var(--muted); }
+.tool.braces { font-family: var(--mono); font-size: 12px; opacity: .75; }
+
+/* Le bouclier du blocage. */
+.tool.shield {
+  width: 12px; height: 14px; opacity: .7;
+  background: var(--muted);
+  clip-path: polygon(50% 0, 100% 22%, 100% 62%, 50% 100%, 0 62%, 0 22%);
+}
+/* Les trois points du menu de page. */
+.tool.dots {
+  width: 14px; height: 3px; opacity: .7;
+  background:
+    radial-gradient(circle, var(--muted) 1.5px, transparent 0) 0   50% / 5px 3px no-repeat,
+    radial-gradient(circle, var(--muted) 1.5px, transparent 0) 50% 50% / 5px 3px no-repeat,
+    radial-gradient(circle, var(--muted) 1.5px, transparent 0) 100% 50% / 5px 3px no-repeat;
+}
+
+/* ── La page, et la palette au-dessus ── */
 
 .page {
   flex: 1; margin: 8px; border-radius: 10px;
@@ -282,7 +393,7 @@ h1 {
 .palette-row {
   display: flex; align-items: center; gap: 12px;
   height: 32px; padding: 0 12px; border-radius: var(--r-s);
-  font-size: 12.5px; color: #D7D7DB;
+  color: #D7D7DB;
   white-space: nowrap; overflow: hidden;
 }
 .palette-row.sel { background: rgba(255,255,255,.10); color: #FFF; }
@@ -297,9 +408,10 @@ figcaption {
 }
 
 @media (max-width: 720px) {
-  .win { height: 380px; }
-  .win-side { width: 148px; }
+  .win { height: 400px; }
+  .win-side { width: 168px; }
   .palette-row span { display: none; }
+  .tools .braces { display: none; }
 }
 
 /* ─────────────────────────  Chiffres  ───────────────────────── */
