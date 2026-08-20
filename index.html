@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wuji — un navigateur pour macOS</title>
+<meta name="description" content="Wuji est un navigateur macOS écrit en Swift et AppKit, posé sur WebKit. Une fenêtre, une colonne d'onglets, une palette. 260 règles de blocage écrites à la main, aucune dépendance, aucune télémétrie.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/wuji-icon-512.png">
+<link rel="stylesheet" href="styles.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wuji — un navigateur pour macOS">
+<meta property="og:description" content="Une fenêtre, une colonne d'onglets, une palette. 260 règles de blocage écrites à la main, aucune dépendance, aucune télémétrie.">
+<meta property="og:image" content="assets/wuji-icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#fonctions">Fonctions</a>
+      <a href="#blocage">Blocage</a>
+      <a href="#interdits">Interdits</a>
+      <a href="#raccourcis">Raccourcis</a>
+      <a href="#installer">Installer</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji">Code source</a>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- ─────────────────────────────  HERO  ───────────────────────────── -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">macOS 26 · Apple&nbsp;Silicon</p>
+    <h1>Un navigateur qui tient<br class="bp">en une fenêtre.</h1>
+    <p class="lede">
+      Écrit en Swift et AppKit, posé sur WebKit. Une colonne d'onglets à gauche, la page à
+      droite, et une palette au centre quand on cherche quelque chose. Pas de barre d'outils
+      qui s'accumule, pas de bouton qui ne fait rien.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://github.com/Black0S/Wuji/releases/latest/download/Wuji.dmg">
+        Télécharger Wuji.dmg
+      </a>
+      <a class="btn" href="https://github.com/Black0S/Wuji">Lire le code</a>
+    </div>
+    <p class="fineprint">
+      Version 0.1.5 · image signée et notarisée par Apple · <a href="https://github.com/Black0S/Wuji/blob/main/LICENSE">GPL-3.0</a>
+    </p>
+  </div>
+
+  <!-- Illustration de l'interface : dessinée en CSS, aux mesures du design system. -->
+  <div class="wrap">
+  <figure class="shot">
+    <div class="win" aria-hidden="true">
+      <div class="win-side">
+        <div class="lights"><i></i><i></i><i></i></div>
+        <div class="side-head">Personnel</div>
+        <div class="tabs">
+          <div class="tab sel"><span class="fav"></span>Recherche</div>
+          <div class="tab"><span class="fav"></span>Documentation WebKit</div>
+          <div class="tab"><span class="fav"></span>Dépôt · Wuji<em class="snd"></em></div>
+          <div class="tab dim"><span class="fav"></span>Article — endormi</div>
+        </div>
+        <div class="side-head">Espaces</div>
+        <div class="tabs">
+          <div class="tab"><span class="glyph">◐</span>Travail</div>
+          <div class="tab"><span class="glyph">◍</span>Privé</div>
+        </div>
+      </div>
+      <div class="win-main">
+        <div class="topbar">
+          <div class="pill"><span class="lock"></span>developer.apple.com/documentation/webkit</div>
+        </div>
+        <div class="page">
+          <div class="skel">
+            <i class="t"></i><i></i><i></i><i class="s"></i><i></i><i></i><i class="s"></i>
+          </div>
+          <div class="palette">
+            <div class="palette-field">Rechercher, ouvrir une adresse…</div>
+            <div class="palette-row sel"><span>Onglet</span>Documentation WebKit</div>
+            <div class="palette-row"><span>Historique</span>developer.apple.com</div>
+            <div class="palette-row"><span>Favori</span>Journal de blocage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <figcaption>La fenêtre : une colonne, une page, et la palette quand on l'appelle.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  CHIFFRES  ───────────────────────────── -->
+<section class="facts">
+  <div class="wrap facts-grid">
+    <div><strong>260</strong><span>règles écrites à la main, au format que WebKit compile</span></div>
+    <div><strong>0</strong><span>dépendance dans le paquet</span></div>
+    <div><strong>0</strong><span>octet de télémétrie</span></div>
+    <div><strong>6</strong><span>listes qui se compilent et s'éteignent séparément</span></div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  FONCTIONS  ───────────────────────────── -->
+<section id="fonctions" class="band">
+  <div class="wrap">
+    <h2>Ce que le navigateur sait faire</h2>
+    <p class="intro">
+      Chaque fonction est là parce qu'elle rend quelque chose possible, pas parce qu'un
+      navigateur est censé l'avoir.
+    </p>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Espaces et dossiers</h3>
+        <p>
+          Les onglets appartiennent à un espace, pas à l'application. Un espace naît privé ou
+          ne l'est jamais : <kbd>⇧⌘N</kbd> en crée un — magasin de données éphémère, rien sur
+          le disque — et il l'est jusqu'à sa fermeture. Une bascule privé/normal mentirait
+          dans les deux sens.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Un onglet ne se ferme jamais tout seul</h3>
+        <p>
+          Passé un délai réglable — jamais, une minute, jusqu'à une heure — il rend sa mémoire
+          sans quitter la colonne, et le survol le réveille avant même le clic. Un onglet qui
+          joue du son ne s'endort pas, et il porte un haut-parleur à droite de son titre.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Zoom par site</h3>
+        <p>
+          <kbd>⌘+</kbd> et <kbd>⌘−</kbd> règlent le site qu'on regarde, et il s'en souvient :
+          un site qui se lit mal n'impose pas sa correction à tout le web. Seuls les écarts
+          sont conservés, et Réglages&nbsp;› Sites web les liste.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Journal de blocage</h3>
+        <p>
+          Une fenêtre qui montre ce qui est arrêté, ligne par ligne — pas de compteur : un
+          chiffre qui monte ne se vérifie pas. Chaque ligne porte la liste dont une règle vise
+          l'adresse, et la règle exacte au survol. « Aucune règle ne vise cette adresse » est
+          la réponse la plus utile : l'absence ne vient pas de nous.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Certificats qu'aucune autorité n'atteste</h3>
+        <p>
+          L'ordinaire d'un service qu'on héberge soi-même. La page d'erreur montre le
+          certificat — délivré à qui, par qui, jusqu'à quand, et son empreinte SHA-256 — puis
+          propose de continuer. L'exception vaut pour cet hôte et cette session seulement, et
+          n'est jamais écrite sur le disque.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Autorisations par site</h3>
+        <p>
+          Caméra, micro, position. Demandées une fois, retenues, révocables. La position passe
+          par deux portes : le site vous demande, et macOS demande à Wuji — accorder la
+          première sans la seconde donnait un refus que la page vous attribuait.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Scripts utilisateur</h3>
+        <p>
+          Installation depuis une adresse en <code>.user.js</code>, portée affichée avant
+          d'accepter, mise à jour à la demande. Leur icône quitte la barre quand la fonction
+          est éteinte.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Serveurs qui demandent qui vous êtes</h3>
+        <p>
+          Une authentification HTTP ouvre une bulle en bas à droite, au même endroit que les
+          autres questions. Rien n'est retenu : ce qui est tapé part au serveur et disparaît
+          avec la bulle.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Pages internes en <code>wuji://</code></h3>
+        <p>
+          Favoris, historique, téléchargements, listes de règles, sites exclus, scripts,
+          réglages — avec le même sommaire à gauche partout.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Mises à jour</h3>
+        <p>
+          Réglages&nbsp;› Fonctions demande à GitHub la dernière version publiée, sans
+          identifiant et sans dire laquelle vous utilisez : la comparaison se fait chez vous.
+          Rien n'est téléchargé ni installé tout seul. La vérification au lancement est éteinte
+          par défaut.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  BLOCAGE  ───────────────────────────── -->
+<section id="blocage" class="band alt">
+  <div class="wrap">
+    <h2>Le blocage</h2>
+    <p class="intro">
+      260 règles écrites directement dans le format de <code>WKContentRuleList</code>, celui
+      que WebKit compile : 240 blocages et 20 masquages. Rien n'est téléchargé, rien n'est
+      converti au démarrage — le navigateur lit les fichiers et les donne au moteur. Un
+      convertisseur, si rapide soit-il, refait à chaque lancement un travail dont le résultat
+      ne change pas.
+    </p>
+
+    <div class="table-scroll">
+      <table class="lists">
+        <caption class="sr">Les six listes de blocage</caption>
+        <thead>
+          <tr><th scope="col">Liste</th><th scope="col">Règles</th><th scope="col">Ce qu'elle vise</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Mouchards</th><td>72</td><td>audience, comportement, attribution, courtiers d'identité, empreinte</td></tr>
+          <tr><th scope="row">Publicité</th><td>84</td><td>régies, enchères en temps réel, articles sponsorisés</td></tr>
+          <tr><th scope="row">Télémétrie des appareils</th><td>57</td><td>ce que les systèmes et les objets renvoient à leur fabricant</td></tr>
+          <tr><th scope="row">Habillage publicitaire</th><td>20</td><td>masque les éléments dont la classe annonce une publicité</td></tr>
+          <tr><th scope="row">Réseaux sociaux</th><td>15</td><td>boutons et pixels sociaux, hors du site du réseau</td></tr>
+          <tr><th scope="row">Rejeu de session</th><td>12</td><td>l'enregistrement de vos mouvements et de vos frappes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two">
+      <div>
+        <h3>Six listes, six interrupteurs</h3>
+        <p>
+          Chacune se compile à part et s'éteint dans <code>wuji://ad-block/lists</code> —
+          éteinte, elle quitte le moteur et le disque, elle n'y reste pas neutralisée. Une
+          famille n'existe que si l'on peut vouloir la garder en éteignant les autres : la
+          télémétrie d'un téléviseur qu'on ne possède pas ne bloquera jamais rien.
+        </p>
+      </div>
+      <div>
+        <h3>Comment une règle entre dans la liste</h3>
+        <p>
+          Chacune est adossée à au moins une liste de référence — EasyList, EasyPrivacy,
+          AdGuard, uBlock Origin, Peter Lowe, Turtlecute — et à une règle qui bloque le domaine
+          entier, jamais à une simple mention. Chercher un nom n'importe où ferait bloquer un
+          CDN majeur et la page de connexion Google.
+        </p>
+      </div>
+    </div>
+
+    <div class="honest">
+      <h3>Ce que ces règles ne font pas</h3>
+      <ul>
+        <li>
+          <strong>Les publicités servies depuis le domaine du site lui-même passent</strong> —
+          YouTube au premier chef. Les retirer demande d'exécuter du code dans la page et de le
+          corriger chaque semaine. Wuji ne le fait pas et ne prétend pas le faire.
+        </li>
+        <li>
+          <strong>Les domaines jetables passent aussi.</strong> Les sites les plus agressifs
+          tirent leurs publicités de noms générés au hasard ; une liste tenue à la main ne suit
+          pas ce rythme.
+        </li>
+        <li>
+          <strong>Deux familles sont exclues même quand les listes les bloquent</strong> : les
+          gestionnaires de consentement et les anti-robots. Absents, ils ne retirent pas la
+          publicité — ils verrouillent la page.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  INTERDITS  ───────────────────────────── -->
+<section id="interdits" class="band">
+  <div class="wrap">
+    <h2>Ce que le projet s'interdit</h2>
+    <p class="intro">Les absences sont décidées, et voici pourquoi.</p>
+
+    <ul class="rules">
+      <li>
+        <h3>Aucun contrôle mort</h3>
+        <p>Un réglage qui ne pilote rien est pire qu'un réglage absent : il donne l'illusion
+        d'un produit plus avancé qu'il ne l'est.</p>
+      </li>
+      <li>
+        <h3>Aucune télémétrie</h3>
+        <p>Rien ne part de cette machine que vous n'ayez demandé. La seule requête que Wuji
+        émette pour son propre compte est la vérification de version, et elle ne se déclenche
+        que sur un clic.</p>
+      </li>
+      <li>
+        <h3>Aucun mot de passe enregistré</h3>
+        <p>Stocker des identifiants demande de les remplir, et c'est le remplissage qui coûte :
+        au mauvais endroit, il livre un mot de passe à un site qui ne l'a jamais eu. À moitié
+        faite, cette fonction serait la pire chose que Wuji puisse embarquer.</p>
+      </li>
+      <li>
+        <h3>Aucune suggestion du moteur de recherche</h3>
+        <p>Elles supposent d'envoyer chaque frappe à un tiers — « c », « ch », « cha » — y
+        compris pour les recherches qu'on efface avant de les valider. La palette cherche donc
+        chez vous seulement : onglets ouverts, historique, favoris.</p>
+      </li>
+      <li>
+        <h3>Une seule fenêtre, parce qu'il y a les espaces</h3>
+        <p>Ailleurs, on ouvre une seconde fenêtre parce que les onglets n'ont aucun autre moyen
+        d'être groupés — c'est un contournement. Ici les espaces persistent, se nomment et
+        survivent à la fermeture.</p>
+      </li>
+      <li>
+        <h3>Les favicons viennent du site</h3>
+        <p>Jamais d'un service tiers qui apprendrait au passage ce que vous visitez.</p>
+      </li>
+      <li>
+        <h3>Aucune règle écrite pour faire passer un test</h3>
+        <p>Les pages de conformité proposent leurs propres filtres ; les adopter donne un bon
+        score et ne protège personne.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  RACCOURCIS  ───────────────────────────── -->
+<section id="raccourcis" class="band alt">
+  <div class="wrap">
+    <h2>Raccourcis</h2>
+    <p class="intro">Tout se fait au clavier, y compris ce qui n'a pas de bouton.</p>
+
+    <div class="keys">
+      <div class="key"><kbd>⌘L</kbd><span>Palette — adresse, recherche, onglets ouverts</span></div>
+      <div class="key"><kbd>⌘T</kbd><span>Nouvel onglet</span></div>
+      <div class="key"><kbd>⌘W</kbd><span>Fermer l'onglet</span></div>
+      <div class="key"><kbd>⇧⌘T</kbd><span>Rouvrir le dernier fermé</span></div>
+      <div class="key"><kbd>⌘]</kbd><span>Onglet suivant</span></div>
+      <div class="key"><kbd>⌘[</kbd><span>Onglet précédent</span></div>
+      <div class="key"><kbd>⇧⌘N</kbd><span>Nouvel espace privé</span></div>
+      <div class="key"><kbd>⌥⌘N</kbd><span>Nouveau dossier</span></div>
+      <div class="key"><kbd>⌘F</kbd><span>Rechercher dans la page</span></div>
+      <div class="key"><kbd>⌘R</kbd><span>Recharger</span></div>
+      <div class="key"><kbd>⌘+</kbd><span>Zoom du site · <kbd>⌘0</kbd> par défaut</span></div>
+      <div class="key"><kbd>⌘D</kbd><span>Mettre en favori · <kbd>⇧⌘B</kbd> les ouvrir</span></div>
+      <div class="key"><kbd>⌘Y</kbd><span>Historique</span></div>
+      <div class="key"><kbd>⌘J</kbd><span>Téléchargements</span></div>
+      <div class="key"><kbd>⌘,</kbd><span>Réglages</span></div>
+      <div class="key"><kbd>⌘M</kbd><span>Minimiser la fenêtre</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  INSTALLER  ───────────────────────────── -->
+<section id="installer" class="band">
+  <div class="wrap">
+    <h2>Installer</h2>
+
+    <div class="install">
+      <article class="dl">
+        <img src="assets/wuji-icon-512.png" alt="" width="96" height="96">
+        <div>
+          <h3>Wuji 0.1.5</h3>
+          <p>Image signée, notarisée et agrafée : elle s'ouvre sans détour sur une machine
+          neuve. Apple Silicon, macOS 26 au minimum.</p>
+          <a class="btn btn-primary" href="https://github.com/Black0S/Wuji/releases/latest/download/Wuji.dmg">Télécharger le .dmg</a>
+          <a class="btn btn-quiet" href="https://github.com/Black0S/Wuji/releases">Toutes les versions</a>
+        </div>
+      </article>
+
+      <article class="build">
+        <h3>Ou le compiler soi-même</h3>
+        <pre><code>git clone https://github.com/Black0S/Wuji.git
+cd Wuji
+./run.sh</code></pre>
+        <p>
+          <code>./run.sh</code> compile en release, installe dans <code>/Applications</code> et
+          lance depuis là — on teste où l'application vivra. Lancée depuis <code>.build</code>,
+          elle n'a ni la place ni l'identité qu'elle aura chez quelqu'un.
+        </p>
+        <dl class="scripts">
+          <dt><code>./build.sh</code></dt><dd>assemble le paquet, sans le lancer</dd>
+          <dt><code>./dmg.sh</code></dt><dd>produit <code>Wuji.dmg</code>, signé ad-hoc — pour soi</dd>
+          <dt><code>./release.sh</code></dt><dd>le même, signé, notarisé et agrafé — pour les autres</dd>
+          <dt><code>./uninstall.sh</code></dt><dd>efface l'application et tout ce qu'elle a laissé</dd>
+          <dt><code>swift test</code></dt><dd>la logique pure : règles, nom d'un site, validité de l'asset</dd>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  LICENCE  ───────────────────────────── -->
+<section class="band alt">
+  <div class="wrap two">
+    <div>
+      <h2>Licence</h2>
+      <p>
+        <strong>GPL-3.0.</strong> Wuji peut être lu, modifié et redistribué par qui veut — mais
+        pas fermé : qui publie une version modifiée doit en publier le code sous la même
+        licence. Le travail reste ouvert en aval, ce qu'une licence permissive ne garantit pas.
+      </p>
+      <p class="muted">
+        Ce choix ne l'empêche pas d'être vendu ni de recevoir un soutien : « libre » n'a jamais
+        voulu dire gratuit. Il demande en revanche que les droits restent réunis en une seule
+        main — d'où l'accord décrit dans
+        <a href="https://github.com/Black0S/Wuji/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>,
+        qui laisse le travail des contributeurs sous GPL-3.0 comme le reste.
+      </p>
+    </div>
+    <div>
+      <h2>Aucune dépendance</h2>
+      <p>
+        La liste des suffixes publics vient de
+        <a href="https://github.com/ameshkov/swift-psl">swift-psl</a> et vit dans les sources,
+        recopiée avec sa licence MIT.
+      </p>
+      <p class="muted">
+        Ce n'est pas une préférence : SwiftPM range les ressources d'une dépendance à la racine
+        du paquet <code>.app</code>, et macOS refuse de signer une application qui porte quoi
+        que ce soit à cet endroit. Le choix était donc entre la dépendance et la distribution.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="brand">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </div>
+    <p>© 2026 Liam Jutteau (Black0S) · GPL-3.0</p>
+    <nav aria-label="Liens">
+      <a href="https://github.com/Black0S/Wuji">Dépôt</a>
+      <a href="https://github.com/Black0S/Wuji/releases">Versions</a>
+      <a href="https://github.com/Black0S/Wuji/blob/main/CONTRIBUTING.md">Contribuer</a>
+      <a href="https://github.com/Black0S/Wuji/issues">Signaler</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
