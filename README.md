@@ -7,10 +7,19 @@ exactement ce qui est dans le dépôt.
 
 ```
 index.html   la page
-styles.css   la feuille de style
-assets/      l'icône, extraite de AppIcon.icns
+styles.css   la feuille de style, en clair et en sombre
+assets/      l'icône extraite de AppIcon.icns, et deux captures de l'application
 .nojekyll    demande à Pages de servir les fichiers tels quels
 ```
+
+Le site suit l'apparence du système, comme l'application suit celle de macOS : les deux
+palettes de `styles.css` sont celles de `Sources/DesignSystem/Tokens.swift`, et rien ne
+bascule à la main.
+
+Les captures (`wuji-page.png`, `wuji-depot.png`) sont prises en apparence sombre. Elles
+restent lisibles sur fond clair — ce sont des photos d'une fenêtre, pas des éléments du
+site. Pour qu'elles suivent le thème, il faudrait les reprendre en clair et les servir en
+`<picture>`.
 
 ## Le voir en local
 

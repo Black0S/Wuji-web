@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wuji — un navigateur pour macOS</title>
 <meta name="description" content="Wuji est un navigateur macOS écrit en Swift et AppKit, posé sur WebKit. Une fenêtre, une colonne d'onglets, une palette. 260 règles de blocage écrites à la main, aucune dépendance, aucune télémétrie.">
-<meta name="theme-color" content="#0B0B0C">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0C" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/wuji-icon-512.png">
 <link rel="stylesheet" href="styles.css">
@@ -60,57 +61,13 @@
     </p>
   </div>
 
-  <!-- Illustration de l'interface : dessinée en CSS, aux mesures du design system. -->
+  <!-- La capture, et rien autour : l'image porte son ombre et ses coins. -->
   <div class="wrap">
   <figure class="shot">
-    <div class="win" aria-hidden="true">
-      <div class="win-side">
-        <div class="lights"><i></i><i></i><i></i></div>
-
-        <div class="space">
-          <span class="space-mark"></span>Personnel
-          <span class="switch"></span>
-        </div>
-
-        <div class="row new"><span class="plus"></span>Nouvel onglet<em>⌘T</em></div>
-
-        <div class="tree">
-          <div class="row folder"><span class="tri open"></span>Musique</div>
-          <div class="row tab child sel"><span class="fav"></span>Concerto nº 21<em class="snd"></em></div>
-          <div class="row folder"><span class="tri"></span>Réglages<em>2</em></div>
-          <div class="row folder"><span class="tri"></span>Lectures<em>4</em></div>
-          <div class="row folder"><span class="tri open"></span>Dépôts</div>
-          <div class="row tab child"><span class="fav"></span>GitHub · Wuji</div>
-          <div class="row tab child dim"><span class="fav"></span>Notes — endormi</div>
-          <div class="row tab"><span class="fav globe"></span>Identité non vérifiée</div>
-        </div>
-
-        <div class="side-foot"><span class="dlmark"></span></div>
-      </div>
-      <div class="win-main">
-        <div class="topbar">
-          <div class="navarrows"><span class="chev back"></span><span class="chev fwd"></span></div>
-          <div class="pill"><span class="lock"></span>developer.apple.com/documentation/webkit</div>
-          <div class="tools">
-            <span class="tool braces">{}</span>
-            <span class="tool shield"></span>
-            <span class="tool dots"></span>
-          </div>
-        </div>
-        <div class="page">
-          <div class="skel">
-            <i class="t"></i><i></i><i></i><i class="s"></i><i></i><i></i><i class="s"></i>
-          </div>
-          <div class="palette">
-            <div class="palette-field">Rechercher, ouvrir une adresse…</div>
-            <div class="palette-row sel"><span>Onglet</span>Documentation WebKit</div>
-            <div class="palette-row"><span>Historique</span>developer.apple.com</div>
-            <div class="palette-row"><span>Favori</span>Journal de blocage</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <figcaption>La fenêtre, dessinée : une colonne, une page, et la palette quand on l&rsquo;appelle.</figcaption>
+    <img src="assets/wuji-page.png" width="1600" height="1093"
+         alt="La fenêtre de Wuji : la colonne d'onglets à gauche, un article de Wikipédia à droite,
+              et la barre du haut réduite à l'adresse.">
+    <figcaption>Une colonne, une page. La barre du haut ne porte que l'adresse.</figcaption>
   </figure>
   </div>
 </section>
@@ -219,6 +176,24 @@
       </article>
 
       <article class="card">
+        <h3>La palette</h3>
+        <p>
+          <kbd>⌘L</kbd> ouvre le même champ pour tout : une adresse, une recherche, un onglet
+          déjà ouvert, l'historique, les favoris. Elle ne cherche que chez vous — aucune frappe
+          ne part chez un moteur de recherche.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Téléverser un fichier</h3>
+        <p>
+          Un champ « choisir un fichier » ouvre le panneau du système, en feuille sur la
+          fenêtre. C'est le seul endroit où le panneau de macOS est le bon : c'est son
+          navigateur de fichiers qu'on demande, avec ses favoris et sa recherche.
+        </p>
+      </article>
+
+      <article class="card">
         <h3>Mises à jour</h3>
         <p>
           Réglages&nbsp;› Fonctions demande à GitHub la dernière version publiée, sans
@@ -228,6 +203,14 @@
         </p>
       </article>
     </div>
+
+    <figure class="shot-inline">
+      <img src="assets/wuji-depot.png" width="1600" height="1093" loading="lazy"
+           alt="Wuji sur une page GitHub : la colonne montre des dossiers ouverts, un onglet
+                qui joue du son, et un onglet endormi.">
+      <figcaption>La colonne : des dossiers, un onglet qui sonne, un onglet endormi — et l'espace,
+      tout en haut, qui les contient.</figcaption>
+    </figure>
   </div>
 </section>
 
