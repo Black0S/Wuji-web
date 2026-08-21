@@ -8,7 +8,7 @@ exactement ce qui est dans le dépôt.
 ```
 index.html   la page
 styles.css   la feuille de style, en clair et en sombre
-assets/      l'icône extraite de AppIcon.icns, et deux captures de l'application
+assets/      l'icône extraite de AppIcon.icns, et trois captures en deux apparences
 .nojekyll    demande à Pages de servir les fichiers tels quels
 ```
 
@@ -16,10 +16,18 @@ Le site suit l'apparence du système, comme l'application suit celle de macOS : 
 palettes de `styles.css` sont celles de `Sources/DesignSystem/Tokens.swift`, et rien ne
 bascule à la main.
 
-Les captures (`wuji-page.png`, `wuji-depot.png`) sont prises en apparence sombre. Elles
-restent lisibles sur fond clair — ce sont des photos d'une fenêtre, pas des éléments du
-site. Pour qu'elles suivent le thème, il faudrait les reprendre en clair et les servir en
-`<picture>`.
+Les captures vont par paires, `-clair` et `-sombre`, servies en `<picture>` : le navigateur
+ne télécharge que celle qui correspond au thème du lecteur, jamais les deux.
+
+| paire | ce qu'elle montre | où |
+|---|---|---|
+| `wuji-page-*` | un article de Wikipédia | en tête |
+| `wuji-palette-*` | la palette ouverte (`⌘L`) | Fonctions |
+| `wuji-listes-*` | `wuji://ad-block/lists` | Blocage |
+
+Pour en changer : remplacer les deux fichiers d'une paire, en gardant les mêmes noms et le
+même rapport hauteur/largeur (1440 × 907 aujourd'hui — sinon corriger `width` et `height`
+dans `index.html`, qui réservent la place avant le chargement).
 
 ## Le voir en local
 

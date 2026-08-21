@@ -61,12 +61,15 @@
     </p>
   </div>
 
-  <!-- La capture, et rien autour : l'image porte son ombre et ses coins. -->
+  <!-- Les captures suivent l'apparence : <picture> ne télécharge que celle qui sert. -->
   <div class="wrap">
   <figure class="shot">
-    <img src="assets/wuji-page.png" width="1600" height="1093"
-         alt="La fenêtre de Wuji : la colonne d'onglets à gauche, un article de Wikipédia à droite,
-              et la barre du haut réduite à l'adresse.">
+    <picture>
+      <source srcset="assets/wuji-page-sombre.png" media="(prefers-color-scheme: dark)">
+      <img src="assets/wuji-page-clair.png" width="1440" height="907"
+           alt="La fenêtre de Wuji sur un article de Wikipédia : la colonne d'onglets à gauche,
+                la page à droite, et la barre du haut réduite à l'adresse.">
+    </picture>
     <figcaption>Une colonne, une page. La barre du haut ne porte que l'adresse.</figcaption>
   </figure>
   </div>
@@ -205,11 +208,14 @@
     </div>
 
     <figure class="shot-inline">
-      <img src="assets/wuji-depot.png" width="1600" height="1093" loading="lazy"
-           alt="Wuji sur une page GitHub : la colonne montre des dossiers ouverts, un onglet
-                qui joue du son, et un onglet endormi.">
-      <figcaption>La colonne : des dossiers, un onglet qui sonne, un onglet endormi — et l'espace,
-      tout en haut, qui les contient.</figcaption>
+      <picture>
+        <source srcset="assets/wuji-palette-sombre.png" media="(prefers-color-scheme: dark)">
+        <img src="assets/wuji-palette-clair.png" width="1440" height="907" loading="lazy"
+             alt="La palette ouverte au-dessus d'une page de résultats : un champ de saisie, puis
+                  les onglets ouverts, les pages internes et l'historique, chacun avec son origine.">
+      </picture>
+      <figcaption><kbd>⌘L</kbd> — la palette cherche dans ce que vous avez déjà : onglets ouverts,
+      pages internes, historique, favoris. Rien ne part chez un moteur de recherche.</figcaption>
     </figure>
   </div>
 </section>
@@ -242,6 +248,17 @@
         </tbody>
       </table>
     </div>
+
+    <figure class="shot-inline">
+      <picture>
+        <source srcset="assets/wuji-listes-sombre.png" media="(prefers-color-scheme: dark)">
+        <img src="assets/wuji-listes-clair.png" width="1440" height="907" loading="lazy"
+             alt="La page wuji://ad-block/lists : les six listes, leur nombre de règles, ce qu'elles
+                  visent, et un interrupteur pour chacune.">
+      </picture>
+      <figcaption><code>wuji://ad-block/lists</code> — six listes, six interrupteurs. Éteinte, une
+      liste quitte le moteur et le disque.</figcaption>
+    </figure>
 
     <div class="two">
       <div>
