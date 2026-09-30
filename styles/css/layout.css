@@ -1,0 +1,142 @@
+/* Wuji — la mise en page : barre, bandes, gabarit des pages de fonctions, pied. */
+
+/* ─────────────────────────  Marque : l'anneau  ───────────────────────── */
+
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.ring {
+  width: 18px; height: 18px; border-radius: 50%; flex: none;
+  border: 1.5px solid var(--ring); box-shadow: var(--ring-glow);
+}
+.wordmark { font-size: 13px; font-weight: 500; letter-spacing: .34em; text-transform: uppercase; padding-left: 2px; }
+
+/* ─────────────────────────  Barre de navigation  ───────────────────────── */
+
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease;
+}
+/* Le filet n'apparaît qu'une fois la page défilée : en haut, rien ne sépare la barre du titre. */
+.nav.scrolled, .nav.open { border-bottom-color: var(--line-soft); }
+.nav-in { display: flex; align-items: center; gap: 24px; height: var(--nav-h); }
+
+.nav-links { display: flex; gap: 22px; margin-left: auto; }
+.nav-links a {
+  font-size: 14px; color: var(--muted); text-decoration: none; transition: color .15s ease;
+}
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+
+.nav-cta {
+  font-size: 14px; font-weight: 500; text-decoration: none; padding: 6px 15px;
+  background: var(--btn-bg); color: var(--btn-fg); border-radius: 999px;
+  transition: background .15s ease;
+}
+.nav-cta:hover { background: var(--btn-bg-hover); }
+
+.nav-toggle {
+  display: none; margin-left: auto;
+  width: 36px; height: 36px; border: 0; border-radius: 8px; background: transparent;
+  color: var(--text); cursor: pointer;
+}
+.nav-toggle:hover { background: var(--hover); }
+.nav-toggle svg { width: 18px; height: 18px; }
+
+/* Le menu déplié du téléphone : toutes les pages, pas seulement celles de la barre. */
+.nav-menu { display: none; }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-cta { margin-left: auto; }
+  .nav-toggle { display: inline-grid; place-items: center; order: 3; margin-left: -8px; }
+  .nav.open .nav-menu {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 16px;
+    padding: 12px 24px 22px; border-top: 1px solid var(--line-soft);
+  }
+  .nav-menu a {
+    padding: 9px 0; font-size: 15px; text-decoration: none; color: var(--muted);
+  }
+  .nav-menu a[aria-current="page"] { color: var(--text); font-weight: 500; }
+}
+
+/* ─────────────────────────  Bandes  ───────────────────────── */
+
+.band { padding: 96px 0; border-top: 1px solid var(--line-soft); }
+.band.alt { background: var(--bg-alt); }
+.band-head { max-width: 700px; margin-bottom: 48px; }
+.band-head.center { margin-inline: auto; text-align: center; }
+.band-head p { color: var(--muted); margin: 0; }
+@media (max-width: 700px) { .band { padding: 68px 0; } }
+
+/* ─────────────────────────  Hero de l'accueil  ───────────────────────── */
+
+.hero { position: relative; padding: 96px 0 0; text-align: center; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: -20% 50% auto; translate: 50% 0;
+  width: min(900px, 120vw); aspect-ratio: 1; background: var(--glow); pointer-events: none;
+}
+.hero > .wrap { position: relative; }
+.lede { max-width: 640px; margin: 26px auto 0; font-size: 19px; color: var(--muted); }
+.lede + .actions { margin-top: 36px; }
+.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.fineprint { margin-top: 18px; font-size: 13px; color: var(--muted-2); }
+@media (max-width: 640px) { .bp { display: none; } }
+
+/* ─────────────────────────  Pages de fonctions  ─────────────────────────
+
+   Un titre, puis deux colonnes : à gauche le sommaire du site et celui de la page, qui
+   restent sous la main pendant qu'on lit ; à droite les sections. Sur un téléphone, le
+   sommaire devient une rangée qui défile de côté. */
+
+.page-head { padding: 72px 0 40px; border-bottom: 1px solid var(--line-soft); }
+.page-head h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.page-head .lede { margin: 20px 0 0; max-width: 720px; text-align: left; }
+.crumbs { display: flex; gap: 8px; margin: 0 0 18px; font-size: 13px; color: var(--muted); }
+.crumbs a { text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+
+.doc { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 64px; padding-block: 48px 96px; }
+.doc-side { position: sticky; top: calc(var(--nav-h) + 28px); align-self: start; font-size: 14px; }
+.doc-side h2 {
+  margin: 0 0 10px; font-size: 11px; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted-2);
+}
+.doc-side ul { list-style: none; margin: 0 0 28px; padding: 0; display: grid; gap: 2px; }
+.doc-side a {
+  display: block; padding: 5px 10px; margin-left: -10px; border-radius: 7px;
+  color: var(--muted); text-decoration: none; transition: color .15s ease, background .15s ease;
+}
+.doc-side a:hover { color: var(--text); background: var(--hover); }
+.doc-side a[aria-current="page"], .doc-side a.here { color: var(--text); background: var(--sel); font-weight: 500; }
+
+.doc-main > section { padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid var(--line-soft); }
+.doc-main > section:last-of-type { border-bottom: 0; }
+.doc-main > section > p.section-lede { color: var(--muted); max-width: 720px; margin-bottom: 32px; }
+
+@media (max-width: 900px) {
+  /* minmax(0, …) : sans lui, la rangée du sommaire, qui ne se replie pas, élargissait la
+     colonne — et toute la page débordait de l'écran. */
+  .doc { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block-start: 24px; }
+  .doc-side { position: static; min-width: 0; }
+  .doc-side .toc-site { display: none; }
+  .doc-side ul.toc-page { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0; }
+  .doc-side ul.toc-page a { white-space: nowrap; margin: 0; border: 1px solid var(--line-soft); }
+  .doc-side h2 { display: none; }
+}
+
+/* ─────────────────────────  Pied  ───────────────────────── */
+
+.foot { border-top: 1px solid var(--line-soft); padding: 56px 0 40px; background: var(--bg-alt); }
+.foot-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; }
+.foot-grid h2 {
+  margin: 0 0 12px; font-size: 11px; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted-2);
+}
+.foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 14px; }
+.foot-grid a { color: var(--muted); text-decoration: none; }
+.foot-grid a:hover { color: var(--text); }
+.foot-grid p { font-size: 14px; color: var(--muted); max-width: 300px; margin-top: 14px; }
+.foot-legal { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line-soft); font-size: 13px; color: var(--muted-2); }
+@media (max-width: 800px) { .foot-grid { grid-template-columns: 1fr 1fr; } }

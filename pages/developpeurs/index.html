@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Développeurs — Wuji</title>
+<meta name="description" content="Des outils de développement dans la fenêtre — éléments, console, sources, réseau, stockage, mode appareil — et des scripts utilisateur.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../styles/css/base.css">
+<link rel="stylesheet" href="../../styles/css/layout.css">
+<link rel="stylesheet" href="../../styles/css/components.css">
+<script src="../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Développeurs — Wuji">
+<meta property="og:description" content="Des outils de développement dans la fenêtre — éléments, console, sources, réseau, stockage, mode appareil — et des scripts utilisateur.">
+<meta property="og:image" content="../../assets/captures/accueil.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, accueil">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Fonctions</a>
+      <a href="../../pages/blocage/">Blocage</a>
+      <a href="../../pages/confidentialite/">Confidentialité</a>
+      <a href="../../pages/developpeurs/" aria-current="page">Développeurs</a>
+      <a href="../../pages/raccourcis/">Raccourcis</a>
+      <a href="../../pages/installer/">Installer</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Télécharger</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="Toutes les pages">
+    <a href="../../pages/naviguer/">Naviguer</a>
+    <a href="../../pages/lire/">Lire et garder</a>
+    <a href="../../pages/blocage/">Blocage</a>
+    <a href="../../pages/confidentialite/">Confidentialité</a>
+    <a href="../../pages/mots-de-passe/">Mots de passe</a>
+    <a href="../../pages/sites/">Sites et sécurité</a>
+    <a href="../../pages/developpeurs/" aria-current="page">Développeurs</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Raccourcis</a>
+    <a href="../../pages/installer/">Installer</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Développeurs</span></p>
+    <h1>Développeurs</h1>
+    <p class="lede">Des outils de développement dans la fenêtre et dans le style de Wuji, et des scripts qui tournent comme dans Chrome. Ce qu'ils ne savent pas faire est écrit aussi.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="Sur cette page">
+      <h2>Sur cette page</h2>
+      <ul class="toc-page">
+      <li><a href="#outils">Les outils de développement</a></li>
+      <li><a href="#appareil">Le mode appareil</a></li>
+      <li><a href="#scripts">Scripts utilisateur</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="Toutes les pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Naviguer</a></li>
+      <li><a href="../../pages/lire/">Lire et garder</a></li>
+      <li><a href="../../pages/blocage/">Blocage</a></li>
+      <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+      <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+      <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+      <li><a href="../../pages/developpeurs/" aria-current="page">Développeurs</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+      <li><a href="../../pages/installer/">Installer</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="outils">
+  <h2>Les outils de développement</h2>
+<figure class="figure">
+  <img src="../../assets/captures/outils.png" width="1440" height="907" loading="lazy" data-zoom
+       alt="Les outils de développement ouverts sous la page : l&#x27;arbre des éléments à gauche, les styles à droite, les onglets Éléments, Console, Sources, Réseau, Stockage.">
+  <figcaption><kbd>⌥⌘I</kbd> — les outils se posent sous la page, sans la raccourcir.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Dans la fenêtre</h3><p><kbd>⌥⌘I</kbd>, ou « Inspecter l'élément » au clic droit. Le panneau se pose par-dessus le bas de la page sans la redimensionner, suit l'onglet qu'on regarde, et se détache dans une fenêtre à lui.</p></div>
+    <div class="feature"><h3>Éléments</h3><p>L'arbre du document, tenu à jour ; la recherche par sélecteur, texte, balise ou attribut ; le fil d'Ariane. Le survol surligne marge, bordure, remplissage et contenu. Les flèches se promènent dans l'arbre, ← remonte au parent sans rien replier.</p></div>
+    <div class="feature"><h3>Éditer en place</h3><p>Un double-clic ouvre la ligne en couleurs : le nœud entier s'il est petit, sa balise ouvrante s'il est grand. <kbd>⌘S</kbd> enregistre, échap renonce — et l'élément est accordé sur place, pas recréé.</p></div>
+    <div class="feature"><h3>Styles, calculé, boîte, écouteurs</h3><p>Les règles telles qu'elles sont écrites — celles d'une feuille d'un autre site comprises —, les valeurs calculées, la boîte, et les écouteurs de l'élément et de ses ancêtres avec leur fichier et leur ligne.</p></div>
+    <div class="feature"><h3>Console</h3><p>Ce que la page écrit, ses erreurs avec leur pile, des objets qu'on déplie, <code>console.table</code> en tableau, <code>$0</code> pour l'élément choisi, et une ligne pour évaluer dans la page — ou dans un cadre.</p></div>
+    <div class="feature"><h3>Sources</h3><p>Scripts et feuilles, mis en forme et colorés, sur tout le fichier : un script de 3,6 Mo se lit en entier, avec la recherche et le retour à la ligne.</p></div>
+    <div class="feature"><h3>Réseau</h3><p>Chaque ressource, son état, son poids, son temps et sa chronologie ; méthode et en-têtes pour <code>fetch</code> et <code>XMLHttpRequest</code> ; recharger sans le cache.</p></div>
+    <div class="feature"><h3>Stockage</h3><p>Cookies — <code>HttpOnly</code> compris —, qui s'écrivent et se modifient ; stockage local et de session ; bases IndexedDB et leurs tables ; Cache Storage et service workers.</p></div>
+    <div class="feature"><h3>Ce qui précède l'ouverture</h3><p>Les trois cents derniers messages, les trois cents dernières requêtes et tous les écouteurs sont gardés avant qu'on ouvre le panneau — moins d'une microseconde par écouteur.</p></div>
+    <div class="feature"><h3>Des cadres, même d'un autre site</h3><p>Un <code>&lt;iframe&gt;</code> se déplie dans l'arbre ; un élément choisi dans un cadre y emmène la console.</p></div>
+  </div>
+</section>
+
+<section id="appareil">
+  <h2>Le mode appareil</h2>
+  <div class="features">
+    <div class="feature"><h3>Un téléphone dans la fenêtre</h3><p>iPhone 16 Pro Max, 16 et SE, Pixel 9, Galaxy S24, iPad mini, iPad et iPad Pro 13, ou une taille sur mesure, pivotables. La page est mise en page à la largeur de l'appareil et reçoit l'identité de son navigateur.</p></div>
+    <div class="feature"><h3>La souris devient un doigt</h3><p><code>maxTouchPoints</code>, <code>ontouchstart</code>, les évènements <code>touchstart</code> et <code>touchend</code>, un curseur rond. Un écran plus grand que la place est réduit, et le panneau dit de combien.</p></div>
+  </div>
+</section>
+
+<section id="scripts">
+  <h2>Scripts utilisateur</h2>
+  <div class="features">
+    <div class="feature"><h3>Installer</h3><p>Depuis une adresse en <code>.user.js</code> — la convention de Greasemonkey — ou depuis une page qui se révèle être un script. La portée s'affiche avant d'accepter ; la mise à jour se fait à la demande.</p></div>
+    <div class="feature"><h3>Écrire</h3><p>Un éditeur coloré, dans Réglages › Scripts, pour les écrire ou les retoucher.</p></div>
+    <div class="feature"><h3>Une fois par document</h3><p>Un script tourne une fois, et suit lui-même les changements de page — le contrat de Tampermonkey. Sur YouTube, qui change de vidéo sans recharger, il est posé en arrivant sur la page qu'il vise, jamais deux fois.</p></div>
+    <div class="feature"><h3>Rien quand rien ne tourne</h3><p>Sans script actif, rien n'est posé dans les pages. L'icône reste dans la barre, pâle quand rien ne tourne ici.</p></div>
+  </div>
+</section>
+<div class="note">
+  <h3>Ce que les outils ne savent pas faire</h3>
+  <ul>
+    <li><strong>Pas de points d'arrêt, pas de pas à pas.</strong> C'est le travail d'un débogueur, que WebKit ne prête pas à une application.</li>
+    <li><strong>En mode appareil, <code>@media (pointer: coarse)</code> ne change pas</strong> : WebKit le tire du matériel.</li>
+    <li><strong>Une feuille qu'un site refuse</strong> même à la requête de la page, et que l'archive n'a pas gardée, reste illisible — et c'est écrit.</li>
+  </ul>
+</div>
+<nav class="pager" aria-label="Pages voisines"><a class="prev" href="../../pages/sites/"><small>Précédent</small>Sites et sécurité</a><a class="next" href="../../pages/performance/"><small>Suivant</small>Performance</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>Un navigateur pour macOS, écrit en Swift et AppKit, posé sur WebKit. Rien ne part de votre Mac que vous n'ayez demandé.</p>
+      </div>
+      <div>
+        <h2>Le navigateur</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Naviguer</a></li>
+        <li><a href="../../pages/lire/">Lire et garder</a></li>
+        <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocage</a></li>
+        <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+        <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ressources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+        <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+        <li><a href="../../pages/installer/">Installer</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">Toutes les versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Listes de blocage</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 0.7.5 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

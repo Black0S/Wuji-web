@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mots de passe — Wuji</title>
+<meta name="description" content="Un coffre chiffré en AES-256-GCM, Touch ID, une complétion que la page ne voit pas, l&#x27;import et l&#x27;export des identifiants.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../styles/css/base.css">
+<link rel="stylesheet" href="../../styles/css/layout.css">
+<link rel="stylesheet" href="../../styles/css/components.css">
+<script src="../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mots de passe — Wuji">
+<meta property="og:description" content="Un coffre chiffré en AES-256-GCM, Touch ID, une complétion que la page ne voit pas, l&#x27;import et l&#x27;export des identifiants.">
+<meta property="og:image" content="../../assets/captures/accueil.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, accueil">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Fonctions</a>
+      <a href="../../pages/blocage/">Blocage</a>
+      <a href="../../pages/confidentialite/">Confidentialité</a>
+      <a href="../../pages/developpeurs/">Développeurs</a>
+      <a href="../../pages/raccourcis/">Raccourcis</a>
+      <a href="../../pages/installer/">Installer</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Télécharger</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="Toutes les pages">
+    <a href="../../pages/naviguer/">Naviguer</a>
+    <a href="../../pages/lire/">Lire et garder</a>
+    <a href="../../pages/blocage/">Blocage</a>
+    <a href="../../pages/confidentialite/">Confidentialité</a>
+    <a href="../../pages/mots-de-passe/" aria-current="page">Mots de passe</a>
+    <a href="../../pages/sites/">Sites et sécurité</a>
+    <a href="../../pages/developpeurs/">Développeurs</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Raccourcis</a>
+    <a href="../../pages/installer/">Installer</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Mots de passe</span></p>
+    <h1>Mots de passe</h1>
+    <p class="lede">Les identifiants vont dans le coffre de Wuji, et nulle part ailleurs. Rien n'entre sans un oui, rien ne sort sans un geste.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="Sur cette page">
+      <h2>Sur cette page</h2>
+      <ul class="toc-page">
+      <li><a href="#coffre">Le coffre</a></li>
+      <li><a href="#touch-id">Touch ID</a></li>
+      <li><a href="#completion">La complétion</a></li>
+      <li><a href="#regles">Trois règles</a></li>
+      <li><a href="#entrer-sortir">Entrer et sortir</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="Toutes les pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Naviguer</a></li>
+      <li><a href="../../pages/lire/">Lire et garder</a></li>
+      <li><a href="../../pages/blocage/">Blocage</a></li>
+      <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+      <li><a href="../../pages/mots-de-passe/" aria-current="page">Mots de passe</a></li>
+      <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+      <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+      <li><a href="../../pages/installer/">Installer</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="coffre">
+  <h2>Le coffre</h2>
+  <div class="features">
+    <div class="feature"><h3>Chiffré, et la clé ne touche pas le disque</h3><p>Un fichier, <code>coffre.json</code>, chiffré en <strong>AES-256-GCM</strong> avec une clé dérivée du mot de passe maître par PBKDF2-HMAC-SHA512, 210 000 tours. La clé vit en mémoire et disparaît au verrouillage.</p></div>
+    <div class="feature"><h3>Un octet changé, un fichier refusé</h3><p>GCM authentifie autant qu'il chiffre : un coffre modifié est refusé au lieu de rendre n'importe quoi.</p></div>
+    <div class="feature"><h3>Fermé au lancement</h3><p>Il ne s'ouvre pas de force : sur une page de connexion, la complétion propose « Déverrouiller le coffre… », là où elle sert.</p></div>
+    <div class="feature"><h3>Ce qu'on perd, dit franchement</h3><p>Pas de synchronisation iCloud ni de sauvegarde du trousseau. Et un mot de passe maître oublié est un coffre perdu : c'est ce que « chiffré » veut dire — d'où la double saisie à la création.</p></div>
+  </div>
+</section>
+
+<section id="touch-id">
+  <h2>Touch ID</h2>
+  <div class="features">
+    <div class="feature"><h3>Un raccourci, pas un remplacement</h3><p>Le coffre s'ouvre au doigt si on l'allume. Le mot de passe maître reste valable : ajouter une empreinte au Mac invalide la clé confiée, et sans lui le coffre deviendrait inouvrable.</p></div>
+    <div class="feature"><h3>Trente-deux octets, dans l'Enclave</h3><p>Ce qui est confié à l'Enclave sécurisée est la clé du coffre, inutile sans le fichier. Jamais un identifiant, jamais un nom de site. Éteindre Touch ID efface la clé confiée.</p></div>
+  </div>
+</section>
+
+<section id="completion">
+  <h2>La complétion</h2>
+  <div class="features">
+    <div class="feature"><h3>Sous le champ où l'on a cliqué</h3><p>La liste des comptes connus pour ce site, filtrée à la frappe — casse et accents mis de côté. ↑ ↓ ↵ choisissent, échap referme.</p></div>
+    <div class="feature"><h3>Un choix ne remplit que ce champ</h3><p>Choisir un compte dans le champ d'identifiant ne sort pas le mot de passe du coffre : il ne le quitte que lorsque c'est son champ qui a été désigné.</p></div>
+    <div class="feature"><h3>La page ne voit jamais la liste</h3><p>Elle est dessinée par macOS, pas dans la page : un site ne peut ni la lire, ni compter vos comptes. Et elle ne porte que des noms.</p></div>
+    <div class="feature"><h3>Les connexions en deux étapes</h3><p>Google, Microsoft et d'autres demandent l'adresse d'abord : le champ déclaré « username » suffit à proposer, et le remplissage écrit l'adresse seule.</p></div>
+    <div class="feature"><h3>Instantanée</h3><p>Le coffre est déchiffré une fois et indexé par site : 0,2 µs par frappe sur deux mille identifiants.</p></div>
+  </div>
+</section>
+
+<section id="regles">
+  <h2>Trois règles</h2>
+  <div class="features">
+    <div class="feature"><h3>L'hôte vient de WebKit, jamais de la page</h3><p>C'est l'origine réelle du cadre qui parle : une page ne peut pas se faire passer pour votre banque et recevoir son identifiant.</p></div>
+    <div class="feature"><h3>Rien sans un oui</h3><p>L'enregistrement est proposé, pas fait. Le remplissage n'est automatique que s'il n'y a rien à choisir ; à partir de deux comptes, c'est vous qui choisissez.</p></div>
+    <div class="feature"><h3>HTTPS, sauf chez soi</h3><p>Un mot de passe n'est pas proposé en clair sur le réseau ; un service hébergé chez vous — <code>localhost</code>, <code>.local</code>, les réseaux privés — n'en traverse aucun.</p></div>
+  </div>
+</section>
+
+<section id="entrer-sortir">
+  <h2>Entrer et sortir</h2>
+  <div class="features">
+    <div class="feature"><h3>Importer</h3><p>Aucun navigateur tiers ne peut lire l'app Mots de passe. Son export CSV — ou celui de Chrome, de Firefox — se lit dans Réglages › Mots de passe, et chaque ligne entre chiffrée. Combien entrent et combien sont écartées est dit avant d'écrire.</p></div>
+    <div class="feature"><h3>Exporter</h3><p>Aux mêmes colonnes : ce qui sort d'ici se relit dans Safari, Chrome ou Firefox. Un export chiffré que seul Wuji relirait ne serait pas un export — il est en clair, et c'est dit.</p></div>
+    <div class="feature"><h3>Copier sans passer par la page</h3><p>Réglages › Mots de passe liste l'hôte et le compte, jamais le secret. « Copier » le met dans le presse-papiers sans qu'il transite par la page.</p></div>
+    <div class="feature"><h3>L'authentification HTTP</h3><p>Un serveur qui demande qui vous êtes ouvre une bulle en bas à droite. Rien n'y est retenu : ce qui est tapé part au serveur et disparaît avec elle.</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Pages voisines"><a class="prev" href="../../pages/confidentialite/"><small>Précédent</small>Confidentialité</a><a class="next" href="../../pages/sites/"><small>Suivant</small>Sites et sécurité</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>Un navigateur pour macOS, écrit en Swift et AppKit, posé sur WebKit. Rien ne part de votre Mac que vous n'ayez demandé.</p>
+      </div>
+      <div>
+        <h2>Le navigateur</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Naviguer</a></li>
+        <li><a href="../../pages/lire/">Lire et garder</a></li>
+        <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocage</a></li>
+        <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+        <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ressources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+        <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+        <li><a href="../../pages/installer/">Installer</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">Toutes les versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Listes de blocage</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 0.7.5 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

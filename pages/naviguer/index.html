@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naviguer — Wuji</title>
+<meta name="description" content="Fenêtres, espaces, dossiers, deux colonnes, la palette, deux pages côte à côte, le mode zen et le zoom : comment Wuji range ce qu&#x27;on ouvre.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../styles/css/base.css">
+<link rel="stylesheet" href="../../styles/css/layout.css">
+<link rel="stylesheet" href="../../styles/css/components.css">
+<script src="../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Naviguer — Wuji">
+<meta property="og:description" content="Fenêtres, espaces, dossiers, deux colonnes, la palette, deux pages côte à côte, le mode zen et le zoom : comment Wuji range ce qu&#x27;on ouvre.">
+<meta property="og:image" content="../../assets/captures/accueil.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, accueil">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/" aria-current="page">Fonctions</a>
+      <a href="../../pages/blocage/">Blocage</a>
+      <a href="../../pages/confidentialite/">Confidentialité</a>
+      <a href="../../pages/developpeurs/">Développeurs</a>
+      <a href="../../pages/raccourcis/">Raccourcis</a>
+      <a href="../../pages/installer/">Installer</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Télécharger</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="Toutes les pages">
+    <a href="../../pages/naviguer/" aria-current="page">Naviguer</a>
+    <a href="../../pages/lire/">Lire et garder</a>
+    <a href="../../pages/blocage/">Blocage</a>
+    <a href="../../pages/confidentialite/">Confidentialité</a>
+    <a href="../../pages/mots-de-passe/">Mots de passe</a>
+    <a href="../../pages/sites/">Sites et sécurité</a>
+    <a href="../../pages/developpeurs/">Développeurs</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Raccourcis</a>
+    <a href="../../pages/installer/">Installer</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Naviguer</span></p>
+    <h1>Naviguer</h1>
+    <p class="lede">Une fenêtre, des espaces, deux colonnes et une palette. Tout ce qui sert à ouvrir, ranger et retrouver une page — et rien qui s'accumule.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="Sur cette page">
+      <h2>Sur cette page</h2>
+      <ul class="toc-page">
+      <li><a href="#fenetres">Fenêtres, espaces et dossiers</a></li>
+      <li><a href="#colonnes">Deux colonnes, trois largeurs</a></li>
+      <li><a href="#palette">La barre d'adresse et la palette</a></li>
+      <li><a href="#double-page">Deux pages côte à côte</a></li>
+      <li><a href="#zen">Le mode zen</a></li>
+      <li><a href="#zoom">Le zoom</a></li>
+      <li><a href="#onglets">Onglets, son et sessions</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="Toutes les pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/" aria-current="page">Naviguer</a></li>
+      <li><a href="../../pages/lire/">Lire et garder</a></li>
+      <li><a href="../../pages/blocage/">Blocage</a></li>
+      <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+      <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+      <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+      <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+      <li><a href="../../pages/installer/">Installer</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="fenetres">
+  <h2>Fenêtres, espaces et dossiers</h2>
+  <p class="section-lede">Les onglets appartiennent à un espace, chaque fenêtre a les siens, et chaque espace se range en dossiers.</p>
+<figure class="figure">
+  <img src="../../assets/captures/accueil.png" width="1440" height="907" loading="lazy" data-zoom
+       alt="La fenêtre de Wuji : l&#x27;espace Personnel, un dossier Musique ouvert dans la colonne des onglets, un article de Wikipédia au centre et les favoris à droite.">
+  <figcaption>L'espace « Personnel », un dossier d'onglets, et les favoris rangés à droite.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Des fenêtres, chacune avec ses espaces</h3><p><kbd>⌘N</kbd> en ouvre une, <kbd>⇧⌘W</kbd> la ferme. Fermer une fenêtre ferme ses onglets — et <strong>Fichier › Rouvrir la fenêtre fermée</strong> la rend avec ses espaces. Au lancement, toutes reviennent à leur place.</p></div>
+    <div class="feature"><h3>Des espaces</h3><p><kbd>⌥T</kbd> en crée un, <kbd>⌥W</kbd> le ferme, <kbd>⌥<span class="k-qwerty">]</span><span class="k-alt">/</span><span class="k-azerty">$</span></kbd> et <kbd>⌥<span class="k-qwerty">[</span><span class="k-alt">/</span><span class="k-azerty">^</span></kbd> passent de l'un à l'autre — les mêmes touches que pour les onglets, l'autre modificateur. Changer d'espace se voit : la colonne entre du côté d'où il vient.</p></div>
+    <div class="feature"><h3>Un nom, un symbole</h3><p>Le titre de la colonne ouvre la carte des espaces : leur nom, leur symbole, le nombre d'onglets de chacun. On les réordonne au glisser et on les renomme sur place.</p></div>
+    <div class="feature"><h3>Des espaces types</h3><p>Une recette plutôt qu'un espace : l'ouvrir en crée un neuf, avec ses onglets. On en compose un, ou l'on enregistre l'espace ouvert (Réglages › Espaces).</p></div>
+    <div class="feature"><h3>Des dossiers d'onglets</h3><p><kbd>⌥⌘N</kbd> crée un dossier ; un onglet s'y range au glisser, et le dossier se replie. Le clic droit dans le vide de la colonne propose nouvel onglet, rouvrir l'onglet fermé, nouveau dossier.</p></div>
+    <div class="feature"><h3>Rien ne se ferme par surprise</h3><p>Fermer un espace ne demande rien, mais rien n'est perdu : l'historique garde ses pages, et la session d'avant est conservée à côté de la courante.</p></div>
+  </div>
+</section>
+
+<section id="colonnes">
+  <h2>Deux colonnes, trois largeurs</h2>
+  <p class="section-lede">À gauche les onglets, à droite ce qu'on a mis de côté. Chacune se règle, se déplace, ou s'efface.</p>
+<figure class="figure">
+  <img src="../../assets/captures/historique.png" width="1440" height="907" loading="lazy" data-zoom
+       alt="La colonne de droite affiche l&#x27;historique avec un champ de recherche, à côté d&#x27;un article de Wikipédia.">
+  <figcaption>La colonne de droite sur l'historique — <kbd>⌥⌘0</kbd> l'allume ou l'éteint.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Large, réduite, au survol</h3><p>Chaque colonne a trois largeurs : pleine, réduite à ses icônes, ou réduite et qui s'ouvre quand le curseur approche. Elles se choisissent sous le titre de la colonne, d'un clic.</p></div>
+    <div class="feature"><h3>La colonne de droite</h3><p>Favoris, historique, téléchargements ou liste de lecture — une seule à la fois, choisie sous son titre. Chacune se <strong>cherche</strong>, et l'historique se parcourt en entier, pas ses dernières pages.</p></div>
+    <div class="feature"><h3>Ranger au glisser</h3><p>Les favoris et leurs dossiers se rangent comme les onglets : une place s'ouvre là où ils tomberont, le milieu d'un dossier y fait entrer.</p></div>
+    <div class="feature"><h3>Tirer vers la page</h3><p>Une page de la colonne de droite tirée sur la moitié gauche ou droite de la page s'ouvre à côté de celle qu'on lit ; s'il n'y a pas de page, elle s'ouvre à sa place.</p></div>
+    <div class="feature"><h3>Échanger les deux colonnes</h3><p>Les onglets à droite et les listes à gauche, si c'est ainsi qu'on travaille : un seul réglage, et tout suit — les congés, les ouvertures au survol.</p></div>
+    <div class="feature"><h3>Personnaliser l'interface</h3><p>Une carte posée au milieu de la fenêtre : on y fait glisser les boutons de la barre du haut, on choisit les largeurs et la liste de droite, en voyant l'interface changer derrière.</p></div>
+    <div class="feature"><h3>Le zoom de l'interface</h3><p>De 80 à 200 %, pour la colonne, la barre et les panneaux, sans toucher aux pages : le chrome est redessiné à l'échelle, pas agrandi comme une image.</p></div>
+    <div class="feature"><h3>Un défilement comme la page</h3><p>Les colonnes défilent avec la physique du système — l'amorti de la molette, l'élan du trackpad, le rebond aux deux bouts. Une colonne où tout tient ne bouge pas.</p></div>
+  </div>
+</section>
+
+<section id="palette">
+  <h2>La barre d'adresse et la palette</h2>
+  <p class="section-lede">Un champ pour tout : une adresse, une recherche, un onglet déjà ouvert, une page d'hier.</p>
+<figure class="figure">
+  <img src="../../assets/captures/palette.png" width="1440" height="907" loading="lazy" data-zoom
+       alt="La palette ouverte au-dessus d&#x27;un article : l&#x27;adresse de la page, puis les onglets ouverts avec leur site.">
+  <figcaption><kbd>⌘L</kbd> — la palette cherche chez vous : onglets ouverts, historique, favoris.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Trois gestes, pas un de plus</h3><p>La palette s'ouvre sur <kbd>⌘T</kbd>, <kbd>⌘L</kbd> et le clic sur l'adresse. Jamais toute seule : on venait de fermer quelque chose, pas de demander un champ.</p></div>
+    <div class="feature"><h3>Compléter en tapant</h3><p>« you » devient « youtube.com », la fin sélectionnée : Entrée y va, une touche de plus la remplace, ⌫ l'efface.</p></div>
+    <div class="feature"><h3>Des suggestions qui restent chez vous</h3><p>Onglets ouverts, favoris, et l'historique si vous l'allumez — sur la période et au nombre choisis. <strong>Aucune frappe ne part chez un moteur de recherche.</strong></p></div>
+    <div class="feature"><h3>Cinq moteurs, et les vôtres</h3><p>Google, DuckDuckGo, Qwant, Bing et Luxxle, chacun avec son mot-clé : <code>@d mozart</code> cherche sur DuckDuckGo quel que soit le moteur par défaut. On en ajoute, on en retire.</p></div>
+    <div class="feature"><h3>Un champ qui ne bouge pas</h3><p>Il prend toute la longueur entre les boutons, et sa place ne dépend que de la fenêtre. Le cadenas est à gauche et n'en bouge plus : un indicateur de sécurité qui change de place se cherche avant de se lire.</p></div>
+    <div class="feature"><h3>Le badge du zoom</h3><p>Quand un site s'écarte du zoom par défaut, un badge le dit dans la barre, et un clic le rend. Plus d'écart, plus de badge.</p></div>
+  </div>
+</section>
+
+<section id="double-page">
+  <h2>Deux pages côte à côte</h2>
+  <p class="section-lede">Lire l'une en écrivant dans l'autre, comparer deux versions, suivre une vidéo à côté d'une documentation.</p>
+<figure class="figure">
+  <img src="../../assets/captures/double-page.png" width="1440" height="907" loading="lazy" data-zoom
+       alt="Deux articles de Wikipédia côte à côte, Mozart à gauche et Bach à droite ; dans la colonne, les deux onglets portent la marque de la paire.">
+  <figcaption><kbd>⇧⌘D</kbd> — les deux onglets restent deux lignes de la colonne, marquées d'un même glyphe.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Diviser, défaire</h3><p><kbd>⇧⌘D</kbd> divise la vue avec un onglet neuf, et la referme. Défaire une paire ne ferme rien : les deux onglets restent où ils étaient.</p></div>
+    <div class="feature"><h3>Tirer un onglet ou un favori</h3><p>Tiré au-dessus de la page, il fait paraître deux cartes, « À gauche » et « À droite » ; relâché sur l'une, il s'ouvre de ce côté.</p></div>
+    <div class="feature"><h3>La proportion qu'on veut</h3><p>L'interstice se tire ; un double-clic le remet au milieu. La session retrouve la paire et sa proportion au lancement suivant.</p></div>
+    <div class="feature"><h3>La barre suit le panneau actif</h3><p>On choisit un panneau en y cliquant : l'adresse, la recherche dans la page, le zoom, le mode lecture et <kbd>⌘W</kbd> le visent, sans rien savoir de la paire.</p></div>
+  </div>
+</section>
+
+<section id="zen">
+  <h2>Le mode zen</h2>
+  <p class="section-lede">La page, seule, jusqu'aux bords de la fenêtre — ou de l'écran.</p>
+<figure class="figure">
+  <img src="../../assets/captures/zen.png" width="1440" height="907" loading="lazy" data-zoom
+       alt="Le mode zen : un article de Wikipédia occupe toute la fenêtre ; dans le coin, la sortie du mode zen.">
+  <figcaption><kbd>⇧⌘Z</kbd> — la page seule. La sortie attend dans le coin.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Tout s'efface</h3><p>Les colonnes et la barre partent ; la page prend toute la fenêtre, coins compris. En plein écran, elle touche les bords de l'écran.</p></div>
+    <div class="feature"><h3>La barre de titre revient quand on la cherche</h3><p>Le curseur sur la zone des pastilles, ou contre le bord haut : la barre paraît, se tire pour déplacer la fenêtre, et s'efface une demi-seconde après.</p></div>
+    <div class="feature"><h3>La sortie et le zoom, joints dans le coin</h3><p>Un seul onglet en bas à droite porte la sortie du mode zen et le curseur de zoom, avec le même arrondi que le reste de l'interface.</p></div>
+  </div>
+</section>
+
+<section id="zoom">
+  <h2>Le zoom</h2>
+  <p class="section-lede">Deux zooms, qui ne se mélangent pas : celui des pages, retenu par site, et celui de l'interface.</p>
+  <div class="features">
+    <div class="feature"><h3>Zoom par site</h3><p><kbd>⌘+</kbd> et <kbd>⌘−</kbd> règlent le site qu'on regarde, et il s'en souvient ; <kbd>⌘0</kbd> lui rend le zoom par défaut. Seuls les écarts sont gardés — un site qui se lit mal n'impose pas sa correction à tout le web.</p></div>
+    <div class="feature"><h3>Un curseur sur la page</h3><p>Un curseur de zoom peut se poser en bas à droite de la page, attaché à son bord : il règle le même zoom par site, au même pas.</p></div>
+    <div class="feature"><h3>L'écart se mesure au réglage</h3><p>Le badge et le curseur comparent au zoom par défaut que vous avez choisi, pas à cent pour cent.</p></div>
+  </div>
+</section>
+
+<section id="onglets">
+  <h2>Onglets, son et sessions</h2>
+  <div class="features">
+    <div class="feature"><h3>Rouvrir ce qu'on a fermé</h3><p><kbd>⇧⌘T</kbd> rouvre le dernier onglet fermé. La session est enregistrée à chaque changement, et la précédente est gardée à côté : une écriture ratée devient un renommage, pas une perte.</p></div>
+    <div class="feature"><h3>Un onglet qui joue brille</h3><p>Son contour s'éclaire dans la colonne. Un haut-parleur paraît dans le champ d'adresse : couper le son, pause, lecture, incrustation — même quand le lecteur vit dans un cadre d'un autre site.</p></div>
+    <div class="feature"><h3>Le son se coupe dans le moteur</h3><p>La vidéo continue, la page ne voit rien et ne peut pas remettre le son d'elle-même.</p></div>
+    <div class="feature"><h3>Une page de Wuji par espace</h3><p>Favoris, historique, réglages : les raccourcis rejoignent l'onglet déjà ouvert sur une page de Wuji plutôt que d'en empiler un de plus.</p></div>
+    <div class="feature"><h3>Des gestes du Mac</h3><p>Balayer à deux doigts revient en arrière — et se coupe si vos tableaux larges partent en navigation. La barre de défilement peut se cacher.</p></div>
+    <div class="feature"><h3>Les menus du système</h3><p>Les menus sont ceux de macOS — clavier, VoiceOver, sous-menus compris. Les questions de Wuji, elles, arrivent dans une bulle en bas à droite, et fermer sans répondre vaut « non ».</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Pages voisines"><a class="next" href="../../pages/lire/"><small>Suivant</small>Lire et garder</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>Un navigateur pour macOS, écrit en Swift et AppKit, posé sur WebKit. Rien ne part de votre Mac que vous n'ayez demandé.</p>
+      </div>
+      <div>
+        <h2>Le navigateur</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Naviguer</a></li>
+        <li><a href="../../pages/lire/">Lire et garder</a></li>
+        <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocage</a></li>
+        <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+        <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ressources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+        <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+        <li><a href="../../pages/installer/">Installer</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">Toutes les versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Listes de blocage</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 0.7.5 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

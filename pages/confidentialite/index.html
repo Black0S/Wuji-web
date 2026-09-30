@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidentialité — Wuji</title>
+<meta name="description" content="Fenêtre privée, cookies, pistage, traceurs dans les liens, HTTPS d&#x27;abord, données des sites : ce que Wuji refuse pour vous, et ce qu&#x27;il ne fait jamais.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../styles/css/base.css">
+<link rel="stylesheet" href="../../styles/css/layout.css">
+<link rel="stylesheet" href="../../styles/css/components.css">
+<script src="../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Confidentialité — Wuji">
+<meta property="og:description" content="Fenêtre privée, cookies, pistage, traceurs dans les liens, HTTPS d&#x27;abord, données des sites : ce que Wuji refuse pour vous, et ce qu&#x27;il ne fait jamais.">
+<meta property="og:image" content="../../assets/captures/accueil.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, accueil">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Fonctions</a>
+      <a href="../../pages/blocage/">Blocage</a>
+      <a href="../../pages/confidentialite/" aria-current="page">Confidentialité</a>
+      <a href="../../pages/developpeurs/">Développeurs</a>
+      <a href="../../pages/raccourcis/">Raccourcis</a>
+      <a href="../../pages/installer/">Installer</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Télécharger</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="Toutes les pages">
+    <a href="../../pages/naviguer/">Naviguer</a>
+    <a href="../../pages/lire/">Lire et garder</a>
+    <a href="../../pages/blocage/">Blocage</a>
+    <a href="../../pages/confidentialite/" aria-current="page">Confidentialité</a>
+    <a href="../../pages/mots-de-passe/">Mots de passe</a>
+    <a href="../../pages/sites/">Sites et sécurité</a>
+    <a href="../../pages/developpeurs/">Développeurs</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Raccourcis</a>
+    <a href="../../pages/installer/">Installer</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Confidentialité</span></p>
+    <h1>Confidentialité</h1>
+    <p class="lede">Rien ne part de cette machine que vous n'ayez demandé. Ce qui se règle a son onglet dans les réglages ; ce qui ne se règle pas est simplement absent.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="Sur cette page">
+      <h2>Sur cette page</h2>
+      <ul class="toc-page">
+      <li><a href="#privee">La fenêtre privée</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#pistage">Pistage</a></li>
+      <li><a href="#liens">Liens et redirections</a></li>
+      <li><a href="#donnees">Données et historique</a></li>
+      <li><a href="#jamais">Ce qui ne se fait jamais</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="Toutes les pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Naviguer</a></li>
+      <li><a href="../../pages/lire/">Lire et garder</a></li>
+      <li><a href="../../pages/blocage/">Blocage</a></li>
+      <li><a href="../../pages/confidentialite/" aria-current="page">Confidentialité</a></li>
+      <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+      <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+      <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+      <li><a href="../../pages/installer/">Installer</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="privee">
+  <h2>La fenêtre privée</h2>
+  <div class="features">
+    <div class="feature"><h3>Une fenêtre, pas une bascule</h3><p><kbd>⇧⌘N</kbd>. Tout ce qu'elle contient est privé — ses onglets et ses espaces —, sans historique, jamais écrit dans la session. Une bascule privé/normal mentirait dans les deux sens.</p></div>
+    <div class="feature"><h3>Un magasin éphémère</h3><p>Ses onglets partagent un magasin de données qui disparaît avec la fenêtre : on se connecte dans l'un, le lien ouvert à côté l'est encore, puis plus rien.</p></div>
+    <div class="feature"><h3>Rien par les à-côtés</h3><p>Un onglet privé fermé ne se rouvre pas d'un <kbd>⇧⌘T</kbd>, le zoom d'un site reste en mémoire, une autorisation ne vaut que pour cette fois, les favicons ne vont pas sur le disque.</p></div>
+    <div class="feature"><h3>La fenêtre de la page décide</h3><p>Une page privée qui finit de charger pendant qu'on regarde une fenêtre ordinaire n'entre pas dans l'historique. Un lien venu d'une autre application part dans une fenêtre normale.</p></div>
+  </div>
+</section>
+
+<section id="cookies">
+  <h2>Cookies</h2>
+<figure class="figure narrow">
+  <img src="../../assets/captures/confidentialite.png" width="1440" height="1041" loading="lazy" data-zoom
+       alt="Réglages › Confidentialité : bannières de cookies, cookies tiers, pistage entre sites, scripts de pistage, mesure des clics, ne pas vendre mes données, traceurs des liens, redirections.">
+  <figcaption>Réglages › Confidentialité — tout est allumé d'office.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Refuser les bannières</h3><p>Wuji clique « Tout refuser » — ou appelle l'interface prévue pour — sur les outils de consentement qu'il connaît : Didomi, OneTrust, Cookiebot, Usercentrics, Sirdata, CookieYes, Complianz, Google, YouTube, Bing, Amazon… Refuser et non masquer : une bannière cachée laisse la décision en suspens.</p></div>
+    <div class="feature"><h3>Jamais au hasard</h3><p>Seulement une bannière qui attend une réponse, jamais un choix déjà fait, et aucune heuristique générale : un clic au mauvais endroit accepterait à votre place. Les murs « accepter ou s'abonner » restent affichés — ils n'offrent aucun refus.</p></div>
+    <div class="feature"><h3>Bloquer les cookies tiers</h3><p>Un site intégré dans la page d'un autre — publicité, bouton « J'aime », lecteur — ne pose ni ne relit de cookie. Éteint, un paiement intégré qui en a besoin fonctionne.</p></div>
+    <div class="feature"><h3>Site par site</h3><p>Dans le menu du cadenas : bloquer les cookies tiers ou tous les cookies de ce site seul, et effacer ce qu'il a laissé.</p></div>
+  </div>
+</section>
+
+<section id="pistage">
+  <h2>Pistage</h2>
+  <div class="features">
+    <div class="feature"><h3>Empêcher le pistage entre sites</h3><p>La prévention du pistage de WebKit, celle de Safari.</p></div>
+    <div class="feature"><h3>Freiner les scripts de pistage</h3><p>La protection de WebKit contre les scripts reconnus comme traceurs.</p></div>
+    <div class="feature"><h3>Mesure privée des clics</h3><p>Allumée comme dans Safari ; éteinte, aucun rapport d'attribution publicitaire ne part.</p></div>
+    <div class="feature"><h3>Ne pas vendre ni partager mes données</h3><p>Le signal Global Privacy Control, <code>navigator.globalPrivacyControl</code>, dans tous les cadres.</p></div>
+  </div>
+</section>
+
+<section id="liens">
+  <h2>Liens et redirections</h2>
+  <div class="features">
+    <div class="feature"><h3>Retirer les traceurs des liens</h3><p>WebKit n'en retire que trois. Wuji retire aussi ceux de HubSpot, Mailchimp, Marketo, Instagram, TikTok, Yandex, Twitter, LinkedIn et les <code>utm_*</code>, avant que la page parte. Ni <code>ref</code> ni le <code>tag</code> d'Amazon : ce sont des parrainages voulus.</p></div>
+    <div class="feature"><h3>Sauter les redirections de pistage</h3><p>Un lien de Google, Facebook, YouTube, Reddit, Steam, DuckDuckGo, LinkedIn, Slack ou VK ne passe plus chez eux d'abord : la destination est dans l'adresse, on y va directement.</p></div>
+    <div class="feature"><h3>Retenir les redirections non demandées</h3><p>Un clic dans le vide d'une page — ou sur un calque transparent posé par-dessus — n'emmène plus l'onglet chez un annonceur. Un vrai lien ou un bouton passe toujours.</p></div>
+    <div class="feature"><h3>HTTPS d'abord</h3><p>Une adresse en <code>http://</code> est d'abord essayée en <code>https://</code>, et revient à la demande si le site ne le permet pas.</p></div>
+  </div>
+</section>
+
+<section id="donnees">
+  <h2>Données et historique</h2>
+  <div class="features">
+    <div class="feature"><h3>Site par site</h3><p>Confidentialité liste chaque domaine avec ce qu'il a laissé — cookies, stockage, cache —, un champ pour le retrouver, un bouton par ligne. Effacer une ligne déconnecte de ce site-là, et de lui seul.</p></div>
+    <div class="feature"><h3>En quittant</h3><p>Les données des sites peuvent s'effacer à chaque fermeture ; Wuji attend que WebKit ait fini avant de quitter.</p></div>
+    <div class="feature"><h3>L'historique qu'on garde</h3><p>Sa durée se règle ; au-delà, les pages sont effacées au lancement suivant.</p></div>
+    <div class="feature"><h3>Vos fichiers, lisibles</h3><p>Favoris, session, liste de lecture : des fichiers JSON dans <code>~/Library/Application Support/Wuji</code>, qu'on lit et modifie à la main. Seul le coffre est chiffré.</p></div>
+  </div>
+</section>
+
+<section id="jamais">
+  <h2>Ce qui ne se fait jamais</h2>
+  <div class="features">
+    <div class="feature"><h3>Aucune télémétrie</h3><p>La seule requête que Wuji émette pour son propre compte est la vérification de version — sans identifiant, sans dire laquelle vous utilisez, et seulement sur un clic, sauf si vous l'autorisez au lancement.</p></div>
+    <div class="feature"><h3>Aucune suggestion du moteur</h3><p>Elles supposent d'envoyer chaque frappe à un tiers, y compris ce qu'on efface avant de valider. La palette cherche chez vous seulement.</p></div>
+    <div class="feature"><h3>Les favicons viennent du site</h3><p>Jamais d'un service tiers qui apprendrait au passage ce que vous visitez.</p></div>
+    <div class="feature"><h3>Seules les pages de Wuji parlent à Wuji</h3><p>Ce qui règle, efface ou installe ne répond qu'au cadre principal d'une page <code>wuji://</code>. Une page ordinaire ne peut rien éteindre d'un message.</p></div>
+    <div class="feature"><h3>Préchauffer, en le sachant</h3><p>Le préchauffage des connexions gagne environ 150 ms, mais le site sait que vous arrivez avant votre clic. Il ne vise que des sites déjà visités, jamais depuis une fenêtre privée, et se coupe dans Performances.</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Pages voisines"><a class="prev" href="../../pages/blocage/"><small>Précédent</small>Blocage</a><a class="next" href="../../pages/mots-de-passe/"><small>Suivant</small>Mots de passe</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>Un navigateur pour macOS, écrit en Swift et AppKit, posé sur WebKit. Rien ne part de votre Mac que vous n'ayez demandé.</p>
+      </div>
+      <div>
+        <h2>Le navigateur</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Naviguer</a></li>
+        <li><a href="../../pages/lire/">Lire et garder</a></li>
+        <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocage</a></li>
+        <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+        <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ressources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+        <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+        <li><a href="../../pages/installer/">Installer</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">Toutes les versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Listes de blocage</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 0.7.5 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

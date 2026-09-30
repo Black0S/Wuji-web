@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance — Wuji</title>
+<meta name="description" content="Ce que Wuji fait par-dessus WebKit : onglets qui dorment, budget de mémoire, cadence des pages, connexions préchauffées, et les mesures du banc.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../styles/css/base.css">
+<link rel="stylesheet" href="../../styles/css/layout.css">
+<link rel="stylesheet" href="../../styles/css/components.css">
+<script src="../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Performance — Wuji">
+<meta property="og:description" content="Ce que Wuji fait par-dessus WebKit : onglets qui dorment, budget de mémoire, cadence des pages, connexions préchauffées, et les mesures du banc.">
+<meta property="og:image" content="../../assets/captures/accueil.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, accueil">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Fonctions</a>
+      <a href="../../pages/blocage/">Blocage</a>
+      <a href="../../pages/confidentialite/">Confidentialité</a>
+      <a href="../../pages/developpeurs/">Développeurs</a>
+      <a href="../../pages/raccourcis/">Raccourcis</a>
+      <a href="../../pages/installer/">Installer</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Télécharger</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="Toutes les pages">
+    <a href="../../pages/naviguer/">Naviguer</a>
+    <a href="../../pages/lire/">Lire et garder</a>
+    <a href="../../pages/blocage/">Blocage</a>
+    <a href="../../pages/confidentialite/">Confidentialité</a>
+    <a href="../../pages/mots-de-passe/">Mots de passe</a>
+    <a href="../../pages/sites/">Sites et sécurité</a>
+    <a href="../../pages/developpeurs/">Développeurs</a>
+    <a href="../../pages/performance/" aria-current="page">Performance</a>
+    <a href="../../pages/raccourcis/">Raccourcis</a>
+    <a href="../../pages/installer/">Installer</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Performance</span></p>
+    <h1>Performance</h1>
+    <p class="lede">Le moteur est WebKit : une page s'analyse et s'exécute à la vitesse de Safari. Ce qu'un navigateur peut faire par-dessus, c'est ne pas se mettre en travers — et c'est là qu'il y avait tout à gagner.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="Sur cette page">
+      <h2>Sur cette page</h2>
+      <ul class="toc-page">
+      <li><a href="#veille">Des onglets qui dorment</a></li>
+      <li><a href="#affichage">Affichage et réseau</a></li>
+      <li><a href="#banc">Ce que dit le banc</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="Toutes les pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Naviguer</a></li>
+      <li><a href="../../pages/lire/">Lire et garder</a></li>
+      <li><a href="../../pages/blocage/">Blocage</a></li>
+      <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+      <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+      <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+      <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+      <li><a href="../../pages/performance/" aria-current="page">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+      <li><a href="../../pages/installer/">Installer</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="veille">
+  <h2>Des onglets qui dorment</h2>
+<figure class="figure narrow">
+  <img src="../../assets/captures/performances.png" width="1440" height="1041" loading="lazy" data-zoom
+       alt="Réglages › Performances : mettre en veille les onglets oubliés après 30 minutes, le budget de mémoire des pages, la cadence des pages, préchauffer les connexions.">
+  <figcaption>Réglages › Performances.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Suspendus par WebKit</h3><p>Un onglet qu'on ne regarde pas voit son JavaScript et sa mise en page suspendus : une page qui brûle un cœur entier tombe à 3 % en arrière-plan, et reprend où elle en était, sans rechargement.</p></div>
+    <div class="feature"><h3>Endormis après un délai</h3><p>Quinze minutes, trente, une, deux ou quatre heures — ou seulement quand le Mac en manque. L'onglet rend sa mémoire sans quitter la colonne, et le survol le réveille avant le clic.</p></div>
+    <div class="feature"><h3>Ce qui ne dort pas</h3><p>Une page qui joue du son ou qui charge n'est pas inactive, et un onglet où l'on a tapé dans un formulaire est gardé — la saisie ne se perd pas dans un sommeil.</p></div>
+    <div class="feature"><h3>Un budget de mémoire</h3><p>Au-delà d'un tiers de la mémoire du Mac, les onglets quittés depuis plus de cinq minutes s'endorment sans attendre, le plus ancien d'abord — avant que macOS ne ralentisse tout. Le réglage affiche la mesure.</p></div>
+    <div class="feature"><h3>Sous la pression de macOS</h3><p>Quand le système manque de mémoire, les onglets s'endorment et le cache en mémoire des ressources se vide ; celui du disque reste.</p></div>
+  </div>
+</section>
+
+<section id="affichage">
+  <h2>Affichage et réseau</h2>
+  <div class="features">
+    <div class="feature"><h3>La cadence de l'écran</h3><p>Jusqu'à 120 images par seconde sur un écran qui les affiche ; 60 dans tous les cas en mode économie d'énergie.</p></div>
+    <div class="feature"><h3>Des connexions préchauffées</h3><p>La résolution et la poignée de main partent pendant que vous tapez une adresse, et dès l'appui sur un lien vers un site déjà visité : environ 150 ms de moins avant le premier octet.</p></div>
+    <div class="feature"><h3>Un onglet d'avance</h3><p>Un onglet neuf est préparé à l'avance, son processus déjà lancé : une page ouverte dans un nouvel onglet s'affiche en 88 ms au lieu de 140.</p></div>
+    <div class="feature"><h3>Rien sur le chemin de la page</h3><p>La colonne se met à jour sur place au lieu de se reconstruire à chaque signal, la vérification d'un certificat est retenue par hôte, et ce que Wuji va chercher pour lui passe en HTTP/3 d'emblée, quatre connexions par hôte au plus.</p></div>
+  </div>
+</section>
+
+<section id="banc">
+  <h2>Ce que dit le banc</h2>
+  <p class="section-lede">Les chiffres viennent de <code>bench.sh</code> : cinq passes entrelacées, médianes, en version publiée, sur des pages servies en local. Ce qui se mesure se mesure avant d'être écrit.</p>
+<div class="table-scroll"><table class="table">
+  <thead><tr><th scope="col">Onglets chargés</th><th scope="col">Total</th><th scope="col">Application</th><th scope="col">Rendu</th><th scope="col">Réseau</th><th scope="col">GPU</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">5</th><td class="num">307 Mo</td><td class="num">105 Mo</td><td class="num">174 Mo</td><td class="num">14 Mo</td><td class="num">13 Mo</td></tr>
+    <tr><th scope="row">15</th><td class="num">609 Mo</td><td class="num">122 Mo</td><td class="num">445 Mo</td><td class="num">29 Mo</td><td class="num">15 Mo</td></tr>
+    <tr><th scope="row">30</th><td class="num">1 062 Mo</td><td class="num">139 Mo</td><td class="num">850 Mo</td><td class="num">52 Mo</td><td class="num">17 Mo</td></tr>
+  </tbody>
+</table></div>
+  <div class="features">
+    <div class="feature"><h3>Tout ce que macOS attribue à Wuji</h3><p>À trente onglets, l'application pèse 139 Mo ; ses processus de rendu en pèsent 850 — le prix de WebKit, que Safari paie pareil. Le banc additionne tout : rendu, réseau, GPU.</p></div>
+    <div class="feature"><h3>Le critère</h3><p>Un profil pris pendant le chargement d'une page lourde ne montre plus aucun symbole de Wuji au-delà d'un échantillon isolé : ce qui reste à gagner est dans le moteur.</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Pages voisines"><a class="prev" href="../../pages/developpeurs/"><small>Précédent</small>Développeurs</a><a class="next" href="../../pages/raccourcis/"><small>Suivant</small>Raccourcis</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>Un navigateur pour macOS, écrit en Swift et AppKit, posé sur WebKit. Rien ne part de votre Mac que vous n'ayez demandé.</p>
+      </div>
+      <div>
+        <h2>Le navigateur</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Naviguer</a></li>
+        <li><a href="../../pages/lire/">Lire et garder</a></li>
+        <li><a href="../../pages/sites/">Sites et sécurité</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocage</a></li>
+        <li><a href="../../pages/confidentialite/">Confidentialité</a></li>
+        <li><a href="../../pages/mots-de-passe/">Mots de passe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ressources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Développeurs</a></li>
+        <li><a href="../../pages/raccourcis/">Raccourcis</a></li>
+        <li><a href="../../pages/installer/">Installer</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">Toutes les versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Listes de blocage</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 0.7.5 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -4,74 +4,80 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wuji — un navigateur pour macOS</title>
-<meta name="description" content="Wuji est un navigateur macOS écrit en Swift et AppKit, posé sur WebKit. Une fenêtre, deux colonnes, une palette. Le blocage d'uBlock Origin compilé par WebKit, aucune dépendance, aucune télémétrie.">
+<meta name="description" content="Wuji est un navigateur macOS écrit en Swift et AppKit, posé sur WebKit. Une fenêtre, deux colonnes, une palette. Le blocage d&#x27;uBlock Origin compilé par WebKit, aucune dépendance, aucune télémétrie.">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/wuji-icon-512.png">
-<link rel="stylesheet" href="styles.css">
-
+<link rel="stylesheet" href="styles/css/base.css">
+<link rel="stylesheet" href="styles/css/layout.css">
+<link rel="stylesheet" href="styles/css/components.css">
+<script src="styles/js/site.js" defer></script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Wuji — un navigateur pour macOS">
-<meta property="og:description" content="Une fenêtre, deux colonnes, une palette. Le blocage d'uBlock Origin compilé par WebKit, aucune dépendance, aucune télémétrie.">
-<meta property="og:image" content="assets/wuji-page.png">
+<meta property="og:description" content="Wuji est un navigateur macOS écrit en Swift et AppKit, posé sur WebKit. Une fenêtre, deux colonnes, une palette. Le blocage d&#x27;uBlock Origin compilé par WebKit, aucune dépendance, aucune télémétrie.">
+<meta property="og:image" content="assets/captures/accueil.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
 <a class="skip" href="#contenu">Aller au contenu</a>
-
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#">
+    <a class="brand" href="./" aria-label="Wuji, accueil">
       <span class="ring" aria-hidden="true"></span>
       <span class="wordmark">Wuji</span>
     </a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#fonctions">Fonctions</a>
-      <a href="#blocage">Blocage</a>
-      <a href="#interdits">Interdits</a>
-      <a href="#raccourcis">Raccourcis</a>
-      <a href="#installer">Installer</a>
+      <a href="pages/naviguer/">Fonctions</a>
+      <a href="pages/blocage/">Blocage</a>
+      <a href="pages/confidentialite/">Confidentialité</a>
+      <a href="pages/developpeurs/">Développeurs</a>
+      <a href="pages/raccourcis/">Raccourcis</a>
+      <a href="pages/installer/">Installer</a>
     </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
     <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Télécharger</a>
   </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="Toutes les pages">
+    <a href="pages/naviguer/">Naviguer</a>
+    <a href="pages/lire/">Lire et garder</a>
+    <a href="pages/blocage/">Blocage</a>
+    <a href="pages/confidentialite/">Confidentialité</a>
+    <a href="pages/mots-de-passe/">Mots de passe</a>
+    <a href="pages/sites/">Sites et sécurité</a>
+    <a href="pages/developpeurs/">Développeurs</a>
+    <a href="pages/performance/">Performance</a>
+    <a href="pages/raccourcis/">Raccourcis</a>
+    <a href="pages/installer/">Installer</a>
+  </nav>
 </header>
 
 <main id="contenu">
 
-<!-- ─────────────────────────────  HERO  ───────────────────────────── -->
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">macOS 26 · Apple&nbsp;Silicon</p>
     <h1>Un navigateur qui tient <br class="bp">en une fenêtre.</h1>
-    <p class="lede">
-      Écrit en Swift et AppKit, posé sur WebKit. Les onglets à gauche, la page au centre, ce
-      qu'on a mis de côté à droite — et une palette quand on cherche quelque chose. Pas de
-      barre d'outils qui s'accumule, pas de bouton qui ne fait rien.
-    </p>
+    <p class="lede">Écrit en Swift et AppKit, posé sur WebKit. Les onglets à gauche, la page au centre, ce qu'on a mis de côté à droite — et une palette quand on cherche quelque chose. Pas de barre d'outils qui s'accumule, pas de bouton qui ne fait rien.</p>
     <div class="actions">
-      <a class="btn btn-primary" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">
-        Télécharger Wuji.dmg
-      </a>
-      <a class="btn" href="#fonctions">Ce qu'il sait faire</a>
+      <a class="btn btn-primary" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Télécharger Wuji.dmg</a>
+      <a class="btn" href="#fonctions">Tout ce qu'il sait faire</a>
     </div>
     <p class="fineprint">Version 0.7.5 · Apple Silicon, macOS 26 au minimum · GPL-3.0</p>
   </div>
-
   <div class="wrap">
-  <figure class="shot">
-    <img src="assets/wuji-page.png" width="1440" height="907"
-         alt="La fenêtre de Wuji sur un article de Wikipédia : les onglets dans la colonne de gauche,
-              la page au centre, et les favoris rangés en dossiers dans la colonne de droite.">
-    <figcaption>Les onglets à gauche, la page au centre, les favoris à droite. La barre du haut ne
-    porte que l'adresse.</figcaption>
-  </figure>
+    <figure class="shot">
+      <img src="assets/captures/accueil.png" width="1440" height="907" data-zoom
+           alt="La fenêtre de Wuji : l'espace Personnel et un dossier Musique dans la colonne des onglets, un article de Wikipédia au centre, les favoris rangés en dossiers à droite.">
+      <figcaption>Les onglets à gauche, la page au centre, les favoris à droite. La barre du haut ne porte que l'adresse.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ─────────────────────────────  CHIFFRES  ───────────────────────────── -->
-<section class="facts">
+<section class="facts" aria-label="En chiffres">
   <div class="wrap facts-grid">
     <div><strong>68</strong><span>listes du catalogue d'uBlock Origin, à cocher une à une</span></div>
     <div><strong>0</strong><span>liste installée sans que vous l'ayez demandée</span></div>
@@ -80,381 +86,175 @@
   </div>
 </section>
 
-<!-- ─────────────────────────────  FONCTIONS  ───────────────────────────── -->
-<section id="fonctions" class="band">
+<section id="fonctions" class="band alt">
   <div class="wrap">
-    <h2>Ce que le navigateur sait faire</h2>
-    <p class="intro">
-      Chaque fonction est là parce qu'elle rend quelque chose possible, pas parce qu'un
-      navigateur est censé l'avoir.
-    </p>
-
-    <div class="cards">
-      <article class="card">
-        <h3>Espaces, dossiers, fenêtres</h3>
-        <p>
-          Les onglets appartiennent à un espace, et chaque fenêtre a les siens. <kbd>⌥T</kbd>
-          crée un espace, <kbd>⌥]</kbd> passe au suivant — la même touche que pour les onglets,
-          l'autre modificateur. <kbd>⇧⌘N</kbd> ouvre une fenêtre privée : un magasin de données
-          éphémère, rien sur le disque.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Deux colonnes, trois largeurs</h3>
-        <p>
-          À gauche les onglets ; à droite, au choix, les favoris, l'historique, les
-          téléchargements ou la liste de lecture. Chacune est large, réduite à ses icônes, ou
-          s'ouvre au survol. Les favoris se rangent au glisser, et chaque liste se cherche —
-          l'historique entier, pas ses dernières pages.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Deux pages côte à côte</h3>
-        <p>
-          <kbd>⇧⌘D</kbd> divise la vue. Un onglet ou un favori tiré sur la moitié gauche ou
-          droite de la page s'y ouvre, à côté de celle qu'on lit. Défaire la paire ne ferme
-          rien.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Le mode zen</h3>
-        <p>
-          <kbd>⇧⌘Z</kbd> : la page, seule, jusqu'aux bords. La barre de titre revient quand le
-          curseur va la chercher en haut à gauche, et la sortie attend dans le coin, à côté du
-          curseur de zoom.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Des pages sombres, sous la lune</h3>
-        <p>
-          La version sombre du site s'il en a une ; sinon, un thème fabriqué élément par
-          élément — pas un filtre qui inverse la page et retourne les photos. Il se règle par
-          site, et s'arrête sur ceux où l'on préfère l'original.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Un onglet ne se ferme jamais tout seul</h3>
-        <p>
-          Passé un délai réglable, il rend sa mémoire sans quitter la colonne, et le survol le
-          réveille avant le clic. Un onglet qui joue du son ne s'endort pas. Au-delà d'un tiers
-          de la mémoire du Mac, les plus anciens s'endorment d'abord.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Un coffre à mots de passe</h3>
-        <p>
-          Un fichier chiffré en AES-256-GCM, dont la clé ne touche jamais le disque ; Touch ID
-          l'ouvre si on l'allume. Un identifiant n'entre que dans le champ où l'on a cliqué, et
-          la page ne voit jamais la liste. Ce que garde l'app Mots de passe s'importe.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Des captures telles qu'on les voit</h3>
-        <p>
-          La page entière, parcourue écran par écran — vidéos et images paresseuses comprises ;
-          une zone ; ou un élément, même quand il défile dans un bloc à lui, comme le fil d'une
-          messagerie. Le fichier va dans les téléchargements et le presse-papiers.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Des outils de développement</h3>
-        <p>
-          <kbd>⌥⌘I</kbd> : éléments, console, sources mises en forme et colorées, réseau,
-          stockage — cookies compris, qui s'écrivent et se modifient. Un mode appareil pour
-          voir une page comme sur un téléphone. Dans la fenêtre, au style de Wuji.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Lire, garder, traduire</h3>
-        <p>
-          <kbd>⇧⌘R</kbd> ne garde que l'article. <kbd>⇧⌘L</kbd> le met dans la liste de
-          lecture, lisible hors ligne. La traduction passe par les modèles installés sur le
-          Mac : la page ne part chez personne.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Réglages par site</h3>
-        <p>
-          Zoom, JavaScript, lecture automatique, mode sombre ; caméra, micro, position et
-          notifications, demandées une fois et révocables. Les notifications arrivent dans le
-          Centre de notifications, comme celles d'une application.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Scripts utilisateur</h3>
-        <p>
-          Installation depuis une adresse en <code>.user.js</code>, portée affichée avant
-          d'accepter, et un éditeur coloré pour les écrire soi-même. Un script tourne une fois
-          par document — y compris quand YouTube change de vidéo sans recharger.
-        </p>
-      </article>
+    <div class="band-head">
+      <h2>Tout ce que le navigateur sait faire</h2>
+      <p>Huit sujets, et chacun sa page, avec toutes ses fonctions. Chacune est là parce qu'elle rend quelque chose possible, pas parce qu'un navigateur est censé l'avoir.</p>
     </div>
-
-    <figure class="shot-inline">
-      <img src="assets/wuji-palette.png" width="1440" height="907" loading="lazy"
-           alt="La palette ouverte au-dessus d'un article : l'adresse de la page, puis les onglets
-                ouverts, chacun avec son site.">
-      <figcaption><kbd>⌘L</kbd> — la palette cherche dans ce que vous avez déjà : onglets ouverts,
-      historique, favoris. Aucune frappe ne part chez un moteur de recherche.</figcaption>
-    </figure>
-
-    <figure class="shot-inline">
-      <img src="assets/wuji-outils.png" width="1440" height="907" loading="lazy"
-           alt="Les outils de développement ouverts sous la page : l'arbre des éléments à gauche,
-                les styles à droite.">
-      <figcaption><kbd>⌥⌘I</kbd> — les outils se posent sous la page, sans la raccourcir.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ─────────────────────────────  BLOCAGE  ───────────────────────────── -->
-<section id="blocage" class="band alt">
-  <div class="wrap">
-    <h2>Le blocage</h2>
-    <p class="intro">
-      <strong>Wuji n'embarque aucune liste.</strong> Tant qu'on n'a rien choisi, il ne bloque
-      rien et n'a contacté personne. Le catalogue est celui d'uBlock Origin — ses listes, ses
-      groupes, ses adresses — et « Sélection recommandée » en pose neuf d'un clic. Chacune
-      s'éteint seule ; décochée, elle quitte le moteur et le disque.
-    </p>
-
-    <div class="table-scroll">
-      <table class="lists">
-        <caption class="sr">Les familles du catalogue</caption>
-        <thead>
-          <tr><th scope="col">Famille</th><th scope="col">Listes</th><th scope="col">Ce qu'elle vise</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">uBlock Origin</th><td>6</td><td>les listes d'uBlock Origin lui-même : publicité, confidentialité, sites à risque, réparations</td></tr>
-          <tr><th scope="row">Publicités</th><td>3</td><td>EasyList, AdGuard, les régies</td></tr>
-          <tr><th scope="row">Confidentialité</th><td>2</td><td>EasyPrivacy et le pistage</td></tr>
-          <tr><th scope="row">Sites malveillants</th><td>2</td><td>hameçonnage et logiciels malveillants</td></tr>
-          <tr><th scope="row">Polyvalentes</th><td>2</td><td>listes d'hôtes qui couvrent plusieurs familles</td></tr>
-          <tr><th scope="row">Nuisances</th><td>16</td><td>bannières de cookies, fenêtres surgissantes, widgets, rappels</td></tr>
-          <tr><th scope="row">Régions</th><td>37</td><td>les listes par langue et par pays</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <figure class="shot-inline narrow">
-      <img src="assets/wuji-blocage.png" width="1440" height="1041" loading="lazy"
-           alt="La section Blocage des réglages : aucune liste en service, le bouton Sélection
-                recommandée, les familles du catalogue en jetons et les listes d'uBlock Origin.">
-      <figcaption>Réglages › Blocage — rien en service tant qu'on n'a rien coché.</figcaption>
-    </figure>
-
-    <div class="two">
-      <div>
-        <h3>C'est WebKit qui filtre</h3>
-        <p>
-          Les listes sont converties au format de bloqueur de WebKit par un dépôt public,
-          <a href="https://github.com/Black0S/Wuji-Rules-List">Wuji-Rules-List</a>, puis
-          compilées une fois et appliquées dans le processus réseau : une requête bloquée ne
-          part pas, et la page n'apprend jamais qu'elle a été empêchée. Une liste de plus de
-          cent cinquante mille règles — la limite de WebKit — se découpe, et chaque morceau se
-          compile à part.
-        </p>
-      </div>
-      <div>
-        <h3>Ce que WebKit ne sait pas faire</h3>
-        <p>
-          Les parades aux murs anti-bloqueur, les substituts de scripts, la réécriture d'une
-          réponse avant que la page la lise : Wuji les rejoue avec le code d'uBlock Origin
-          lui-même, recopié tel quel et mis à jour avec ses versions. C'est ce qui tient la
-          publicité de YouTube à distance.
-        </p>
-      </div>
-      <div>
-        <h3>Vos règles</h3>
-        <p>
-          « Masquer un élément… » : le survol montre, le clic choisit, et ce qui en sort est une
-          règle WebKit, rangée sous le site. Elle s'applique dans le moteur, avant que la page
-          se dessine. Vos règles s'exportent et s'importent telles que WebKit les compile, sans
-          conversion.
-        </p>
-      </div>
-      <div>
-        <h3>Des listes à jour, sans rien demander</h3>
-        <p>
-          Les listes en service se vérifient au plus une fois par jour, et seule une version
-          nouvelle se recompile. Un site qu'une liste casse se met en pause, lui seul, d'un
-          clic sur le bouclier.
-        </p>
-      </div>
-    </div>
-
-    <div class="honest">
-      <h3>Ce que le blocage ne dit pas</h3>
-      <ul>
-        <li>
-          <strong>Aucun compteur de requêtes bloquées.</strong> WebKit applique les règles dans
-          son processus réseau et n'en rend aucun compte à l'application. Un « 247 éléments
-          bloqués » serait un nombre inventé — le genre de chiffre qui rassure et qu'on ne peut
-          pas vérifier.
-        </li>
-        <li>
-          <strong>Une partie de la syntaxe n'a pas d'équivalent chez WebKit.</strong> Le
-          catalogue affiche, pour chaque liste, la part de ses règles que la conversion a su
-          rendre. Une liste à 65 % bloque ce qu'elle sait bloquer, et le dit.
-        </li>
-      </ul>
+    <div class="topics">
+    <a class="topic" href="pages/naviguer/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
+      <h3>Naviguer</h3>
+      <p>Fenêtres et espaces, deux colonnes, la palette, deux pages côte à côte, le mode zen.</p>
+      <ul><li>Espaces, dossiers, espaces types</li><li>Colonnes larges, réduites ou au survol</li><li>Deux pages et le mode zen</li></ul>
+      <span class="more">Tout voir</span>
+    </a>
+    <a class="topic" href="pages/lire/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg>
+      <h3>Lire et garder</h3>
+      <p>Pages sombres, lecture, traduction sur l'appareil, favoris, historique, captures.</p>
+      <ul><li>Des pages sombres sans filtre</li><li>Une liste de lecture hors ligne</li><li>Captures de la page, d'une zone, d'un élément</li></ul>
+      <span class="more">Tout voir</span>
+    </a>
+    <a class="topic" href="pages/blocage/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 9.5C8 19 5 15.5 5 11V6z"/></svg>
+      <h3>Blocage</h3>
+      <p>Le catalogue d'uBlock Origin, compilé par WebKit. Aucune liste imposée.</p>
+      <ul><li>68 listes, 9 recommandées</li><li>Vos règles au format de WebKit</li><li>Fenêtres surgissantes jugées au geste</li></ul>
+      <span class="more">Tout voir</span>
+    </a>
+    <a class="topic" href="pages/confidentialite/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.5"/><path d="M4.5 19.5l15-15"/></svg>
+      <h3>Confidentialité</h3>
+      <p>Fenêtre privée, cookies refusés, traceurs retirés des liens, aucune télémétrie.</p>
+      <ul><li>Bannières de cookies refusées</li><li>Traceurs et redirections sautés</li><li>Données effacées site par site</li></ul>
+      <span class="more">Tout voir</span>
+    </a>
+    <a class="topic" href="pages/mots-de-passe/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l2.5 2.5M13.5 9.5l2 2"/></svg>
+      <h3>Mots de passe</h3>
+      <p>Un coffre chiffré, Touch ID, une complétion que la page ne voit pas.</p>
+      <ul><li>AES-256-GCM, clé en mémoire</li><li>Un identifiant, seulement sur un clic</li><li>Import et export CSV</li></ul>
+      <span class="more">Tout voir</span>
+    </a>
+    <a class="topic" href="pages/sites/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.8 3 2.8 14 0 17M12 3.5c-2.8 3-2.8 14 0 17"/></svg>
+      <h3>Sites et sécurité</h3>
+      <p>Réglages par site, autorisations, notifications, le cadenas et les certificats.</p>
+      <ul><li>JavaScript, lecture, identité</li><li>Notifications dans le Centre</li><li>Certificats lus en cinq portes</li></ul>
+      <span class="more">Tout voir</span>
+    </a>
+    <a class="topic" href="pages/developpeurs/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4c-2 0-2 2-2 3.5S6.5 11 5 12c1.5 1 2 2.5 2 4.5S7 20 9 20M15 4c2 0 2 2 2 3.5s.5 3.5 2 4.5c-1.5 1-2 2.5-2 4.5S17 20 15 20"/></svg>
+      <h3>Développeurs</h3>
+      <p>Des outils de développement dans la fenêtre, et des scripts utilisateur.</p>
+      <ul><li>Éléments, console, sources, réseau, stockage</li><li>Un mode appareil</li><li>Scripts .user.js</li></ul>
+      <span class="more">Tout voir</span>
+    </a>
+    <a class="topic" href="pages/performance/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16.5a8 8 0 1 1 16 0"/><path d="M12 16.5l4-5.5"/></svg>
+      <h3>Performance</h3>
+      <p>Des onglets qui dorment, un budget de mémoire, rien sur le chemin de la page.</p>
+      <ul><li>Onglets suspendus par WebKit</li><li>Un tiers de la mémoire, au plus</li><li>Connexions préchauffées</li></ul>
+      <span class="more">Tout voir</span>
+    </a>
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────────  INTERDITS  ───────────────────────────── -->
-<section id="interdits" class="band">
+<section class="band">
   <div class="wrap">
-    <h2>Ce que le projet s'interdit</h2>
-    <p class="intro">Les absences sont décidées, et voici pourquoi.</p>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Deux pages côte à côte</h2>
+      <p><kbd>⇧⌘D</kbd> divise la vue ; un onglet ou un favori tiré sur une moitié de la page s'y ouvre. La barre d'adresse suit le panneau qu'on a choisi, et la session retrouve la paire.</p>
+      <a class="more" href="pages/naviguer/#double-page">En savoir plus</a>
+    </div>
+    <img src="assets/captures/double-page.png" width="1440" height="907" loading="lazy" data-zoom alt="Deux articles de Wikipédia côte à côte, Mozart et Bach." style="filter: drop-shadow(var(--shot-shadow))">
+  </div>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Le mode zen</h2>
+      <p><kbd>⇧⌘Z</kbd> : la page, seule, jusqu'aux bords. La barre de titre revient quand le curseur va la chercher, et la sortie attend dans le coin avec le curseur de zoom.</p>
+      <a class="more" href="pages/naviguer/#zen">En savoir plus</a>
+    </div>
+    <img src="assets/captures/zen.png" width="1440" height="907" loading="lazy" data-zoom alt="Le mode zen : un article occupe toute la fenêtre." style="filter: drop-shadow(var(--shot-shadow))">
+  </div>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Des pages sombres, sous la lune</h2>
+      <p>La version sombre du site s'il en a une ; sinon, un thème fabriqué élément par élément — pas un filtre qui retourne les photos. Sans recharger la page.</p>
+      <a class="more" href="pages/lire/#lune">En savoir plus</a>
+    </div>
+    <img src="assets/captures/lune.png" width="1440" height="907" loading="lazy" data-zoom alt="Wikipédia rendu sombre par Wuji, le portrait de Mozart intact." style="filter: drop-shadow(var(--shot-shadow))">
+  </div>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Ce qu'on a mis de côté, à droite</h2>
+      <p>Favoris, historique, téléchargements ou liste de lecture, dans une colonne qui se cherche, se range au glisser et se tire vers la page. <kbd>⌥⌘0</kbd> l'allume.</p>
+      <a class="more" href="pages/naviguer/#colonnes">En savoir plus</a>
+    </div>
+    <img src="assets/captures/historique.png" width="1440" height="907" loading="lazy" data-zoom alt="La colonne de droite affiche l&#x27;historique, avec sa recherche." style="filter: drop-shadow(var(--shot-shadow))">
+  </div>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Des outils de développement</h2>
+      <p><kbd>⌥⌘I</kbd> : éléments, console, sources, réseau, stockage et un mode appareil, posés sous la page sans la raccourcir.</p>
+      <a class="more" href="pages/developpeurs/#outils">En savoir plus</a>
+    </div>
+    <img src="assets/captures/outils.png" width="1440" height="907" loading="lazy" data-zoom alt="Les outils de développement sous un article de Wikipédia." style="filter: drop-shadow(var(--shot-shadow))">
+  </div>
+  </div>
+</section>
 
+<section class="band alt">
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Le blocage, choisi et compilé</h2>
+      <p>Wuji n'embarque aucune liste. Le catalogue est celui d'uBlock Origin ; « Sélection recommandée » en pose neuf d'un clic, et WebKit les applique dans son processus réseau — une requête bloquée ne part pas. Ce que WebKit ne sait pas faire, Wuji le rejoue avec le code d'uBlock Origin lui-même.</p>
+    </div>
+    <figure class="figure narrow">
+  <img src="assets/captures/blocage.png" width="1440" height="1041" loading="lazy" data-zoom
+       alt="Réglages › Blocage : aucune liste en service, la sélection recommandée, les familles du catalogue.">
+  <figcaption>Réglages › Blocage — rien en service tant qu'on n'a rien coché.</figcaption>
+</figure>
+    <p style="text-align:center"><a class="more" href="pages/blocage/">Tout le blocage</a></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Ce que le projet s'interdit</h2>
+      <p>Les absences sont décidées, et chacune a sa raison.</p>
+    </div>
     <ul class="rules">
-      <li>
-        <h3>Aucun contrôle mort</h3>
-        <p>Un réglage qui ne pilote rien est pire qu'un réglage absent : il donne l'illusion
-        d'un produit plus avancé qu'il ne l'est.</p>
-      </li>
-      <li>
-        <h3>Aucune télémétrie</h3>
-        <p>Rien ne part de cette machine que vous n'ayez demandé. La seule requête que Wuji
-        émette pour son propre compte est la vérification de version, sans identifiant et sans
-        dire laquelle vous utilisez — et elle ne se fait que sur un clic, sauf si vous
-        l'autorisez au lancement.</p>
-      </li>
-      <li>
-        <h3>Aucun remplissage qui se fait tout seul</h3>
-        <p>Au mauvais endroit — un cadre tiers, une origine voisine —, un remplissage automatique
-        livre un mot de passe à un site qui ne l'a jamais eu. Un identifiant n'entre que dans le
-        champ où l'on a cliqué, et rien ne part vers un cadre d'une autre origine.</p>
-      </li>
-      <li>
-        <h3>Aucune suggestion du moteur de recherche</h3>
-        <p>Elles supposent d'envoyer chaque frappe à un tiers — « c », « ch », « cha » — y
-        compris pour les recherches qu'on efface avant de les valider. La palette cherche donc
-        chez vous seulement.</p>
-      </li>
-      <li>
-        <h3>Aucune liste choisie à votre place</h3>
-        <p>Un navigateur qui arriverait avec ses listes aurait décidé pour vous ce qu'il faut
-        bloquer, et personne ne saurait dire quoi. Une liste absente ne peut pas se tromper en
-        votre nom.</p>
-      </li>
-      <li>
-        <h3>Les favicons viennent du site</h3>
-        <p>Jamais d'un service tiers qui apprendrait au passage ce que vous visitez.</p>
-      </li>
-      <li>
-        <h3>Aucune règle écrite pour faire passer un test</h3>
-        <p>Les pages de conformité proposent leurs propres filtres ; les adopter donne un bon
-        score et ne protège personne.</p>
-      </li>
+    <li><h3>Aucun contrôle mort</h3><p>Un réglage qui ne pilote rien donne l'illusion d'un produit plus avancé qu'il ne l'est.</p></li>
+    <li><h3>Aucune télémétrie</h3><p>La seule requête que Wuji émette pour lui-même vérifie la version — sur un clic, sans identifiant.</p></li>
+    <li><h3>Aucune liste choisie à votre place</h3><p>Une liste absente ne peut pas se tromper en votre nom : rien n'est bloqué avant que vous l'ayez décidé.</p></li>
+    <li><h3>Aucune suggestion du moteur</h3><p>Chaque frappe partirait chez un tiers. La palette cherche chez vous seulement.</p></li>
+    <li><h3>Aucun remplissage tout seul</h3><p>Un identifiant n'entre que dans le champ où l'on a cliqué, jamais dans un cadre d'une autre origine.</p></li>
+    <li><h3>Mesuré avant d'être écrit</h3><p>Chaque chiffre de ce site vient d'un banc, d'un test ou du code — pas d'une promesse.</p></li>
     </ul>
   </div>
 </section>
 
-<!-- ─────────────────────────────  RACCOURCIS  ───────────────────────────── -->
-<section id="raccourcis" class="band alt">
+<section id="installer" class="band alt">
   <div class="wrap">
-    <h2>Raccourcis</h2>
-    <p class="intro"><kbd>⌘</kbd> agit sur ce qui contient, <kbd>⌥</kbd> sur l'espace : deux
-    raccourcis à retenir deviennent une règle.</p>
-
-    <div class="keys">
-      <div class="key"><kbd>⌘L</kbd><span>Palette — adresse, recherche, onglets ouverts</span></div>
-      <div class="key"><kbd>⌘T</kbd><span>Nouvel onglet · <kbd>⇧⌘T</kbd> rouvrir le dernier fermé</span></div>
-      <div class="key"><kbd>⌘W</kbd><span>Fermer l'onglet</span></div>
-      <div class="key"><kbd>⌘]</kbd><span>Onglet suivant · <kbd>⌘[</kbd> précédent</span></div>
-      <div class="key"><kbd>⌥T</kbd><span>Nouvel espace · <kbd>⌥W</kbd> le fermer</span></div>
-      <div class="key"><kbd>⌥]</kbd><span>Espace suivant · <kbd>⌥[</kbd> précédent</span></div>
-      <div class="key"><kbd>⌘N</kbd><span>Nouvelle fenêtre · <kbd>⇧⌘N</kbd> privée</span></div>
-      <div class="key"><kbd>⌥⌘N</kbd><span>Nouveau dossier</span></div>
-      <div class="key"><kbd>⇧⌘D</kbd><span>Deux pages côte à côte</span></div>
-      <div class="key"><kbd>⇧⌘Z</kbd><span>Mode zen</span></div>
-      <div class="key"><kbd>⌥⌘0</kbd><span>Colonne de droite</span></div>
-      <div class="key"><kbd>⌥⌘I</kbd><span>Outils de développement</span></div>
-      <div class="key"><kbd>⌘D</kbd><span>Mettre en favori · <kbd>⇧⌘B</kbd> les favoris</span></div>
-      <div class="key"><kbd>⇧⌘R</kbd><span>Mode lecture · <kbd>⇧⌘L</kbd> liste de lecture</span></div>
-      <div class="key"><kbd>⌘F</kbd><span>Rechercher dans la page</span></div>
-      <div class="key"><kbd>⌘+</kbd><span>Zoom du site · <kbd>⌘0</kbd> par défaut</span></div>
-      <div class="key"><kbd>⌘Y</kbd><span>Historique · <kbd>⌘J</kbd> téléchargements</span></div>
-      <div class="key"><kbd>⌘S</kbd><span>Enregistrer la page · <kbd>⌘P</kbd> imprimer</span></div>
-      <div class="key"><kbd>⌘R</kbd><span>Recharger</span></div>
-      <div class="key"><kbd>⌘,</kbd><span>Réglages</span></div>
+    <div class="band-head">
+      <h2>Installer</h2>
+      <p>Glisser l'application dans le dossier Applications, et c'est tout.</p>
     </div>
-  </div>
-</section>
-
-<!-- ─────────────────────────────  INSTALLER  ───────────────────────────── -->
-<section id="installer" class="band">
-  <div class="wrap">
-    <h2>Installer</h2>
-
     <div class="install">
-      <article class="dl">
+      <article class="panel dl">
         <img src="assets/wuji-icon-512.png" alt="" width="96" height="96">
         <div>
           <h3>Wuji 0.7.5</h3>
-          <p>Glisser l'application dans le dossier Applications, et c'est tout. Apple Silicon,
-          macOS 26 au minimum.</p>
+          <p>Apple Silicon, macOS 26 au minimum. Aucun compte, rien à connecter.</p>
           <a class="btn btn-primary" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Télécharger le .dmg</a>
-          <a class="btn btn-quiet" href="https://github.com/Black0S/Wuji-web/releases">Toutes les versions</a>
+          <a class="btn btn-quiet" href="pages/installer/">Installer, pas à pas</a>
         </div>
       </article>
-
-      <article class="aside">
+      <article class="panel">
         <h3>Au premier lancement</h3>
-        <p>
-          Wuji arrive vide, et c'est voulu : rien n'est choisi à votre place. Trois gestes le
-          rendent à vous.
-        </p>
+        <p>Wuji arrive vide, et c'est voulu : rien n'est choisi à votre place.</p>
         <dl class="steps">
-          <dt>Réglages › Blocage</dt><dd>« Sélection recommandée » pose neuf listes d'un clic — ou cochez les vôtres</dd>
-          <dt>Favoris › Importer…</dt><dd>les favoris d'un autre navigateur, à la suite des vôtres</dd>
-          <dt>Réglages › Mots de passe</dt><dd>un coffre, un mot de passe maître, Touch ID si vous voulez</dd>
+          <dt>Réglages › Blocage</dt><dd>« Sélection recommandée » pose neuf listes d'un clic</dd>
+          <dt>Favoris › Importer…</dt><dd>les favoris d'un autre navigateur</dd>
+          <dt>Réglages › Mots de passe</dt><dd>un coffre, Touch ID si vous voulez</dd>
         </dl>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ─────────────────────────────  LICENCE  ───────────────────────────── -->
-<section class="band alt">
-  <div class="wrap two">
-    <div>
-      <h2>Licence</h2>
-      <p>
-        <strong>GPL-3.0.</strong> Qui publie une version modifiée de Wuji doit en publier le
-        code sous la même licence : le travail reste ouvert en aval, ce qu'une licence
-        permissive ne garantit pas.
-      </p>
-      <p class="muted">
-        « Libre » n'a jamais voulu dire gratuit : ce choix n'empêche ni la vente ni le soutien.
-      </p>
-    </div>
-    <div>
-      <h2>Aucune dépendance</h2>
-      <p>
-        La liste des suffixes publics vient de
-        <a href="https://github.com/ameshkov/swift-psl">swift-psl</a>, et le code des parades
-        d'<a href="https://github.com/gorhill/uBlock">uBlock Origin</a> ; les deux vivent dans
-        les sources, recopiés avec leur licence.
-      </p>
-      <p class="muted">
-        Ce n'est pas une préférence : SwiftPM range les ressources d'une dépendance à la racine
-        du paquet <code>.app</code>, et macOS refuse de signer une application qui porte quoi
-        que ce soit à cet endroit. Le choix était donc entre la dépendance et la distribution.
-      </p>
     </div>
   </div>
 </section>
@@ -462,16 +262,41 @@
 </main>
 
 <footer class="foot">
-  <div class="wrap foot-in">
-    <div class="brand">
-      <span class="ring" aria-hidden="true"></span>
-      <span class="wordmark">Wuji</span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="./"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>Un navigateur pour macOS, écrit en Swift et AppKit, posé sur WebKit. Rien ne part de votre Mac que vous n'ayez demandé.</p>
+      </div>
+      <div>
+        <h2>Le navigateur</h2>
+        <ul>
+        <li><a href="pages/naviguer/">Naviguer</a></li>
+        <li><a href="pages/lire/">Lire et garder</a></li>
+        <li><a href="pages/sites/">Sites et sécurité</a></li>
+        <li><a href="pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="pages/blocage/">Blocage</a></li>
+        <li><a href="pages/confidentialite/">Confidentialité</a></li>
+        <li><a href="pages/mots-de-passe/">Mots de passe</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ressources</h2>
+        <ul>
+        <li><a href="pages/developpeurs/">Développeurs</a></li>
+        <li><a href="pages/raccourcis/">Raccourcis</a></li>
+        <li><a href="pages/installer/">Installer</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">Toutes les versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Listes de blocage</a></li>
+        </ul>
+      </div>
     </div>
-    <p>© 2026 Liam Jutteau (Black0S) · GPL-3.0</p>
-    <nav aria-label="Liens">
-      <a href="https://github.com/Black0S/Wuji-web/releases">Versions</a>
-      <a href="https://github.com/Black0S/Wuji-Rules-List">Listes de blocage</a>
-    </nav>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 0.7.5 · GPL-3.0</p>
   </div>
 </footer>
 

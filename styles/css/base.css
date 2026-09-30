@@ -1,0 +1,116 @@
+/* Wuji — les fondations : jetons, remise à zéro, typographie.
+
+   Les couleurs sont celles du thème clair de Sources/DesignSystem/Tokens.swift : le site
+   n'a qu'une apparence, et ses captures aussi. Monochrome, filets de 1 px, surfaces
+   opaques, aucune teinte décorative — la seule lumière est celle de l'anneau. */
+
+:root {
+  color-scheme: light;
+
+  /* chromeBackground #FFFFFF, sidebarBackground #F5F5F7, textPrimary #1D1D1F,
+     textSecondary #6E6E73, hairline noir 12 %, selectionFill noir 7 %. */
+  --bg:        #FFFFFF;
+  --bg-alt:    #F5F5F7;
+  --surface:   #FFFFFF;
+  --text:      #1D1D1F;
+  --muted:     #6E6E73;
+  --muted-2:   #86868B;
+  --line:      rgba(0,0,0,.12);
+  --line-soft: rgba(0,0,0,.08);
+
+  --tint:      rgba(0,0,0,.02);
+  --hover:     rgba(0,0,0,.05);
+  --sel:       rgba(0,0,0,.07);
+  --card-hover:#F5F5F7;
+
+  --btn-bg:    #1D1D1F;
+  --btn-fg:    #FFFFFF;
+  --btn-bg-hover: #000000;
+  --btn-glow:  0 10px 30px -12px rgba(0,0,0,.5);
+
+  --glow:      radial-gradient(circle at center,
+                 rgba(0,0,0,.055) 0%, rgba(0,0,0,.02) 35%, transparent 68%);
+  --ring:      #1D1D1F;
+  --ring-glow: 0 0 10px rgba(0,0,0,.28), inset 0 0 6px rgba(0,0,0,.10);
+
+  --nav-bg:    rgba(255,255,255,.78);
+  --shot-shadow: 0 30px 70px -34px rgba(0,0,0,.45);
+
+  --wrap: 1120px;
+  --nav-h: 58px;
+  --r-s: 8px;
+  --r-m: 12px;
+  --r-l: 16px;
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Inter,
+          system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 24px); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 3px; }
+a:hover { text-decoration-color: currentColor; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+code, pre, kbd { font-family: var(--mono); }
+code { font-size: .86em; color: var(--text); background: var(--sel); padding: 1px 5px; border-radius: 5px; }
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6.4vw, 4.6rem);
+  line-height: 1.04; letter-spacing: -.035em; font-weight: 600;
+}
+h2 {
+  margin: 0 0 18px;
+  font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+  letter-spacing: -.03em; line-height: 1.12; font-weight: 600;
+}
+h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; letter-spacing: -.01em; line-height: 1.35; }
+p { margin: 0 0 14px; }
+
+kbd {
+  display: inline-block;
+  font-size: .78em; padding: 1px 6px; line-height: 1.5;
+  border: 1px solid var(--line); border-radius: 6px;
+  background: var(--sel); color: var(--text);
+  white-space: nowrap; vertical-align: .08em;
+}
+
+.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: 24px; }
+
+.sr, .skip {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+.skip:focus {
+  position: fixed; top: 12px; left: 12px; width: auto; height: auto; clip-path: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-s);
+  padding: 10px 14px; z-index: 100;
+}
+
+:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; border-radius: 4px; }
+
+.muted { color: var(--muted); }
+.eyebrow {
+  margin: 0 0 20px;
+  font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
+}
