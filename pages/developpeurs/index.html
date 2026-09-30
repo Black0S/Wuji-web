@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Développeurs — Wuji</title>
-<meta name="description" content="Des outils de développement dans la fenêtre — éléments, console, sources, réseau, stockage, mode appareil — et des scripts utilisateur.">
+<meta name="description" content="Des outils de développement dans la fenêtre — éléments, console, sources, réseau, stockage, mode appareil —, son site en direct depuis le disque, et des scripts utilisateur.">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="../../assets/favicon.png" type="image/png">
@@ -15,7 +15,7 @@
 <script src="../../styles/js/site.js" defer></script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Développeurs — Wuji">
-<meta property="og:description" content="Des outils de développement dans la fenêtre — éléments, console, sources, réseau, stockage, mode appareil — et des scripts utilisateur.">
+<meta property="og:description" content="Des outils de développement dans la fenêtre — éléments, console, sources, réseau, stockage, mode appareil —, son site en direct depuis le disque, et des scripts utilisateur.">
 <meta property="og:image" content="../../assets/captures/accueil.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -69,6 +69,7 @@
       <h2>Sur cette page</h2>
       <ul class="toc-page">
       <li><a href="#outils">Les outils de développement</a></li>
+      <li><a href="#en-direct">Son site en direct</a></li>
       <li><a href="#appareil">Le mode appareil</a></li>
       <li><a href="#scripts">Scripts utilisateur</a></li>
       </ul>
@@ -108,6 +109,17 @@
     <div class="feature"><h3>Stockage</h3><p>Cookies — <code>HttpOnly</code> compris —, qui s'écrivent et se modifient ; stockage local et de session ; bases IndexedDB et leurs tables ; Cache Storage et service workers.</p></div>
     <div class="feature"><h3>Ce qui précède l'ouverture</h3><p>Les trois cents derniers messages, les trois cents dernières requêtes et tous les écouteurs sont gardés avant qu'on ouvre le panneau — moins d'une microseconde par écouteur.</p></div>
     <div class="feature"><h3>Des cadres, même d'un autre site</h3><p>Un <code>&lt;iframe&gt;</code> se déplie dans l'arbre ; un élément choisi dans un cadre y emmène la console.</p></div>
+  </div>
+</section>
+
+<section id="en-direct">
+  <h2>Son site en direct</h2>
+  <p class="section-lede">On écrit son site dans son éditeur, on le regarde dans Wuji — et il se recharge à chaque enregistrement, sans serveur de développement.</p>
+  <div class="features">
+    <div class="feature"><h3>Depuis le disque</h3><p><code>file:///Users/…/index.html</code> tapé dans la barre, ou le chemin que copie l'éditeur — <code>/Users/…</code>, <code>~/…</code>. « Ouvrir avec » du Finder propose Wuji pour une page HTML.</p></div>
+    <div class="feature"><h3>À chaque enregistrement</h3><p>La page, sa feuille de style, son script, une image : quand un fichier du projet change, ses onglets se rechargent — une fois par enregistrement, sans rien injecter dans la page ni ouvrir de port.</p></div>
+    <div class="feature"><h3>Le dossier du projet</h3><p>Une page de <code>pages/naviguer/</code> trouve sa feuille dans <code>../../styles/</code> : Wuji ouvre l'accès au projet — le dossier qui porte <code>.git</code>, <code>.vscode</code> ou <code>package.json</code> —, jamais au dossier personnel ni au reste du disque.</p></div>
+    <div class="feature"><h3>Les liens comme sur un serveur</h3><p>Un lien vers un dossier ouvre son <code>index.html</code>. Ce qui n'est pas le site — <code>.git</code>, <code>.DS_Store</code>, les fichiers de travail de l'éditeur — ne recharge rien.</p></div>
   </div>
 </section>
 
