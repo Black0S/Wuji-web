@@ -24,9 +24,11 @@
    ajoutée ici ; rien ne les encadre, sinon le cadre se verrait. */
 
 .shot { margin: 64px 0 0; }
-.shot img, .figure img { width: 100%; filter: drop-shadow(var(--shot-shadow)); }
+/* Les captures portent leur ombre : celle de macOS, prise avec la fenêtre. */
+.shot img, .figure img { width: 100%; }
 .figure { margin: 40px 0; }
 .figure.narrow { max-width: 720px; margin-inline: auto; }
+.figure.portrait { max-width: 400px; margin-inline: auto; }
 figcaption { margin-top: 16px; text-align: center; font-size: 13px; color: var(--muted-2); }
 figcaption kbd { font-size: 11.5px; }
 [data-zoom] { cursor: zoom-in; }
@@ -36,7 +38,7 @@ figcaption kbd { font-size: 11.5px; }
   border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh;
 }
 .lightbox::backdrop { background: rgba(245,245,247,.92); backdrop-filter: blur(6px); }
-.lightbox img { max-width: 96vw; max-height: 90vh; width: auto; cursor: zoom-out; filter: drop-shadow(var(--shot-shadow)); }
+.lightbox img { max-width: 96vw; max-height: 90vh; width: auto; cursor: zoom-out; }
 
 /* ─────────────────────────  Chiffres  ───────────────────────── */
 

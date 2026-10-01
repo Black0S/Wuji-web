@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Wuji — un navigateur pour macOS">
 <meta property="og:description" content="Wuji est un navigateur macOS écrit en Swift et AppKit, posé sur WebKit. Une fenêtre, deux colonnes, une palette. Le blocage d&#x27;uBlock Origin compilé par WebKit, aucune dépendance, aucune télémétrie.">
-<meta property="og:image" content="assets/captures/accueil.png">
+<meta property="og:image" content="assets/captures/fenetre.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -70,9 +70,9 @@
   </div>
   <div class="wrap">
     <figure class="shot">
-      <img src="assets/captures/accueil.png" width="1440" height="907" data-zoom
-           alt="La fenêtre de Wuji : l'espace Personnel et un dossier Musique dans la colonne des onglets, un article de Wikipédia au centre, les favoris rangés en dossiers à droite.">
-      <figcaption>Les onglets à gauche, la page au centre, les favoris à droite. La barre du haut ne porte que l'adresse.</figcaption>
+      <img src="assets/captures/fenetre.png" width="2000" height="1263" data-zoom
+           alt="La fenêtre de Wuji : l'espace Personnel et un dossier Musique dans la colonne des onglets, un article de Wikipédia sur Mozart au centre.">
+      <figcaption>Les onglets à gauche, la page au centre. La barre du haut ne porte que l'adresse.</figcaption>
     </figure>
   </div>
 </section>
@@ -161,7 +161,7 @@
       <p><kbd>⇧⌘D</kbd> divise la vue ; un onglet ou un favori tiré sur une moitié de la page s'y ouvre. La barre d'adresse suit le panneau qu'on a choisi, et la session retrouve la paire.</p>
       <a class="more" href="pages/naviguer/#double-page">En savoir plus</a>
     </div>
-    <img src="assets/captures/double-page.png" width="1440" height="907" loading="lazy" data-zoom alt="Deux articles de Wikipédia côte à côte, Mozart et Bach." style="filter: drop-shadow(var(--shot-shadow))">
+    <img src="assets/captures/double-page.png" width="2000" height="1263" loading="lazy" data-zoom alt="Deux articles de Wikipédia côte à côte, Bach et Mozart.">
   </div>
   <div class="showcase">
     <div class="showcase-text">
@@ -169,7 +169,7 @@
       <p><kbd>⇧⌘Z</kbd> : la page, seule, jusqu'aux bords. La barre de titre revient quand le curseur va la chercher, et la sortie attend dans le coin avec le curseur de zoom.</p>
       <a class="more" href="pages/naviguer/#zen">En savoir plus</a>
     </div>
-    <img src="assets/captures/zen.png" width="1440" height="907" loading="lazy" data-zoom alt="Le mode zen : un article occupe toute la fenêtre." style="filter: drop-shadow(var(--shot-shadow))">
+    <img src="assets/captures/zen.png" width="2000" height="1263" loading="lazy" data-zoom alt="Le mode zen : la page Swift d&#x27;Apple occupe toute la fenêtre.">
   </div>
   <div class="showcase">
     <div class="showcase-text">
@@ -177,7 +177,7 @@
       <p>La version sombre du site s'il en a une ; sinon, un thème fabriqué élément par élément — pas un filtre qui retourne les photos. Sans recharger la page.</p>
       <a class="more" href="pages/lire/#lune">En savoir plus</a>
     </div>
-    <img src="assets/captures/lune.png" width="1440" height="907" loading="lazy" data-zoom alt="Wikipédia rendu sombre par Wuji, le portrait de Mozart intact." style="filter: drop-shadow(var(--shot-shadow))">
+    <img src="assets/captures/lune.png" width="2000" height="1245" loading="lazy" data-zoom alt="Wikipédia rendu sombre par Wuji, le portrait de Mozart intact.">
   </div>
   <div class="showcase">
     <div class="showcase-text">
@@ -185,7 +185,7 @@
       <p>Favoris, historique, téléchargements ou liste de lecture, dans une colonne qui se cherche, se range au glisser et se tire vers la page. <kbd>⌥⌘0</kbd> l'allume.</p>
       <a class="more" href="pages/naviguer/#colonnes">En savoir plus</a>
     </div>
-    <img src="assets/captures/historique.png" width="1440" height="907" loading="lazy" data-zoom alt="La colonne de droite affiche l&#x27;historique, avec sa recherche." style="filter: drop-shadow(var(--shot-shadow))">
+    <img src="assets/captures/favoris.png" width="2000" height="1263" loading="lazy" data-zoom alt="La colonne de droite affiche les favoris rangés en dossiers, avec leur recherche.">
   </div>
   <div class="showcase">
     <div class="showcase-text">
@@ -193,7 +193,7 @@
       <p><kbd>⌥⌘I</kbd> : éléments, console, sources, réseau, stockage et un mode appareil, posés sous la page sans la raccourcir.</p>
       <a class="more" href="pages/developpeurs/#outils">En savoir plus</a>
     </div>
-    <img src="assets/captures/outils.png" width="1440" height="907" loading="lazy" data-zoom alt="Les outils de développement sous un article de Wikipédia." style="filter: drop-shadow(var(--shot-shadow))">
+    <img src="assets/captures/outils.png" width="2000" height="1263" loading="lazy" data-zoom alt="Les outils de développement sous la page de WebKit, un titre en cours de modification.">
   </div>
   </div>
 </section>
@@ -205,15 +205,29 @@
       <p>Wuji n'embarque aucune liste. Le catalogue est celui d'uBlock Origin ; « Sélection recommandée » en pose neuf d'un clic, et WebKit les applique dans son processus réseau — une requête bloquée ne part pas. Ce que WebKit ne sait pas faire, Wuji le rejoue avec le code d'uBlock Origin lui-même.</p>
     </div>
     <figure class="figure narrow">
-  <img src="assets/captures/blocage.png" width="1440" height="1041" loading="lazy" data-zoom
-       alt="Réglages › Blocage : aucune liste en service, la sélection recommandée, les familles du catalogue.">
-  <figcaption>Réglages › Blocage — rien en service tant qu'on n'a rien coché.</figcaption>
+  <img src="assets/captures/blocage.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Réglages › Blocage : 15 listes en service et 299 898 règles, les règles à injection, les familles du catalogue en jetons, les listes d&#x27;uBlock Origin cochées.">
+  <figcaption>Réglages › Blocage — 15 listes en service, 299 898 règles compilées par WebKit.</figcaption>
 </figure>
     <p style="text-align:center"><a class="more" href="pages/blocage/">Tout le blocage</a></p>
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="nom">
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Pourquoi « Wuji »</h2>
+      <p><span lang="zh-Hant">無極</span>, <em>wújí</em> : un terme du taoïsme qui signifie littéralement « sommet du néant ». Il est la source sans fin à laquelle tout retourne, associé au mouvement perpétuel du retour, <em>fu</em>, <span lang="zh-Hant">復</span>. Un navigateur qui s'efface devant la page en porte le nom.</p>
+    </div>
+    <figure class="figure portrait">
+  <img src="assets/captures/a-propos.png" width="1064" height="1410" loading="lazy" data-zoom
+       alt="La fenêtre À propos de Wuji : le cercle et les caractères 無極, le sens du nom, la version, WebKit et macOS, les liens et le copyright.">
+  <figcaption>À propos de Wuji — le nom d'abord, la version ensuite.</figcaption>
+</figure>
+  </div>
+</section>
+
+<section class="band alt">
   <div class="wrap">
     <div class="band-head">
       <h2>Ce que le projet s'interdit</h2>
@@ -230,7 +244,7 @@
   </div>
 </section>
 
-<section id="installer" class="band alt">
+<section id="installer" class="band">
   <div class="wrap">
     <div class="band-head">
       <h2>Installer</h2>

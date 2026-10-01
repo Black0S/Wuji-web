@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mots de passe — Wuji">
 <meta property="og:description" content="Un coffre chiffré en AES-256-GCM, Touch ID, une complétion que la page ne voit pas, l&#x27;import et l&#x27;export des identifiants.">
-<meta property="og:image" content="../../assets/captures/accueil.png">
+<meta property="og:image" content="../../assets/captures/fenetre.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -94,6 +94,11 @@
   <div class="doc-main">
 <section id="coffre">
   <h2>Le coffre</h2>
+<figure class="figure narrow">
+  <img src="../../assets/captures/mots-de-passe.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Réglages › Mots de passe : le coffre verrouillé, Touch ID, proposer et remplir, les identifiants, la zone de danger.">
+  <figcaption>Réglages › Mots de passe — un coffre à Wuji, chiffré, que Touch ID ouvre.</figcaption>
+</figure>
   <div class="features">
     <div class="feature"><h3>Chiffré, et la clé ne touche pas le disque</h3><p>Un fichier, <code>coffre.json</code>, chiffré en <strong>AES-256-GCM</strong> avec une clé dérivée du mot de passe maître par PBKDF2-HMAC-SHA512, 210 000 tours. La clé vit en mémoire et disparaît au verrouillage.</p></div>
     <div class="feature"><h3>Un octet changé, un fichier refusé</h3><p>GCM authentifie autant qu'il chiffre : un coffre modifié est refusé au lieu de rendre n'importe quoi.</p></div>

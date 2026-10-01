@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Développeurs — Wuji">
 <meta property="og:description" content="Des outils de développement dans la fenêtre — éléments, console, sources, réseau, stockage, mode appareil —, son site en direct depuis le disque, et des scripts utilisateur.">
-<meta property="og:image" content="../../assets/captures/accueil.png">
+<meta property="og:image" content="../../assets/captures/fenetre.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -94,9 +94,24 @@
 <section id="outils">
   <h2>Les outils de développement</h2>
 <figure class="figure">
-  <img src="../../assets/captures/outils.png" width="1440" height="907" loading="lazy" data-zoom
-       alt="Les outils de développement ouverts sous la page : l&#x27;arbre des éléments à gauche, les styles à droite, les onglets Éléments, Console, Sources, Réseau, Stockage.">
-  <figcaption><kbd>⌥⌘I</kbd> — les outils se posent sous la page, sans la raccourcir.</figcaption>
+  <img src="../../assets/captures/outils.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="Les outils de développement sous la page de WebKit : le titre désigné dans la page, son HTML en cours de modification dans l&#x27;arbre, ses styles à droite.">
+  <figcaption><kbd>⌥⌘I</kbd> — les outils se posent sous la page ; double-clic pour modifier un nœud.</figcaption>
+</figure>
+<figure class="figure">
+  <img src="../../assets/captures/outils-fenetre.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="Les outils de développement dans leur propre fenêtre : l&#x27;arbre complet du document, un nœud en édition, les styles et leurs sources.">
+  <figcaption>Détachés, les outils prennent une fenêtre à eux.</figcaption>
+</figure>
+<figure class="figure">
+  <img src="../../assets/captures/reseau.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="L&#x27;onglet Réseau : les requêtes de webkit.org regroupées, la chronologie, et le détail du document — durées, tailles, adresse complète.">
+  <figcaption>Réseau — les requêtes répétées se regroupent ; le détail montre durées et tailles.</figcaption>
+</figure>
+<figure class="figure">
+  <img src="../../assets/captures/reseau-requetes.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="L&#x27;onglet Réseau sans regroupement : cinquante requêtes, dont les appels répétés d&#x27;un script de mesure, chacun sur la chronologie.">
+  <figcaption>Sans regroupement, chaque appel a sa ligne et sa place dans la chronologie.</figcaption>
 </figure>
   <div class="features">
     <div class="feature"><h3>Dans la fenêtre</h3><p><kbd>⌥⌘I</kbd>, ou « Inspecter l'élément » au clic droit. Le panneau se pose par-dessus le bas de la page sans la redimensionner, suit l'onglet qu'on regarde, et se détache dans une fenêtre à lui.</p></div>
@@ -133,6 +148,16 @@
 
 <section id="scripts">
   <h2>Scripts utilisateur</h2>
+<figure class="figure narrow">
+  <img src="../../assets/captures/scripts.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Réglages › Scripts : YouTube A/B Loop installé et actif, et le champ pour installer depuis une adresse.">
+  <figcaption>Réglages › Scripts — un script s'installe depuis son adresse en .user.js.</figcaption>
+</figure>
+<figure class="figure narrow">
+  <img src="../../assets/captures/script.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="La page d&#x27;un script : où il s&#x27;exécute, les pouvoirs demandés, le site qu&#x27;il peut joindre, et son code avec les numéros de ligne.">
+  <figcaption>Chaque accès s'accorde ici, site par site ; le code se relit et se retouche dans la page.</figcaption>
+</figure>
   <div class="features">
     <div class="feature"><h3>Installer</h3><p>Depuis une adresse en <code>.user.js</code> — la convention de Greasemonkey — ou depuis une page qui se révèle être un script. La portée s'affiche avant d'accepter ; la mise à jour se fait à la demande.</p></div>
     <div class="feature"><h3>Écrire</h3><p>Un éditeur coloré, dans Réglages › Scripts, pour les écrire ou les retoucher.</p></div>

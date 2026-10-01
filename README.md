@@ -36,24 +36,28 @@ de chaque page.
 
 ## Les captures
 
-Elles viennent du banc de Wuji — un profil neuf, jamais celui de quelqu'un : une session semée
-(un dossier, une paire d'onglets), quelques favoris, un historique d'essai. La fenêtre est mise
-à 1440 × 907 points, photographiée sans ombre et réduite à 1440 pixels de large ; les fenêtres
-de réglages font 1440 × 1041. Pour en changer une : garder le nom et le rapport, sinon corriger
-`width` et `height` là où elle est posée, qui réservent la place avant le chargement.
+Une seule série, prise dans Wuji le 1er octobre 2026 avec CleanShot : chaque fenêtre porte son
+ombre et ses coins, sur fond transparent — le CSS n'en ajoute donc aucune. Les fenêtres du
+navigateur sont réduites à 2000 pixels de large, celles des réglages à 1600, « À propos » garde
+sa taille. Pour en changer une : garder son nom, et corriger sa taille dans `TAILLES` du
+générateur si le rapport change — `width` et `height` réservent la place avant le chargement.
 
 | capture | ce qu'elle montre |
 |---|---|
-| `accueil.png` | la fenêtre : un dossier d'onglets, un article, les favoris |
+| `fenetre.png` | la fenêtre : un dossier d'onglets, un article (accueil, Naviguer) |
+| `favoris.png` | les deux colonnes, les favoris à droite |
+| `colonnes-reduites.png`, `colonne-reduite.png` | les colonnes réduites à leurs icônes |
+| `personnaliser.png` | la carte Personnaliser l'interface |
 | `double-page.png` | deux pages côte à côte |
 | `zen.png` | le mode zen |
 | `lune.png` | une page rendue sombre par la lune |
 | `lecture.png` | le mode lecture |
-| `palette.png` | la palette ouverte |
-| `historique.png` | la colonne de droite sur l'historique |
-| `outils.png` | les outils de développement |
-| `blocage.png`, `regles.png` | Réglages › Blocage, Mes règles |
-| `confidentialite.png`, `sites-web.png`, `performances.png`, `apparence.png`, `barre-adresse.png` | les sections des réglages |
+| `outils.png`, `outils-fenetre.png` | les outils de développement, sous la page et détachés |
+| `reseau.png`, `reseau-requetes.png` | l'onglet Réseau, regroupé et détaillé |
+| `general.png`, `apparence.png`, `barre-adresse.png`, `performances.png`, `confidentialite.png`, `espaces.png` | les réglages de Wuji |
+| `sites-web.png`, `autorisations.png`, `mots-de-passe.png` | les réglages des sites |
+| `blocage.png`, `regles.png`, `scripts.png`, `script.png` | le contenu : blocage, mes règles, scripts |
+| `a-propos.png` | la fenêtre À propos, et le nom |
 
 ## Le voir en local
 
