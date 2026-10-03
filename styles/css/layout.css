@@ -89,6 +89,7 @@
 .lede { max-width: 640px; margin: 26px auto 0; font-size: 19px; color: var(--muted); }
 .lede + .actions { margin-top: 36px; }
 .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.actions.start { justify-content: flex-start; }
 .fineprint { margin-top: 18px; font-size: 13px; color: var(--muted-2); }
 @media (max-width: 640px) { .bp { display: none; } }
 
