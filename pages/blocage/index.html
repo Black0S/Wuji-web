@@ -137,6 +137,7 @@
   <div class="features">
     <div class="feature"><h3>Les règles à injection</h3><p>Styles, sélecteurs étendus et primitives que la conversion a dû écarter : Wuji les applique, en trois niveaux — une feuille de style dans le cas courant, un retrait compact, l'évaluateur seulement quand un sélecteur l'exige.</p></div>
     <div class="feature"><h3>Le code d'uBlock Origin lui-même</h3><p>Les parades aux murs anti-bloqueur, les substituts de scripts, la réécriture d'une réponse avant que la page la lise viennent du code d'uBlock Origin, recopié tel quel et mis à jour avec ses versions. C'est ce qui tient la publicité de YouTube à distance.</p></div>
+    <div class="feature"><h3>Les garde-fous d'uBlock Origin</h3><p>Les scriptlets « de confiance » ne viennent que de ses listes, une règle de style ne charge rien — ni <code>url()</code>, ni <code>@import</code> —, et les listes arrivent en HTTPS de bout en bout : une liste détournée ne lirait pas ce que vous tapez.</p></div>
     <div class="feature"><h3>Minuscule dans chaque page</h3><p>Rien n'est envoyé pour un site qu'aucune liste ne mentionne ; deux règles par site en médiane. Et le guetteur s'endort après trente secondes sans changement dans la page.</p></div>
     <div class="feature"><h3>Un vrai interrupteur</h3><p>C'est un autre mécanisme — du style injecté, du code exécuté —, et il ne s'impose pas sans le dire : la page du blocage porte son interrupteur et son compte.</p></div>
   </div>
@@ -160,7 +161,7 @@
   <figcaption>Réglages › Mes règles — rangées par site, exportées telles que WebKit les compile.</figcaption>
 </figure>
   <div class="features">
-    <div class="feature"><h3>Masquer un élément</h3><p>« Masquer un élément… », depuis le bouclier : le survol montre, le clic choisit, échap renonce. Le sélecteur est calculé court, pour survivre au prochain remaniement de la page.</p></div>
+    <div class="feature"><h3>Masquer un élément</h3><p>« Masquer un élément… », depuis le bouclier : le survol montre, le clic choisit, échap renonce. Le sélecteur est calculé court, pour survivre au prochain remaniement de la page. Le panneau vit à part de la page : elle ne peut ni poser ni retirer une règle à votre place.</p></div>
     <div class="feature"><h3>Une règle WebKit, pas un script</h3><p>Ce qui en sort est une règle <code>css-display-none</code>, rangée sous le site et compilée avec les autres : elle s'applique dans le moteur, avant que la page se dessine.</p></div>
     <div class="feature"><h3>Tout de suite</h3><p>L'élément disparaît au clic, pas au rechargement — et revient de même quand on retire la règle.</p></div>
     <div class="feature"><h3>Exporter, importer, sans conversion</h3><p>Le fichier est exactement ce que WebKit compile, et il se relit tel quel. Rien n'entre sans que WebKit l'ait compilé à part d'abord.</p></div>

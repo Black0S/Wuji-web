@@ -98,8 +98,8 @@
   <div class="features">
     <div class="feature"><h3>Une fenêtre, pas une bascule</h3><p><kbd>⇧⌘N</kbd>. Tout ce qu'elle contient est privé — ses onglets et ses espaces —, sans historique, jamais écrit dans la session. Une bascule privé/normal mentirait dans les deux sens.</p></div>
     <div class="feature"><h3>Un magasin éphémère</h3><p>Ses onglets partagent un magasin de données qui disparaît avec la fenêtre : on se connecte dans l'un, le lien ouvert à côté l'est encore, puis plus rien.</p></div>
-    <div class="feature"><h3>Rien par les à-côtés</h3><p>Un onglet privé fermé ne se rouvre pas d'un <kbd>⇧⌘T</kbd>, le zoom d'un site reste en mémoire, une autorisation ne vaut que pour cette fois, les favicons ne vont pas sur le disque.</p></div>
-    <div class="feature"><h3>La fenêtre de la page décide</h3><p>Une page privée qui finit de charger pendant qu'on regarde une fenêtre ordinaire n'entre pas dans l'historique. Un lien venu d'une autre application part dans une fenêtre normale.</p></div>
+    <div class="feature"><h3>Rien par les à-côtés</h3><p>Un onglet privé fermé ne se rouvre pas d'un <kbd>⇧⌘T</kbd>, le zoom d'un site reste en mémoire, une autorisation ne vaut que pour cette fois, les favicons ne vont pas sur le disque, un fichier enregistré ne garde pas l'adresse d'où il vient, et la fenêtre n'est pas confiée à la restauration de macOS.</p></div>
+    <div class="feature"><h3>La fenêtre de la page décide</h3><p>Une page privée qui finit de charger pendant qu'on regarde une fenêtre ordinaire n'entre pas dans l'historique. Un lien venu d'une autre application part dans une fenêtre normale, et une fenêtre ouverte par une page privée reste privée.</p></div>
   </div>
 </section>
 
@@ -124,7 +124,7 @@
     <div class="feature"><h3>Empêcher le pistage entre sites</h3><p>La prévention du pistage de WebKit, celle de Safari.</p></div>
     <div class="feature"><h3>Freiner les scripts de pistage</h3><p>La protection de WebKit contre les scripts reconnus comme traceurs.</p></div>
     <div class="feature"><h3>Mesure privée des clics</h3><p>Allumée comme dans Safari ; éteinte, aucun rapport d'attribution publicitaire ne part.</p></div>
-    <div class="feature"><h3>Ne pas vendre ni partager mes données</h3><p>Le signal Global Privacy Control, <code>navigator.globalPrivacyControl</code>, dans tous les cadres.</p></div>
+    <div class="feature"><h3>Ne pas vendre ni partager mes données</h3><p>Le signal Global Privacy Control entier, posé par WebKit : l'en-tête <code>Sec-GPC: 1</code> sur chaque requête — celui que la loi californienne et les sites lisent — et <code>navigator.globalPrivacyControl</code> dans tous les cadres.</p></div>
   </div>
 </section>
 
@@ -143,7 +143,7 @@
   <div class="features">
     <div class="feature"><h3>Site par site</h3><p>Confidentialité liste chaque domaine avec ce qu'il a laissé — cookies, stockage, cache —, un champ pour le retrouver, un bouton par ligne. Effacer une ligne déconnecte de ce site-là, et de lui seul.</p></div>
     <div class="feature"><h3>En quittant</h3><p>Les données des sites peuvent s'effacer à chaque fermeture ; Wuji attend que WebKit ait fini avant de quitter.</p></div>
-    <div class="feature"><h3>L'historique qu'on garde</h3><p>Sa durée se règle ; au-delà, les pages sont effacées au lancement suivant.</p></div>
+    <div class="feature"><h3>L'historique qu'on garde</h3><p>Sa durée se règle ; au-delà, les pages sont effacées au lancement suivant. L'effacer efface aussi ce qui le racontait : les favicons des sites visités, les sites tapés, et les registres de WebKit qui listent les domaines — HSTS, prévention du pistage.</p></div>
     <div class="feature"><h3>Vos fichiers, lisibles</h3><p>Favoris, session, liste de lecture : des fichiers JSON dans <code>~/Library/Application Support/Wuji</code>, qu'on lit et modifie à la main. Seul le coffre est chiffré.</p></div>
   </div>
 </section>

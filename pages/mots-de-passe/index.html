@@ -103,6 +103,8 @@
     <div class="feature"><h3>Chiffré, et la clé ne touche pas le disque</h3><p>Un fichier, <code>coffre.json</code>, chiffré en <strong>AES-256-GCM</strong> avec une clé dérivée du mot de passe maître par PBKDF2-HMAC-SHA512, 210 000 tours. La clé vit en mémoire et disparaît au verrouillage.</p></div>
     <div class="feature"><h3>Un octet changé, un fichier refusé</h3><p>GCM authentifie autant qu'il chiffre : un coffre modifié est refusé au lieu de rendre n'importe quoi.</p></div>
     <div class="feature"><h3>Fermé au lancement</h3><p>Il ne s'ouvre pas de force : sur une page de connexion, la complétion propose « Déverrouiller le coffre… », là où elle sert.</p></div>
+    <div class="feature"><h3>Refermé après la connexion</h3><p>Ouvert au doigt pour se connecter, il se referme dès que le mot de passe est dans la page — ou au bout de deux minutes s'il n'a servi à rien. Ouvert depuis les réglages, il attend qu'on ait fini.</p></div>
+    <div class="feature"><h3>Refermé avec le Mac</h3><p>Écran verrouillé, mise en veille, session passée à un autre compte : la clé quitte la mémoire, et Touch ID la rend au retour.</p></div>
     <div class="feature"><h3>Ce qu'on perd, dit franchement</h3><p>Pas de synchronisation iCloud ni de sauvegarde du trousseau. Et un mot de passe maître oublié est un coffre perdu : c'est ce que « chiffré » veut dire — d'où la double saisie à la création.</p></div>
   </div>
 </section>
@@ -138,10 +140,10 @@
 <section id="entrer-sortir">
   <h2>Entrer et sortir</h2>
   <div class="features">
-    <div class="feature"><h3>Importer</h3><p>Aucun navigateur tiers ne peut lire l'app Mots de passe. Son export CSV — ou celui de Chrome, de Firefox — se lit dans Réglages › Mots de passe, et chaque ligne entre chiffrée. Combien entrent et combien sont écartées est dit avant d'écrire.</p></div>
-    <div class="feature"><h3>Exporter</h3><p>Aux mêmes colonnes : ce qui sort d'ici se relit dans Safari, Chrome ou Firefox. Un export chiffré que seul Wuji relirait ne serait pas un export — il est en clair, et c'est dit.</p></div>
-    <div class="feature"><h3>Copier sans passer par la page</h3><p>Réglages › Mots de passe liste l'hôte et le compte, jamais le secret. « Copier » le met dans le presse-papiers sans qu'il transite par la page.</p></div>
-    <div class="feature"><h3>L'authentification HTTP</h3><p>Un serveur qui demande qui vous êtes ouvre une bulle en bas à droite. Rien n'y est retenu : ce qui est tapé part au serveur et disparaît avec elle.</p></div>
+    <div class="feature"><h3>Importer</h3><p>Aucun navigateur tiers ne peut lire l'app Mots de passe. Son export CSV — ou celui de Chrome, de Firefox, de Bitwarden, de 1Password — se lit dans Réglages › Mots de passe, et chaque ligne entre chiffrée. Combien entrent et combien sont écartées est dit avant d'écrire.</p></div>
+    <div class="feature"><h3>Exporter</h3><p>Aux mêmes colonnes : ce qui sort d'ici se relit dans Safari, Chrome ou Firefox. Un export chiffré que seul Wuji relirait ne serait pas un export — il est en clair, et c'est dit. C'est pourquoi il redemande toujours Touch ID ou le mot de passe maître, même coffre ouvert, et que le fichier n'est lisible que par vous.</p></div>
+    <div class="feature"><h3>Copier sans passer par la page</h3><p>Réglages › Mots de passe liste l'hôte et le compte, jamais le secret. « Copier » le met dans le presse-papiers sans qu'il transite par la page ; il ne quitte pas ce Mac, se déclare secret, et s'efface au bout de 90 secondes.</p></div>
+    <div class="feature"><h3>L'authentification HTTP</h3><p>Un serveur qui demande qui vous êtes ouvre une bulle en bas à droite. Rien n'y est retenu : ce qui est tapé part au serveur et disparaît avec elle. Seul le site affiché peut la demander : une image d'un autre site ne s'invite pas par-dessus votre banque.</p></div>
   </div>
 </section>
 

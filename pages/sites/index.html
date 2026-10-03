@@ -114,10 +114,10 @@
   <figcaption>Réglages › Autorisations — demander la première fois, puis chaque site garde sa réponse.</figcaption>
 </figure>
   <div class="features">
-    <div class="feature"><h3>Caméra, micro, position</h3><p>Demandées une fois, retenues, révocables. La position passe par deux portes : le site vous demande, et macOS demande à Wuji — Wuji vous dit laquelle manque.</p></div>
-    <div class="feature"><h3>Dans le Centre de notifications</h3><p>Un site demande une fois ; la réponse est retenue avec les autres. Un clic ramène à l'onglet qui l'a envoyée, et le site est écrit sous le titre, pour qu'aucune ne se fasse passer pour une autre.</p></div>
+    <div class="feature"><h3>Caméra, micro, position</h3><p>Demandées une fois, retenues, révocables. La position passe par deux portes : le site vous demande, et macOS demande à Wuji — Wuji vous dit laquelle manque. Seul l'onglet qu'on regarde peut demander.</p></div>
+    <div class="feature"><h3>Dans le Centre de notifications</h3><p>Un site demande une fois ; la réponse est retenue avec les autres. Un clic ramène à l'onglet qui l'a envoyée, et le site est écrit sous le titre, pour qu'aucune ne se fasse passer pour une autre. Seulement d'une page chiffrée : réécrite sur un Wi-Fi public, une page en clair ne notifie pas au nom du site.</p></div>
     <div class="feature"><h3>Même celles que WebKit perdait</h3><p>WebKit ne remet pas à l'application les notifications de Gmail, Slack ou Discord. Wuji les relaie — la permission reste celle de WebKit, et l'origine du cadre est vérifiée. Rien en fenêtre privée.</p></div>
-    <div class="feature"><h3>Les questions, au même endroit</h3><p>Caméra, position, installer un script, enregistrer un mot de passe : une bulle en bas à droite. Fermer sans répondre vaut « non ».</p></div>
+    <div class="feature"><h3>Les questions, au même endroit</h3><p>Caméra, position, installer un script, enregistrer un mot de passe : une bulle en bas à droite. Fermer sans répondre vaut « non ». Une seule à la fois, jamais remplacée sous le curseur, et un oui donné dans la première demi-seconde ne compte pas.</p></div>
   </div>
 </section>
 
@@ -126,6 +126,7 @@
   <div class="features">
     <div class="feature"><h3>Deux lignes, cinq portes</h3><p>L'essentiel se lit sans cliquer : avec qui la connexion est chiffrée, et qui l'atteste. Le reste attend derrière son groupe — Identité, Validité, Chiffrement, Empreinte SHA-256, Chaîne de confiance —, et chaque ligne se copie d'un clic.</p></div>
     <div class="feature"><h3>Les certificats que personne n'atteste</h3><p>L'ordinaire d'un service qu'on héberge soi-même. La page d'erreur montre le certificat et son empreinte SHA-256, puis propose de continuer — pour cet hôte et cette session seulement, jamais écrit sur le disque.</p></div>
+    <div class="feature"><h3>L'adresse de la page qu'on voit</h3><p>Une page qui lance elle-même une navigation n'en affiche l'adresse qu'à l'arrivée : un script ne peut pas poser « banque.fr » au-dessus de son propre contenu. Un clic, un retour ou une adresse tapée s'affichent tout de suite.</p></div>
     <div class="feature"><h3>Téléverser un fichier</h3><p>Un champ « choisir un fichier » ouvre le panneau du système en feuille sur la fenêtre, avec ses favoris et sa recherche.</p></div>
   </div>
 </section>
