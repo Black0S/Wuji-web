@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passwords — Wuji</title>
+<meta name="description" content="A vault encrypted with AES-256-GCM, Touch ID, autofill the page never sees, importing and exporting logins.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../../styles/css/base.css">
+<link rel="stylesheet" href="../../../styles/css/layout.css">
+<link rel="stylesheet" href="../../../styles/css/components.css">
+<script src="../../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Passwords — Wuji">
+<meta property="og:description" content="A vault encrypted with AES-256-GCM, Touch ID, autofill the page never sees, importing and exporting logins.">
+<meta property="og:image" content="../../../assets/captures/fenetre.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://black0s.github.io/Wuji-web/pages/mots-de-passe/">
+<link rel="alternate" hreflang="en" href="https://black0s.github.io/Wuji-web/en/pages/mots-de-passe/">
+<link rel="alternate" hreflang="x-default" href="https://black0s.github.io/Wuji-web/pages/mots-de-passe/">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, home">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Features</a>
+      <a href="../../pages/blocage/">Blocking</a>
+      <a href="../../pages/confidentialite/">Privacy</a>
+      <a href="../../pages/developpeurs/">Developers</a>
+      <a href="../../pages/raccourcis/">Shortcuts</a>
+      <a href="../../pages/installer/">Install</a>
+    </nav>
+    <a class="nav-lang" href="../../../pages/mots-de-passe/" hreflang="fr" lang="fr">Français</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="All pages">
+    <a href="../../pages/naviguer/">Browsing</a>
+    <a href="../../pages/lire/">Reading and keeping</a>
+    <a href="../../pages/blocage/">Blocking</a>
+    <a href="../../pages/confidentialite/">Privacy</a>
+    <a href="../../pages/mots-de-passe/" aria-current="page">Passwords</a>
+    <a href="../../pages/sites/">Sites and security</a>
+    <a href="../../pages/developpeurs/">Developers</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Shortcuts</a>
+    <a href="../../pages/installer/">Install</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Passwords</span></p>
+    <h1>Passwords</h1>
+    <p class="lede">Logins go into Wuji's vault, and nowhere else. Nothing goes in without a yes, nothing comes out without a gesture.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="On this page">
+      <h2>On this page</h2>
+      <ul class="toc-page">
+      <li><a href="#coffre">The vault</a></li>
+      <li><a href="#touch-id">Touch ID</a></li>
+      <li><a href="#completion">Autofill</a></li>
+      <li><a href="#regles">Three rules</a></li>
+      <li><a href="#entrer-sortir">In and out</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="All pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Browsing</a></li>
+      <li><a href="../../pages/lire/">Reading and keeping</a></li>
+      <li><a href="../../pages/blocage/">Blocking</a></li>
+      <li><a href="../../pages/confidentialite/">Privacy</a></li>
+      <li><a href="../../pages/mots-de-passe/" aria-current="page">Passwords</a></li>
+      <li><a href="../../pages/sites/">Sites and security</a></li>
+      <li><a href="../../pages/developpeurs/">Developers</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+      <li><a href="../../pages/installer/">Install</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="coffre">
+  <h2>The vault</h2>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/mots-de-passe.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Settings › Passwords: the locked vault, Touch ID, offer and fill, the logins, the danger zone.">
+  <figcaption>Settings › Passwords — a vault of Wuji's own, encrypted, that Touch ID opens.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Encrypted, and the key never touches the disk</h3><p>One file, <code>coffre.json</code>, encrypted with <strong>AES-256-GCM</strong> using a key derived from the master password by PBKDF2-HMAC-SHA512, 210,000 rounds. The key lives in memory and disappears on locking.</p></div>
+    <div class="feature"><h3>One byte changed, one file refused</h3><p>GCM authenticates as much as it encrypts: a modified vault is refused instead of returning anything.</p></div>
+    <div class="feature"><h3>Locked at launch</h3><p>It never opens by force: on a sign-in page, autofill offers “Unlock the vault…”, right where it's useful.</p></div>
+    <div class="feature"><h3>Locked again after signing in</h3><p>Opened with your finger to sign in, it locks again as soon as the password is in the page — or after two minutes if it served no purpose. Opened from the settings, it waits until you're done.</p></div>
+    <div class="feature"><h3>Locked along with the Mac</h3><p>Screen locked, sleep, session switched to another account: the key leaves memory, and Touch ID gives it back when you return.</p></div>
+    <div class="feature"><h3>What you lose, said plainly</h3><p>No iCloud sync and no keychain backup. And a forgotten master password is a lost vault: that's what “encrypted” means — hence typing it twice when creating it.</p></div>
+  </div>
+</section>
+
+<section id="touch-id">
+  <h2>Touch ID</h2>
+  <div class="features">
+    <div class="feature"><h3>A shortcut, not a replacement</h3><p>The vault opens with your finger if you turn it on. The master password stays valid: adding a fingerprint to the Mac invalidates the stored key, and without it the vault would become impossible to open.</p></div>
+    <div class="feature"><h3>Thirty-two bytes, in the Enclave</h3><p>What's handed to the Secure Enclave is the vault's key, useless without the file. Never a login, never a site name. Turning off Touch ID erases the stored key.</p></div>
+  </div>
+</section>
+
+<section id="completion">
+  <h2>Autofill</h2>
+  <div class="features">
+    <div class="feature"><h3>Under the field you clicked</h3><p>The list of accounts known for this site, filtered as you type — case and accents ignored. ↑ ↓ ↵ choose, Escape closes.</p></div>
+    <div class="feature"><h3>A choice only fills that field</h3><p>Choosing an account in the username field doesn't take the password out of the vault: it only leaves when its own field was picked.</p></div>
+    <div class="feature"><h3>The page never sees the list</h3><p>It's drawn by macOS, not inside the page: a site can neither read it nor count your accounts. And it only carries names.</p></div>
+    <div class="feature"><h3>Two-step sign-ins</h3><p>Google, Microsoft and others ask for the address first: the field declared “username” is enough to offer, and filling writes the address alone.</p></div>
+    <div class="feature"><h3>Instant</h3><p>The vault is decrypted once and indexed by site: 0.2 µs per keystroke over two thousand logins.</p></div>
+  </div>
+</section>
+
+<section id="regles">
+  <h2>Three rules</h2>
+  <div class="features">
+    <div class="feature"><h3>The host comes from WebKit, never from the page</h3><p>It's the frame's real origin that speaks: a page can't pretend to be your bank and receive its login.</p></div>
+    <div class="feature"><h3>Nothing without a yes</h3><p>Saving is offered, not done. Filling is only automatic when there's nothing to choose; from two accounts on, you choose.</p></div>
+    <div class="feature"><h3>HTTPS, except at home</h3><p>A password isn't offered in clear text over the network; a service hosted on your own machine — <code>localhost</code>, <code>.local</code>, private networks — crosses none.</p></div>
+  </div>
+</section>
+
+<section id="entrer-sortir">
+  <h2>In and out</h2>
+  <div class="features">
+    <div class="feature"><h3>Import</h3><p>No third-party browser can read the Passwords app. Its CSV export — or Chrome's, Firefox's, Bitwarden's, 1Password's — is read in Settings › Passwords, and each line goes in encrypted. How many go in and how many are set aside is stated before writing.</p></div>
+    <div class="feature"><h3>Export</h3><p>With the same columns: what leaves here reads back in Safari, Chrome or Firefox. An encrypted export only Wuji could read wouldn't be an export — it's in clear text, and it says so. That's why it always asks for Touch ID or the master password again, even with the vault open, and why the file is readable by you alone.</p></div>
+    <div class="feature"><h3>Copying without going through the page</h3><p>Settings › Passwords lists the host and the account, never the secret. “Copy” puts it on the clipboard without it passing through the page; it doesn't leave this Mac, declares itself secret, and is cleared after 90 seconds.</p></div>
+    <div class="feature"><h3>HTTP authentication</h3><p>A server asking who you are opens a bubble at the bottom right. Nothing is kept there: what you type goes to the server and disappears with it. Only the site shown can ask: an image from another site can't invite itself over your bank.</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Neighboring pages"><a class="prev" href="../../pages/confidentialite/"><small>Previous</small>Privacy</a><a class="next" href="../../pages/sites/"><small>Next</small>Sites and security</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>A browser for macOS, written in Swift and AppKit, built on WebKit. Nothing leaves your Mac unless you asked.</p>
+      </div>
+      <div>
+        <h2>The browser</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Browsing</a></li>
+        <li><a href="../../pages/lire/">Reading and keeping</a></li>
+        <li><a href="../../pages/sites/">Sites and security</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocking</a></li>
+        <li><a href="../../pages/confidentialite/">Privacy</a></li>
+        <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Developers</a></li>
+        <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+        <li><a href="../../pages/installer/">Install</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">All versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Blocking lists</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 1.0.0 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

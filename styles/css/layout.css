@@ -29,6 +29,14 @@
 }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
 
+/* L'autre langue, à portée de chaque page : la même page, en français ou en anglais. */
+.nav-lang {
+  font-size: 13px; color: var(--muted); text-decoration: none; white-space: nowrap;
+  padding: 4px 11px; border: 1px solid var(--line-soft); border-radius: 999px;
+  transition: color .15s ease, border-color .15s ease;
+}
+.nav-lang:hover { color: var(--text); border-color: var(--muted); }
+
 .nav-cta {
   font-size: 14px; font-weight: 500; text-decoration: none; padding: 6px 15px;
   background: var(--btn-bg); color: var(--btn-fg); border-radius: 999px;
@@ -49,7 +57,7 @@
 
 @media (max-width: 900px) {
   .nav-links { display: none; }
-  .nav-cta { margin-left: auto; }
+  .nav-lang { margin-left: auto; }
   .nav-toggle { display: inline-grid; place-items: center; order: 3; margin-left: -8px; }
   .nav.open .nav-menu {
     display: grid; grid-template-columns: 1fr 1fr; gap: 2px 16px;

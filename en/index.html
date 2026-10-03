@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wuji — a browser for macOS</title>
+<meta name="description" content="Wuji is a macOS browser written in Swift and AppKit, built on WebKit. One window, two columns, one palette. uBlock Origin&#x27;s blocking compiled by WebKit, no dependencies, no telemetry.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../styles/css/base.css">
+<link rel="stylesheet" href="../styles/css/layout.css">
+<link rel="stylesheet" href="../styles/css/components.css">
+<script src="../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wuji — a browser for macOS">
+<meta property="og:description" content="Wuji is a macOS browser written in Swift and AppKit, built on WebKit. One window, two columns, one palette. uBlock Origin&#x27;s blocking compiled by WebKit, no dependencies, no telemetry.">
+<meta property="og:image" content="../assets/captures/fenetre.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://black0s.github.io/Wuji-web/">
+<link rel="alternate" hreflang="en" href="https://black0s.github.io/Wuji-web/en/">
+<link rel="alternate" hreflang="x-default" href="https://black0s.github.io/Wuji-web/">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./" aria-label="Wuji, home">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="pages/naviguer/">Features</a>
+      <a href="pages/blocage/">Blocking</a>
+      <a href="pages/confidentialite/">Privacy</a>
+      <a href="pages/developpeurs/">Developers</a>
+      <a href="pages/raccourcis/">Shortcuts</a>
+      <a href="pages/installer/">Install</a>
+    </nav>
+    <a class="nav-lang" href="../" hreflang="fr" lang="fr">Français</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="All pages">
+    <a href="pages/naviguer/">Browsing</a>
+    <a href="pages/lire/">Reading and keeping</a>
+    <a href="pages/blocage/">Blocking</a>
+    <a href="pages/confidentialite/">Privacy</a>
+    <a href="pages/mots-de-passe/">Passwords</a>
+    <a href="pages/sites/">Sites and security</a>
+    <a href="pages/developpeurs/">Developers</a>
+    <a href="pages/performance/">Performance</a>
+    <a href="pages/raccourcis/">Shortcuts</a>
+    <a href="pages/installer/">Install</a>
+  </nav>
+</header>
+
+<main id="contenu">
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">macOS 27 · Apple&nbsp;Silicon</p>
+    <h1>A browser that fits <br class="bp">in one window.</h1>
+    <p class="lede">Written in Swift and AppKit, built on WebKit. Tabs on the left, the page in the middle, what you've set aside on the right — and a palette when you're looking for something. No toolbar that keeps growing, no button that does nothing.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download Wuji.dmg</a>
+      <a class="btn" href="#fonctions">Everything it can do</a>
+    </div>
+    <p class="fineprint">Version 1.0.0 · Apple Silicon, macOS 27 or later · GPL-3.0</p>
+  </div>
+  <div class="wrap">
+    <figure class="shot">
+      <img src="../assets/captures/fenetre.png" width="2000" height="1263" data-zoom
+           alt="The Wuji window: the Personal space and a Music folder in the tab column, a Wikipedia article about Mozart in the middle.">
+      <figcaption>Tabs on the left, the page in the middle. The top bar carries only the address.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="facts" aria-label="In numbers">
+  <div class="wrap facts-grid">
+    <div><strong>68</strong><span>lists from uBlock Origin's catalog, to check one by one</span></div>
+    <div><strong>0</strong><span>lists installed without you asking</span></div>
+    <div><strong>0</strong><span>bytes of telemetry</span></div>
+    <div><strong>0</strong><span>dependencies in the package</span></div>
+  </div>
+</section>
+
+<section id="fonctions" class="band alt">
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Everything the browser can do</h2>
+      <p>Eight topics, each with its own page and all its features. Each one is there because it makes something possible, not because a browser is supposed to have it.</p>
+    </div>
+    <div class="topics">
+    <a class="topic" href="pages/naviguer/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg>
+      <h3>Browsing</h3>
+      <p>Windows and spaces, two columns, the palette, two pages side by side, Zen mode.</p>
+      <ul><li>Spaces, folders, space templates</li><li>Wide, collapsed or on-hover columns</li><li>Two pages and Zen mode</li></ul>
+      <span class="more">See all</span>
+    </a>
+    <a class="topic" href="pages/lire/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg>
+      <h3>Reading and keeping</h3>
+      <p>Dark pages, reader mode, reading list, favorites, history, screenshots.</p>
+      <ul><li>Dark pages without a filter</li><li>An offline reading list</li><li>Screenshots of the page, an area, an element</li></ul>
+      <span class="more">See all</span>
+    </a>
+    <a class="topic" href="pages/blocage/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 9.5C8 19 5 15.5 5 11V6z"/></svg>
+      <h3>Blocking</h3>
+      <p>uBlock Origin's catalog, compiled by WebKit. No list forced on you.</p>
+      <ul><li>68 lists, 9 recommended</li><li>Your rules in WebKit's format</li><li>Pop-ups judged by the gesture</li></ul>
+      <span class="more">See all</span>
+    </a>
+    <a class="topic" href="pages/confidentialite/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.5"/><path d="M4.5 19.5l15-15"/></svg>
+      <h3>Privacy</h3>
+      <p>Private window, cookies refused, trackers stripped from links, no telemetry.</p>
+      <ul><li>Cookie banners refused</li><li>Trackers and redirects skipped</li><li>Data erased site by site</li></ul>
+      <span class="more">See all</span>
+    </a>
+    <a class="topic" href="pages/mots-de-passe/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l2.5 2.5M13.5 9.5l2 2"/></svg>
+      <h3>Passwords</h3>
+      <p>An encrypted vault, Touch ID, autofill the page never sees.</p>
+      <ul><li>AES-256-GCM, key in memory</li><li>A login, only on a click</li><li>CSV import and export</li></ul>
+      <span class="more">See all</span>
+    </a>
+    <a class="topic" href="pages/sites/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.8 3 2.8 14 0 17M12 3.5c-2.8 3-2.8 14 0 17"/></svg>
+      <h3>Sites and security</h3>
+      <p>Per-site settings, permissions, notifications, the padlock — and a full security audit before 1.0.</p>
+      <ul><li>JavaScript, autoplay, identity</li><li>Notifications in Notification Center</li><li>Certificates read through five doors</li></ul>
+      <span class="more">See all</span>
+    </a>
+    <a class="topic" href="pages/developpeurs/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4c-2 0-2 2-2 3.5S6.5 11 5 12c1.5 1 2 2.5 2 4.5S7 20 9 20M15 4c2 0 2 2 2 3.5s.5 3.5 2 4.5c-1.5 1-2 2.5-2 4.5S17 20 15 20"/></svg>
+      <h3>Developers</h3>
+      <p>Developer tools inside the window, your site live, and user scripts.</p>
+      <ul><li>Elements, console, sources, network, storage</li><li>Your site live, from disk</li><li>A device mode, .user.js scripts</li></ul>
+      <span class="more">See all</span>
+    </a>
+    <a class="topic" href="pages/performance/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16.5a8 8 0 1 1 16 0"/><path d="M12 16.5l4-5.5"/></svg>
+      <h3>Performance</h3>
+      <p>Tabs that sleep, a memory budget, nothing in the page's way.</p>
+      <ul><li>Tabs suspended by WebKit</li><li>A third of memory, at most</li><li>Pre-warmed connections</li></ul>
+      <span class="more">See all</span>
+    </a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Two pages side by side</h2>
+      <p><kbd>⇧⌘D</kbd> splits the view; a tab or a favorite dragged onto one half of the page opens there. The address bar follows the pane you chose, and the session brings the pair back.</p>
+      <a class="more" href="pages/naviguer/#double-page">Learn more</a>
+    </div>
+    <img src="../assets/captures/double-page.png" width="2000" height="1263" loading="lazy" data-zoom alt="Two Wikipedia articles side by side, Bach and Mozart.">
+  </div>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Zen mode</h2>
+      <p><kbd>⇧⌘Z</kbd>: the page, alone, edge to edge. The title bar comes back when the pointer goes looking for it, and the exit waits in the corner with the zoom slider.</p>
+      <a class="more" href="pages/naviguer/#zen">Learn more</a>
+    </div>
+    <img src="../assets/captures/zen.png" width="2000" height="1263" loading="lazy" data-zoom alt="Zen mode: Apple&#x27;s Swift page fills the whole window.">
+  </div>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Dark pages, under the moon</h2>
+      <p>The site's own dark version if it has one; otherwise, a theme built element by element — not a filter that inverts the photos. Without reloading the page.</p>
+      <a class="more" href="pages/lire/#lune">Learn more</a>
+    </div>
+    <img src="../assets/captures/lune.png" width="2000" height="1245" loading="lazy" data-zoom alt="Wikipedia made dark by Wuji, Mozart's portrait untouched.">
+  </div>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>What you've set aside, on the right</h2>
+      <p>Favorites, history, downloads or the reading list, in a column you can search, sort by dragging and pull onto the page. <kbd>⌥⌘0</kbd> turns it on.</p>
+      <a class="more" href="pages/naviguer/#colonnes">Learn more</a>
+    </div>
+    <img src="../assets/captures/favoris.png" width="2000" height="1263" loading="lazy" data-zoom alt="The right column shows favorites sorted into folders, with their search.">
+  </div>
+  <div class="showcase">
+    <div class="showcase-text">
+      <h2>Developer tools</h2>
+      <p><kbd>⌥⌘I</kbd>: elements, console, sources, network, storage and a device mode, set under the page without shrinking it.</p>
+      <a class="more" href="pages/developpeurs/#outils">Learn more</a>
+    </div>
+    <img src="../assets/captures/outils.png" width="2000" height="1263" loading="lazy" data-zoom alt="The developer tools under WebKit's page, a heading being edited.">
+  </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Blocking, chosen and compiled</h2>
+      <p>Wuji ships no list. The catalog is uBlock Origin's; “Recommended selection” installs nine in one click, and WebKit applies them in its network process — a blocked request never leaves. What WebKit can't do, Wuji replays with uBlock Origin's own code.</p>
+    </div>
+    <figure class="figure narrow">
+  <img src="../assets/captures/blocage.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Settings › Blocking: 15 lists in use and 299,898 rules, injection rules, the catalog's families as chips, uBlock Origin&#x27;s lists checked.">
+  <figcaption>Settings › Blocking — 15 lists in use, 299,898 rules compiled by WebKit.</figcaption>
+</figure>
+    <p style="text-align:center"><a class="more" href="pages/blocage/">All about blocking</a></p>
+  </div>
+</section>
+
+<section class="band" id="nom">
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Why “Wuji”</h2>
+      <p><span lang="zh-Hant">無極</span>, <em>wújí</em>: a Taoist term that literally means “summit of nothingness”. It is the endless source to which everything returns, tied to the perpetual movement of return, <em>fu</em>, <span lang="zh-Hant">復</span>. A browser that steps aside for the page bears its name.</p>
+    </div>
+    <figure class="figure portrait">
+  <img src="../assets/captures/a-propos.png" width="932" height="1278" loading="lazy" data-zoom
+       alt="Wuji's About window: the circle and the characters 無極, the meaning of the name, version 1.0.0, WebKit and macOS 27, the links and the copyright.">
+  <figcaption>About Wuji — the name first, the version second.</figcaption>
+</figure>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <div class="band-head">
+      <h2>What the project refuses to do</h2>
+      <p>What's missing is decided, and each absence has its reason.</p>
+    </div>
+    <ul class="rules">
+    <li><h3>No dead controls</h3><p>A setting that controls nothing gives the illusion of a more advanced product than it is.</p></li>
+    <li><h3>No telemetry</h3><p>The only request Wuji makes for itself checks the version — on a click, without any identifier.</p></li>
+    <li><h3>No list chosen for you</h3><p>A missing list can't be wrong on your behalf: nothing is blocked until you've decided.</p></li>
+    <li><h3>No search engine suggestions</h3><p>Every keystroke would go to a third party. The palette searches only on your Mac.</p></li>
+    <li><h3>No filling on its own</h3><p>A login only goes into the field you clicked, never into a frame from another origin.</p></li>
+    <li><h3>Measured before it's written</h3><p>Every number on this site comes from a benchmark, a test or the code — not from a promise.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="installer" class="band">
+  <div class="wrap">
+    <div class="band-head">
+      <h2>Install</h2>
+      <p>Drag the app into the Applications folder, and that's it.</p>
+    </div>
+    <div class="install">
+      <article class="panel dl">
+        <img src="../assets/wuji-icon-512.png" alt="" width="96" height="96">
+        <div>
+          <h3>Wuji 1.0.0</h3>
+          <p>Apple Silicon, macOS 27 or later. No account, nothing to connect.</p>
+          <a class="btn btn-primary" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download the .dmg</a>
+          <a class="btn btn-quiet" href="pages/installer/">Install, step by step</a>
+        </div>
+      </article>
+      <article class="panel">
+        <h3>On first launch</h3>
+        <p>Wuji starts empty, and that's on purpose: nothing is chosen for you.</p>
+        <dl class="steps">
+          <dt>Settings › Blocking</dt><dd>“Recommended selection” installs nine lists in one click</dd>
+          <dt>Favorites › Import…</dt><dd>favorites from another browser</dd>
+          <dt>Settings › Passwords</dt><dd>a vault, Touch ID if you want</dd>
+          <dt>Settings › General › Language</dt><dd>French or English, or the Mac's language</dd>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="./"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>A browser for macOS, written in Swift and AppKit, built on WebKit. Nothing leaves your Mac unless you asked.</p>
+      </div>
+      <div>
+        <h2>The browser</h2>
+        <ul>
+        <li><a href="pages/naviguer/">Browsing</a></li>
+        <li><a href="pages/lire/">Reading and keeping</a></li>
+        <li><a href="pages/sites/">Sites and security</a></li>
+        <li><a href="pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="pages/blocage/">Blocking</a></li>
+        <li><a href="pages/confidentialite/">Privacy</a></li>
+        <li><a href="pages/mots-de-passe/">Passwords</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+        <li><a href="pages/developpeurs/">Developers</a></li>
+        <li><a href="pages/raccourcis/">Shortcuts</a></li>
+        <li><a href="pages/installer/">Install</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">All versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Blocking lists</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 1.0.0 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

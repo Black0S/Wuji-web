@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance — Wuji</title>
+<meta name="description" content="What Wuji does on top of WebKit: sleeping tabs, a memory budget, page frame rate, pre-warmed connections, and the benchmark's measurements.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../../styles/css/base.css">
+<link rel="stylesheet" href="../../../styles/css/layout.css">
+<link rel="stylesheet" href="../../../styles/css/components.css">
+<script src="../../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Performance — Wuji">
+<meta property="og:description" content="What Wuji does on top of WebKit: sleeping tabs, a memory budget, page frame rate, pre-warmed connections, and the benchmark's measurements.">
+<meta property="og:image" content="../../../assets/captures/fenetre.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://black0s.github.io/Wuji-web/pages/performance/">
+<link rel="alternate" hreflang="en" href="https://black0s.github.io/Wuji-web/en/pages/performance/">
+<link rel="alternate" hreflang="x-default" href="https://black0s.github.io/Wuji-web/pages/performance/">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, home">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Features</a>
+      <a href="../../pages/blocage/">Blocking</a>
+      <a href="../../pages/confidentialite/">Privacy</a>
+      <a href="../../pages/developpeurs/">Developers</a>
+      <a href="../../pages/raccourcis/">Shortcuts</a>
+      <a href="../../pages/installer/">Install</a>
+    </nav>
+    <a class="nav-lang" href="../../../pages/performance/" hreflang="fr" lang="fr">Français</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="All pages">
+    <a href="../../pages/naviguer/">Browsing</a>
+    <a href="../../pages/lire/">Reading and keeping</a>
+    <a href="../../pages/blocage/">Blocking</a>
+    <a href="../../pages/confidentialite/">Privacy</a>
+    <a href="../../pages/mots-de-passe/">Passwords</a>
+    <a href="../../pages/sites/">Sites and security</a>
+    <a href="../../pages/developpeurs/">Developers</a>
+    <a href="../../pages/performance/" aria-current="page">Performance</a>
+    <a href="../../pages/raccourcis/">Shortcuts</a>
+    <a href="../../pages/installer/">Install</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Performance</span></p>
+    <h1>Performance</h1>
+    <p class="lede">The engine is WebKit: a page is parsed and run at Safari's speed. What a browser can do on top is stay out of the way — and that's where there was everything to gain.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="On this page">
+      <h2>On this page</h2>
+      <ul class="toc-page">
+      <li><a href="#veille">Tabs that sleep</a></li>
+      <li><a href="#affichage">Display and network</a></li>
+      <li><a href="#banc">What the benchmark says</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="All pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Browsing</a></li>
+      <li><a href="../../pages/lire/">Reading and keeping</a></li>
+      <li><a href="../../pages/blocage/">Blocking</a></li>
+      <li><a href="../../pages/confidentialite/">Privacy</a></li>
+      <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+      <li><a href="../../pages/sites/">Sites and security</a></li>
+      <li><a href="../../pages/developpeurs/">Developers</a></li>
+      <li><a href="../../pages/performance/" aria-current="page">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+      <li><a href="../../pages/installer/">Install</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="veille">
+  <h2>Tabs that sleep</h2>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/performances.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Settings › Performance: put forgotten tabs to sleep after 15 minutes, 1.2 GB out of a 2.7 GB budget, the screen&#x27;s frame rate, pre-warm connections.">
+  <figcaption>Settings › Performance.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Suspended by WebKit</h3><p>A tab you're not looking at has its JavaScript and layout suspended: a page that burns a whole core drops to 3% in the background, and picks up where it was, without reloading.</p></div>
+    <div class="feature"><h3>Asleep after a delay</h3><p>Fifteen minutes, thirty, one, two or four hours — or only when the Mac runs short. The tab gives back its memory without leaving the column, and hovering wakes it up before the click.</p></div>
+    <div class="feature"><h3>What doesn't sleep</h3><p>A page playing sound or loading isn't idle, and a tab where you typed in a form is kept — your input isn't lost to sleep.</p></div>
+    <div class="feature"><h3>A memory budget</h3><p>Beyond a third of the Mac's memory, tabs left for more than five minutes go to sleep without waiting, oldest first — before macOS slows everything down. The setting shows the measurement.</p></div>
+    <div class="feature"><h3>Under macOS pressure</h3><p>When the system runs short of memory, tabs go to sleep and the in-memory resource cache is emptied; the disk cache stays.</p></div>
+  </div>
+</section>
+
+<section id="affichage">
+  <h2>Display and network</h2>
+  <div class="features">
+    <div class="feature"><h3>The screen's frame rate</h3><p>Up to 120 frames per second on a display that shows them; 60 in all cases in Low Power Mode.</p></div>
+    <div class="feature"><h3>Pre-warmed connections</h3><p>Name resolution and the handshake start while you type an address, and as soon as you press a link to a site you've already visited: about 150 ms less before the first byte.</p></div>
+    <div class="feature"><h3>A tab ahead</h3><p>A new tab is prepared in advance, its process already launched: a page opened in a new tab shows up in 88 ms instead of 140.</p></div>
+    <div class="feature"><h3>Nothing in the page's way</h3><p>The column updates in place instead of rebuilding on every signal, a certificate check is remembered per host, and what Wuji fetches for itself uses HTTP/3 right away, four connections per host at most.</p></div>
+  </div>
+</section>
+
+<section id="banc">
+  <h2>What the benchmark says</h2>
+  <p class="section-lede">The numbers come from <code>bench.sh</code>: five interleaved passes, medians, in the release build, on pages served locally. What can be measured is measured before it's written.</p>
+<div class="table-scroll"><table class="table">
+  <thead><tr><th scope="col">Loaded tabs</th><th scope="col">Total</th><th scope="col">App</th><th scope="col">Rendering</th><th scope="col">Network</th><th scope="col">GPU</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">5</th><td class="num">307 MB</td><td class="num">105 MB</td><td class="num">174 MB</td><td class="num">14 MB</td><td class="num">13 MB</td></tr>
+    <tr><th scope="row">15</th><td class="num">609 MB</td><td class="num">122 MB</td><td class="num">445 MB</td><td class="num">29 MB</td><td class="num">15 MB</td></tr>
+    <tr><th scope="row">30</th><td class="num">1,062 MB</td><td class="num">139 MB</td><td class="num">850 MB</td><td class="num">52 MB</td><td class="num">17 MB</td></tr>
+  </tbody>
+</table></div>
+  <div class="features">
+    <div class="feature"><h3>Everything macOS attributes to Wuji</h3><p>At thirty tabs, the app weighs 139 MB; its rendering processes weigh 850 — the price of WebKit, which Safari pays the same way. The benchmark adds everything up: rendering, network, GPU.</p></div>
+    <div class="feature"><h3>The criterion</h3><p>A profile taken while a heavy page loads no longer shows any Wuji symbol beyond an isolated sample: what's left to gain is in the engine.</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Neighboring pages"><a class="prev" href="../../pages/developpeurs/"><small>Previous</small>Developers</a><a class="next" href="../../pages/raccourcis/"><small>Next</small>Shortcuts</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>A browser for macOS, written in Swift and AppKit, built on WebKit. Nothing leaves your Mac unless you asked.</p>
+      </div>
+      <div>
+        <h2>The browser</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Browsing</a></li>
+        <li><a href="../../pages/lire/">Reading and keeping</a></li>
+        <li><a href="../../pages/sites/">Sites and security</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocking</a></li>
+        <li><a href="../../pages/confidentialite/">Privacy</a></li>
+        <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Developers</a></li>
+        <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+        <li><a href="../../pages/installer/">Install</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">All versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Blocking lists</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 1.0.0 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

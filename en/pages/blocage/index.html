@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blocking — Wuji</title>
+<meta name="description" content="uBlock Origin&#x27;s catalog, compiled by WebKit in its network process. No list shipped, your rules in WebKit&#x27;s format, pop-ups judged by the gesture.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../../styles/css/base.css">
+<link rel="stylesheet" href="../../../styles/css/layout.css">
+<link rel="stylesheet" href="../../../styles/css/components.css">
+<script src="../../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blocking — Wuji">
+<meta property="og:description" content="uBlock Origin&#x27;s catalog, compiled by WebKit in its network process. No list shipped, your rules in WebKit&#x27;s format, pop-ups judged by the gesture.">
+<meta property="og:image" content="../../../assets/captures/fenetre.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://black0s.github.io/Wuji-web/pages/blocage/">
+<link rel="alternate" hreflang="en" href="https://black0s.github.io/Wuji-web/en/pages/blocage/">
+<link rel="alternate" hreflang="x-default" href="https://black0s.github.io/Wuji-web/pages/blocage/">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, home">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Features</a>
+      <a href="../../pages/blocage/" aria-current="page">Blocking</a>
+      <a href="../../pages/confidentialite/">Privacy</a>
+      <a href="../../pages/developpeurs/">Developers</a>
+      <a href="../../pages/raccourcis/">Shortcuts</a>
+      <a href="../../pages/installer/">Install</a>
+    </nav>
+    <a class="nav-lang" href="../../../pages/blocage/" hreflang="fr" lang="fr">Français</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="All pages">
+    <a href="../../pages/naviguer/">Browsing</a>
+    <a href="../../pages/lire/">Reading and keeping</a>
+    <a href="../../pages/blocage/" aria-current="page">Blocking</a>
+    <a href="../../pages/confidentialite/">Privacy</a>
+    <a href="../../pages/mots-de-passe/">Passwords</a>
+    <a href="../../pages/sites/">Sites and security</a>
+    <a href="../../pages/developpeurs/">Developers</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Shortcuts</a>
+    <a href="../../pages/installer/">Install</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Blocking</span></p>
+    <h1>Blocking</h1>
+    <p class="lede">Wuji ships no list. As long as you haven't chosen anything, it blocks nothing and has contacted no one. What you choose comes from uBlock Origin, and WebKit is what applies it.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="On this page">
+      <h2>On this page</h2>
+      <ul class="toc-page">
+      <li><a href="#catalogue">The catalog</a></li>
+      <li><a href="#webkit">WebKit does the filtering</a></li>
+      <li><a href="#injection">What WebKit can't do</a></li>
+      <li><a href="#mises-a-jour">Lists kept up to date</a></li>
+      <li><a href="#vos-regles">Your rules</a></li>
+      <li><a href="#fenetres">Pop-ups and redirects</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="All pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Browsing</a></li>
+      <li><a href="../../pages/lire/">Reading and keeping</a></li>
+      <li><a href="../../pages/blocage/" aria-current="page">Blocking</a></li>
+      <li><a href="../../pages/confidentialite/">Privacy</a></li>
+      <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+      <li><a href="../../pages/sites/">Sites and security</a></li>
+      <li><a href="../../pages/developpeurs/">Developers</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+      <li><a href="../../pages/installer/">Install</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="catalogue">
+  <h2>The catalog</h2>
+  <p class="section-lede">Sixty-eight lists, uBlock Origin's: its groups, its addresses, nothing else. Each one is checked and turned off on its own; unchecked, it leaves the engine and the disk.</p>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/blocage.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Settings › Blocking: 15 lists in use and 299,898 rules, injection rules, the catalog's families as chips, uBlock Origin&#x27;s lists checked.">
+  <figcaption>Settings › Blocking — 15 lists in use, 299,898 rules compiled by WebKit.</figcaption>
+</figure>
+<div class="table-scroll"><table class="table">
+  <caption class="sr">The catalog's families</caption>
+  <thead><tr><th scope="col">Family</th><th scope="col">Lists</th><th scope="col">What it targets</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">uBlock Origin</th><td class="num">6</td><td>ads, privacy, risky sites, quick fixes, unbreak</td></tr>
+    <tr><th scope="row">Ads</th><td class="num">3</td><td>EasyList, AdGuard, ad networks</td></tr>
+    <tr><th scope="row">Privacy</th><td class="num">2</td><td>EasyPrivacy, tracking</td></tr>
+    <tr><th scope="row">Malicious sites</th><td class="num">2</td><td>phishing, malware</td></tr>
+    <tr><th scope="row">Multipurpose</th><td class="num">2</td><td>host lists covering several families</td></tr>
+    <tr><th scope="row">Annoyances</th><td class="num">16</td><td>cookie banners, pop-ups, widgets, reminders</td></tr>
+    <tr><th scope="row">Regions</th><td class="num">37</td><td>lists by language and by country</td></tr>
+  </tbody>
+</table></div>
+  <div class="features">
+    <div class="feature"><h3>The recommended selection</h3><p>One button installs nine lists at once: uBlock Origin's five — filters, risky sites, privacy, quick fixes, unbreak —, EasyList, EasyPrivacy, Peter Lowe and URLhaus.</p></div>
+    <div class="feature"><h3>By family, as chips</h3><p>A row of chips filters by category, a field by name, and the two combine. A whole family is checked in one gesture: “Enable all (7)”.</p></div>
+  </div>
+</section>
+
+<section id="webkit">
+  <h2>WebKit does the filtering</h2>
+  <div class="features">
+    <div class="feature"><h3>In the network process</h3><p>Rules are compiled by WebKit and applied before the request leaves: a blocked request never leaves, and the page never learns it was stopped. A JavaScript blocker comes in afterwards and can be detected.</p></div>
+    <div class="feature"><h3>Converted separately, in public</h3><p>The <a href="https://github.com/Black0S/Wuji-Rules-List">Wuji-Rules-List</a> repository fetches the original lists and converts them to WebKit's content blocker format. Wuji reads the catalog and compiles what you point it to.</p></div>
+    <div class="feature"><h3>Compiled once</h3><p>Turning megabytes of rules into a decision table takes a few seconds; WebKit keeps the result, and the next launch recompiles nothing.</p></div>
+    <div class="feature"><h3>Beyond 150,000 rules</h3><p>WebKit refuses more in a single list. Large ones are split, and each piece compiles on its own — the limit is per list, not per browser.</p></div>
+    <div class="feature"><h3>Unchecking frees the space</h3><p>Compiled tables weigh more than the lists: unchecking removes them from disk, and a sweep at launch removes whatever was left behind.</p></div>
+  </div>
+</section>
+
+<section id="injection">
+  <h2>What WebKit can't do</h2>
+  <p class="section-lede">WebKit's format can only hide with <code>display:none</code> and runs nothing. What the lists ask for beyond that, Wuji replays — behind a switch.</p>
+  <div class="features">
+    <div class="feature"><h3>Injection rules</h3><p>Styles, extended selectors and primitives the conversion had to set aside: Wuji applies them, at three levels — a style sheet in the common case, a compact removal, the evaluator only when a selector requires it.</p></div>
+    <div class="feature"><h3>uBlock Origin's own code</h3><p>The counters to anti-adblock walls, the script surrogates, rewriting a response before the page reads it come from uBlock Origin's code, copied as is and updated with its releases. That's what keeps YouTube's ads at bay.</p></div>
+    <div class="feature"><h3>uBlock Origin's safeguards</h3><p>“Trusted” scriptlets only come from its lists, a style rule loads nothing — no <code>url()</code>, no <code>@import</code> —, and lists arrive over HTTPS end to end: a hijacked list couldn't read what you type.</p></div>
+    <div class="feature"><h3>Tiny in every page</h3><p>Nothing is sent for a site no list mentions; two rules per site at the median. And the watcher goes to sleep after thirty seconds without a change in the page.</p></div>
+    <div class="feature"><h3>A real switch</h3><p>It's a different mechanism — injected style, executed code —, and it doesn't impose itself without saying so: the blocking page carries its switch and its count.</p></div>
+  </div>
+</section>
+
+<section id="mises-a-jour">
+  <h2>Lists kept up to date</h2>
+  <div class="features">
+    <div class="feature"><h3>At most once a day</h3><p>Lists in use are checked at the cadence you choose, never more than once a day; only a new version is recompiled, and the old one only leaves once the new one is in use.</p></div>
+    <div class="feature"><h3>Update all</h3><p>A button that only appears when it has something to do, and says how much. Network and compilation overlap; a list that fails doesn't stop the others.</p></div>
+    <div class="feature"><h3>Nothing moves under your finger</h3><p>A box stays checked while the work happens, and what's working says so on its own line — the list doesn't jump under the click.</p></div>
+  </div>
+</section>
+
+<section id="vos-regles">
+  <h2>Your rules</h2>
+  <p class="section-lede">A list blocks what others have listed. What remains is the banner on a site only you visit.</p>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/regles.png" width="1600" height="1178" loading="lazy" data-zoom
+       alt="Settings › My Rules: two elements hidden on two sites, google.com and youtube.com expanded, each selector with its description, Import, Export and New site.">
+  <figcaption>Settings › My Rules — sorted by site, described, exported exactly as WebKit compiles them.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Hide an element</h3><p>“Hide an element…”, from the shield: hovering shows, clicking chooses, Escape gives up. The selector is computed short, to survive the page's next redesign. The panel lives apart from the page: it can neither add nor remove a rule on your behalf.</p></div>
+    <div class="feature"><h3>A WebKit rule, not a script</h3><p>What comes out is a <code>css-display-none</code> rule, filed under the site and compiled with the others: it applies inside the engine, before the page draws.</p></div>
+    <div class="feature"><h3>Right away</h3><p>The element disappears on the click, not on reload — and comes back the same way when you remove the rule.</p></div>
+    <div class="feature"><h3>Export, import, no conversion</h3><p>The file is exactly what WebKit compiles, and it reads back as is. Nothing comes in without WebKit having compiled it separately first.</p></div>
+    <div class="feature"><h3>Pausing, site by site</h3><p>A site a list breaks starts working again by lifting blocking on it alone, from the shield; the rules come back as soon as you leave it.</p></div>
+  </div>
+</section>
+
+<section id="fenetres">
+  <h2>Pop-ups and redirects</h2>
+  <p class="section-lede">The gesture decides. A script in a world of its own says what each click landed on, and the judge rules.</p>
+<div class="table-scroll"><table class="table">
+  <thead><tr><th scope="col">The gesture</th><th scope="col">Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>A button, a login, a key on the keyboard</td><td class="num">opens</td></tr>
+    <tr><td>An ordinary link, a large clickable card showing text</td><td class="num">opens</td></tr>
+    <tr><td>A click on the page background that builds a link and clicks it</td><td class="num">held back</td></tr>
+    <tr><td>A link you can't see — transparent, empty, whatever its size</td><td class="num">held back</td></tr>
+    <tr><td>The second window from the same click</td><td class="num">held back</td></tr>
+    <tr><td>No gesture, or a gesture older than a second and a half</td><td class="num">held back</td></tr>
+  </tbody>
+</table></div>
+  <div class="features">
+    <div class="feature"><h3>Announced, never lost</h3><p>Each held-back window is announced by a badge, which opens it if you wanted it. No per-minute limit: that one held back the fifth link you opened while reading.</p></div>
+    <div class="feature"><h3>Pop-up rules, applied</h3><p>Lists precisely target windows opened toward an ad network, and WebKit doesn't apply those rules. Wuji picks them up and applies them before opening anything — in three hundredths of a millisecond.</p></div>
+    <div class="feature"><h3>The page stays</h3><p>A click on the background of a streaming page that sends the tab to a refused ad no longer replaces the site: the page stays, a badge says so.</p></div>
+    <div class="feature"><h3>The ad tab closes itself</h3><p>The only exception to “no tab closes on its own”: born from a pop-up, having never shown anything, and refused by the lists within its first ten seconds. A setting turns it off.</p></div>
+  </div>
+</section>
+<div class="note">
+  <h3>What blocking doesn't tell you</h3>
+  <ul>
+    <li><strong>No blocked-request counter.</strong> WebKit applies the rules in its network process and reports nothing back to the app. The shield shows what's in use, and how many elements your rules hide here — not a made-up number.</li>
+    <li><strong>Part of the syntax has no equivalent.</strong> The catalog shows, for each list, the share of its rules the conversion managed to carry over.</li>
+  </ul>
+</div>
+<nav class="pager" aria-label="Neighboring pages"><a class="prev" href="../../pages/lire/"><small>Previous</small>Reading and keeping</a><a class="next" href="../../pages/confidentialite/"><small>Next</small>Privacy</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>A browser for macOS, written in Swift and AppKit, built on WebKit. Nothing leaves your Mac unless you asked.</p>
+      </div>
+      <div>
+        <h2>The browser</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Browsing</a></li>
+        <li><a href="../../pages/lire/">Reading and keeping</a></li>
+        <li><a href="../../pages/sites/">Sites and security</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocking</a></li>
+        <li><a href="../../pages/confidentialite/">Privacy</a></li>
+        <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Developers</a></li>
+        <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+        <li><a href="../../pages/installer/">Install</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">All versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Blocking lists</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 1.0.0 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

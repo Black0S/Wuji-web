@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sites and security — Wuji</title>
+<meta name="description" content="Settings for all sites and for each one, permissions, notifications, pop-ups, the padlock and certificates.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../../styles/css/base.css">
+<link rel="stylesheet" href="../../../styles/css/layout.css">
+<link rel="stylesheet" href="../../../styles/css/components.css">
+<script src="../../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sites and security — Wuji">
+<meta property="og:description" content="Settings for all sites and for each one, permissions, notifications, pop-ups, the padlock and certificates.">
+<meta property="og:image" content="../../../assets/captures/fenetre.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://black0s.github.io/Wuji-web/pages/sites/">
+<link rel="alternate" hreflang="en" href="https://black0s.github.io/Wuji-web/en/pages/sites/">
+<link rel="alternate" hreflang="x-default" href="https://black0s.github.io/Wuji-web/pages/sites/">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, home">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Features</a>
+      <a href="../../pages/blocage/">Blocking</a>
+      <a href="../../pages/confidentialite/">Privacy</a>
+      <a href="../../pages/developpeurs/">Developers</a>
+      <a href="../../pages/raccourcis/">Shortcuts</a>
+      <a href="../../pages/installer/">Install</a>
+    </nav>
+    <a class="nav-lang" href="../../../pages/sites/" hreflang="fr" lang="fr">Français</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="All pages">
+    <a href="../../pages/naviguer/">Browsing</a>
+    <a href="../../pages/lire/">Reading and keeping</a>
+    <a href="../../pages/blocage/">Blocking</a>
+    <a href="../../pages/confidentialite/">Privacy</a>
+    <a href="../../pages/mots-de-passe/">Passwords</a>
+    <a href="../../pages/sites/" aria-current="page">Sites and security</a>
+    <a href="../../pages/developpeurs/">Developers</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Shortcuts</a>
+    <a href="../../pages/installer/">Install</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Sites and security</span></p>
+    <h1>Sites and security</h1>
+    <p class="lede">Settings for all sites, and for the one you're looking at. A site without settings of its own follows everyone's, even when they change.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="On this page">
+      <h2>On this page</h2>
+      <ul class="toc-page">
+      <li><a href="#reglages">Per-site settings</a></li>
+      <li><a href="#autorisations">Permissions and notifications</a></li>
+      <li><a href="#cadenas">The padlock and certificates</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="All pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Browsing</a></li>
+      <li><a href="../../pages/lire/">Reading and keeping</a></li>
+      <li><a href="../../pages/blocage/">Blocking</a></li>
+      <li><a href="../../pages/confidentialite/">Privacy</a></li>
+      <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+      <li><a href="../../pages/sites/" aria-current="page">Sites and security</a></li>
+      <li><a href="../../pages/developpeurs/">Developers</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+      <li><a href="../../pages/installer/">Install</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="reglages">
+  <h2>Per-site settings</h2>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/sites-web.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Settings › Websites: JavaScript, autoplay set to Never, present as Safari, pop-ups blocked, close ad tabs.">
+  <figcaption>Settings › Websites — for all sites; the padlock menu sets the one you're looking at.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>For all, then for each</h3><p>JavaScript, pop-ups, autoplay, for all sites; then the list of sites that have their own, each one erasable. “Settings for this site”, in the padlock menu, sets the one you're looking at.</p></div>
+    <div class="feature"><h3>Autoplay “muted only”</h3><p>By default, like Safari: a video with sound waits, a muted one plays; “Never” stops both.</p></div>
+    <div class="feature"><h3>JavaScript turned off for a site</h3><p>The page's scripts no longer run. Wuji's own pages keep theirs, whatever you set.</p></div>
+    <div class="feature"><h3>Present as</h3><p>Safari, Chrome or Firefox, for sites that refuse what they don't recognize. The engine stays WebKit.</p></div>
+    <div class="feature"><h3>Zoom and dark mode</h3><p>Each site's zoom is remembered, and dark mode turns off for a site that looks better as it is.</p></div>
+  </div>
+</section>
+
+<section id="autorisations">
+  <h2>Permissions and notifications</h2>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/autorisations.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Settings › Permissions: camera, microphone, screen sharing, location and notifications set to Ask, then the sites that have a setting of their own.">
+  <figcaption>Settings › Permissions — ask the first time, then each site keeps its answer.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Camera, microphone, location</h3><p>Asked once, remembered, revocable. Location goes through two doors: the site asks you, and macOS asks Wuji — Wuji tells you which one is missing. Only the tab you're looking at can ask.</p></div>
+    <div class="feature"><h3>In Notification Center</h3><p>A site asks once; the answer is remembered with the others. A click brings you back to the tab that sent it, and the site is written under the title, so none can pass itself off as another. Only from an encrypted page: rewritten on public Wi-Fi, a clear-text page can't notify in the site's name.</p></div>
+    <div class="feature"><h3>Even those WebKit was losing</h3><p>WebKit doesn't hand the app the notifications from Gmail, Slack or Discord. Wuji relays them — the permission stays WebKit's, and the frame's origin is checked. Nothing in a private window.</p></div>
+    <div class="feature"><h3>Questions, in one place</h3><p>Camera, location, installing a script, saving a password: a bubble at the bottom right. Closing without answering means “no”. Only one at a time, never swapped under the pointer, and a yes given in the first half second doesn't count.</p></div>
+  </div>
+</section>
+
+<section id="cadenas">
+  <h2>The padlock and certificates</h2>
+  <div class="features">
+    <div class="feature"><h3>Two lines, five doors</h3><p>The essentials read without clicking: who the connection is encrypted with, and who vouches for it. The rest waits behind its group — Identity, Validity, Encryption, SHA-256 Fingerprint, Chain of Trust —, and each line can be copied in one click.</p></div>
+    <div class="feature"><h3>Certificates no one vouches for</h3><p>Common for a service you host yourself. The error page shows the certificate and its SHA-256 fingerprint, then offers to continue — for this host and this session only, never written to disk.</p></div>
+    <div class="feature"><h3>The address of the page you see</h3><p>A page that starts a navigation by itself only shows its address on arrival: a script can't put “bank.com” above its own content. A click, going back or a typed address show up right away.</p></div>
+    <div class="feature"><h3>Uploading a file</h3><p>A “choose a file” field opens the system panel as a sheet on the window, with its favorites and its search.</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Neighboring pages"><a class="prev" href="../../pages/mots-de-passe/"><small>Previous</small>Passwords</a><a class="next" href="../../pages/developpeurs/"><small>Next</small>Developers</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>A browser for macOS, written in Swift and AppKit, built on WebKit. Nothing leaves your Mac unless you asked.</p>
+      </div>
+      <div>
+        <h2>The browser</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Browsing</a></li>
+        <li><a href="../../pages/lire/">Reading and keeping</a></li>
+        <li><a href="../../pages/sites/">Sites and security</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocking</a></li>
+        <li><a href="../../pages/confidentialite/">Privacy</a></li>
+        <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Developers</a></li>
+        <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+        <li><a href="../../pages/installer/">Install</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">All versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Blocking lists</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 1.0.0 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

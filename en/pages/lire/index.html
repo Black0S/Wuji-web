@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading and keeping — Wuji</title>
+<meta name="description" content="Dark pages, reader mode, offline reading list, favorites, history, downloads, saving and screenshots.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../../styles/css/base.css">
+<link rel="stylesheet" href="../../../styles/css/layout.css">
+<link rel="stylesheet" href="../../../styles/css/components.css">
+<script src="../../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reading and keeping — Wuji">
+<meta property="og:description" content="Dark pages, reader mode, offline reading list, favorites, history, downloads, saving and screenshots.">
+<meta property="og:image" content="../../../assets/captures/fenetre.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://black0s.github.io/Wuji-web/pages/lire/">
+<link rel="alternate" hreflang="en" href="https://black0s.github.io/Wuji-web/en/pages/lire/">
+<link rel="alternate" hreflang="x-default" href="https://black0s.github.io/Wuji-web/pages/lire/">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, home">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Features</a>
+      <a href="../../pages/blocage/">Blocking</a>
+      <a href="../../pages/confidentialite/">Privacy</a>
+      <a href="../../pages/developpeurs/">Developers</a>
+      <a href="../../pages/raccourcis/">Shortcuts</a>
+      <a href="../../pages/installer/">Install</a>
+    </nav>
+    <a class="nav-lang" href="../../../pages/lire/" hreflang="fr" lang="fr">Français</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="All pages">
+    <a href="../../pages/naviguer/">Browsing</a>
+    <a href="../../pages/lire/" aria-current="page">Reading and keeping</a>
+    <a href="../../pages/blocage/">Blocking</a>
+    <a href="../../pages/confidentialite/">Privacy</a>
+    <a href="../../pages/mots-de-passe/">Passwords</a>
+    <a href="../../pages/sites/">Sites and security</a>
+    <a href="../../pages/developpeurs/">Developers</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Shortcuts</a>
+    <a href="../../pages/installer/">Install</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Reading and keeping</span></p>
+    <h1>Reading and keeping</h1>
+    <p class="lede">Read a page the way you want, keep it for later, find it again, take it with you. Nothing you read goes off to someone to be cleaned up.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="On this page">
+      <h2>On this page</h2>
+      <ul class="toc-page">
+      <li><a href="#lune">Dark pages, under the moon</a></li>
+      <li><a href="#lecture">Reader mode</a></li>
+      <li><a href="#liste">The reading list</a></li>
+      <li><a href="#favoris">Favorites and history</a></li>
+      <li><a href="#telechargements">Downloads</a></li>
+      <li><a href="#garder">Save, print, capture</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="All pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Browsing</a></li>
+      <li><a href="../../pages/lire/" aria-current="page">Reading and keeping</a></li>
+      <li><a href="../../pages/blocage/">Blocking</a></li>
+      <li><a href="../../pages/confidentialite/">Privacy</a></li>
+      <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+      <li><a href="../../pages/sites/">Sites and security</a></li>
+      <li><a href="../../pages/developpeurs/">Developers</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+      <li><a href="../../pages/installer/">Install</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="lune">
+  <h2>Dark pages, under the moon</h2>
+  <p class="section-lede">The moon in the top bar makes the page dark — without reloading, and without inverting the photos.</p>
+<figure class="figure">
+  <img src="../../../assets/captures/lune.png" width="2000" height="1245" loading="lazy" data-zoom
+       alt="Wikipedia&#x27;s Mozart article made dark by Wuji, the moon lit in the top bar; the portrait stays untouched.">
+  <figcaption>Wikipedia has no dark version: this one is built element by element.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>The site's version, or a built one</h3><p>“Dark” takes the site's dark version if it has one — GitHub, Python's or Apple's documentation are recognized and left as they are —, and builds one otherwise. “Turn off on this site” keeps the original where it looks better.</p></div>
+    <div class="feature"><h3>Without reloading</h3><p>The page changes before your eyes: a half-filled form stays that way.</p></div>
+    <div class="feature"><h3>Element by element, not a filter</h3><p>Every background, text, border and gradient is reread as the page computes it, then rewritten darker while keeping its hue. An orange button stays orange, a photo is never touched, a dark icon is inverted to stay visible.</p></div>
+    <div class="feature"><h3>It follows the page</h3><p>A menu that opens, a style sheet that arrives late, a style a framework rewrites, the <code>::before</code>: everything is picked up as it goes, in 12 ms batches, without the page flashing white first.</p></div>
+    <div class="feature"><h3>Measured, text by text</h3><p>A bench of fifteen trap pages measures the contrast of each text against its actual background: 0 unreadable texts out of 5,200, no page left light.</p></div>
+  </div>
+</section>
+
+<section id="lecture">
+  <h2>Reader mode</h2>
+<figure class="figure">
+  <img src="../../../assets/captures/lecture.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="Reader mode on the macOS 27 what's-new page: the title, the site and the text in serif, without the rest of the page.">
+  <figcaption><kbd>⇧⌘R</kbd> — the article, and nothing else.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>The article, and nothing else</h3><p><kbd>⇧⌘R</kbd>. The block is picked by its link density: a menu, a footer, a column of recommendations are made of links, a paragraph has almost none.</p></div>
+    <div class="feature"><h3>Nothing leaves</h3><p>Read-later services send the address, sometimes the whole page, to someone to clean it up. Here, the machine that displays is the one that cleans.</p></div>
+  </div>
+</section>
+
+<section id="liste">
+  <h2>The reading list</h2>
+  <div class="features">
+    <div class="feature"><h3>Offline</h3><p><kbd>⇧⌘L</kbd> sets the page aside, with its article: you reread it without a network from <code>wuji://reading</code>, where what's left to read comes before what's been read.</p></div>
+    <div class="feature"><h3>Read later</h3><p>On a link, “Read Later” keeps the address without opening the page. The list also opens in the right column.</p></div>
+    <div class="feature"><h3>A saved article can't run anything</h3><p>Scripts, frames, <code>on…</code> attributes and <code>javascript:</code> links are removed, and the article's page forbids any script through its security policy.</p></div>
+  </div>
+</section>
+
+<section id="favoris">
+  <h2>Favorites and history</h2>
+<figure class="figure">
+  <img src="../../../assets/captures/favoris.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="Both columns open: tabs on the left, the macOS 27 what's-new page in the middle, favorites sorted into folders on the right with their search.">
+  <figcaption>Favorites in the right column, sorted into folders, with their search.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Sorted favorites</h3><p><kbd>⌘D</kbd> sets the page aside, <kbd>⇧⌘B</kbd> opens the favorites. Folders and subfolders, sorting by dragging or with “Move to…”.</p></div>
+    <div class="feature"><h3>The page, not the section</h3><p>A favorite keeps the page: a section anchor (<code>#raccourcis</code>) is removed, the one of an app that routes by anchor (<code>#/inbox</code>) is kept.</p></div>
+    <div class="feature"><h3>Importing from another browser</h3><p>Chrome, Brave, Edge, Arc and Vivaldi are read in place; Safari too when macOS allows it; any browser's HTML export can be picked by hand. No duplicates, and the count is announced before writing.</p></div>
+    <div class="feature"><h3>The whole history</h3><p><kbd>⌘Y</kbd> opens <code>wuji://history</code>: the whole history, day by day, with a search. It's kept as long as you choose, and is erased line by line or all at once.</p></div>
+  </div>
+</section>
+
+<section id="telechargements">
+  <h2>Downloads</h2>
+  <div class="features">
+    <div class="feature"><h3>What the web asks for</h3><p>A link with the <code>download</code> attribute, a file served as an attachment, a <code>blob:</code> a script clicks: all of them download, under the name the page asked for.</p></div>
+    <div class="feature"><h3>Resuming after a cut</h3><p>An interrupted download survives quitting, marked “interrupted”, with its button. Nothing resumes on its own: resuming two gigabytes over a tethered connection would be a decision you didn't make.</p></div>
+    <div class="feature"><h3>Names that don't step on each other</h3><p>Two files with the same name started in the same second no longer overwrite each other, and a name that would try to leave the folder is cut down to its last segment.</p></div>
+    <div class="feature"><h3>In the column</h3><p><kbd>⌘J</kbd> opens the downloads page; the right column shows them too, and the button at the foot of the column shows their progress.</p></div>
+  </div>
+</section>
+
+<section id="garder">
+  <h2>Save, print, capture</h2>
+  <div class="features">
+    <div class="feature"><h3>Saving the page</h3><p><kbd>⌘S</kbd>: a web archive to keep it browsable, a PDF to freeze it — the whole page, not just the visible area.</p></div>
+    <div class="feature"><h3>Printing</h3><p><kbd>⌘P</kbd>, with the system's print panel.</p></div>
+    <div class="feature"><h3>The whole page</h3><p>Scrolled through screen by screen then stitched back together, as you see it: the playing video and the images that only load as you approach are there.</p></div>
+    <div class="feature"><h3>An area, an element</h3><p>You draw an area, or point at an element by hovering — ↑ and ↓ widen or narrow it. An element taller than its window, like a chat thread, is scrolled through where it scrolls.</p></div>
+    <div class="feature"><h3>Saved and copied</h3><p>Each screenshot goes to the downloads and to the clipboard. No shortcut: ⇧⌘3, ⇧⌘4 and ⇧⌘5 belong to the system.</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Neighboring pages"><a class="prev" href="../../pages/naviguer/"><small>Previous</small>Browsing</a><a class="next" href="../../pages/blocage/"><small>Next</small>Blocking</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>A browser for macOS, written in Swift and AppKit, built on WebKit. Nothing leaves your Mac unless you asked.</p>
+      </div>
+      <div>
+        <h2>The browser</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Browsing</a></li>
+        <li><a href="../../pages/lire/">Reading and keeping</a></li>
+        <li><a href="../../pages/sites/">Sites and security</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocking</a></li>
+        <li><a href="../../pages/confidentialite/">Privacy</a></li>
+        <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Developers</a></li>
+        <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+        <li><a href="../../pages/installer/">Install</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">All versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Blocking lists</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 1.0.0 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

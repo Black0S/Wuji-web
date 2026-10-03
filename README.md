@@ -17,6 +17,9 @@ styles/js/site.js           le menu du téléphone, le sommaire qui suit la lect
                             la visionneuse des captures, le choix AZERTY / QWERTY
 assets/                     l'icône et la favicone
 assets/captures/            les captures de l'application
+en/                         le site en anglais — fabriqué, ne pas le modifier à la main
+i18n/en.json                le dictionnaire : chaque bloc de texte français, et son anglais
+tools/traduire.py           refait en/ depuis les pages françaises
 .nojekyll                   demande à Pages de servir les fichiers tels quels
 ```
 
@@ -59,6 +62,26 @@ générateur si le rapport change — `width` et `height` réservent la place av
 | `blocage.png`, `regles.png`, `scripts.png`, `script.png` | le contenu : blocage, mes règles, scripts |
 | `a-propos.png` | la fenêtre À propos, et le nom |
 
+## En anglais
+
+**Le français est la source, l'anglais se fabrique.** Les pages de `en/` sont les pages
+françaises, texte remplacé bloc par bloc d'après `i18n/en.json` : la mise en page ne peut pas
+diverger. Chaque page porte « English » ou « Français » dans sa barre, qui mène à la même page
+dans l'autre langue, et les balises `hreflang` qui le disent aux moteurs de recherche.
+
+Après avoir modifié une page française — un texte, une carte, le numéro de version :
+
+```bash
+python3 tools/traduire.py --extraire   # ajoute les textes nouveaux à i18n/en.json, vides
+# … traduire les entrées vides dans i18n/en.json …
+python3 tools/traduire.py              # refait en/ ; liste ce qui reste à traduire
+```
+
+Tant qu'un texte n'est pas traduit, la page anglaise le montre en français, et la commande le
+liste et rend une erreur : rien n'est inventé, rien ne passe en silence. Une traduction garde
+les balises de son bloc telles quelles — liens, `<code>`, `<kbd>`. Les captures restent celles
+de l'interface française.
+
 ## Le voir en local
 
 ```bash
@@ -76,7 +99,7 @@ Le dépôt du code est privé : **les versions se publient ici.** Une release de
   l'étiquette doit porter le numéro, `v1.0.0` par exemple.
 
 Le numéro de version écrit dans les pages (l'accueil, « Installer », le pied) se met à jour à
-la main.
+la main — puis `tools/traduire.py` pour l'anglais, voir plus haut.
 
 ## Le publier
 

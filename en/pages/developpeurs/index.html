@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developers — Wuji</title>
+<meta name="description" content="Developer tools inside the window — elements, console, sources, network, storage, device mode —, your site live from disk, and user scripts.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../../styles/css/base.css">
+<link rel="stylesheet" href="../../../styles/css/layout.css">
+<link rel="stylesheet" href="../../../styles/css/components.css">
+<script src="../../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Developers — Wuji">
+<meta property="og:description" content="Developer tools inside the window — elements, console, sources, network, storage, device mode —, your site live from disk, and user scripts.">
+<meta property="og:image" content="../../../assets/captures/fenetre.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://black0s.github.io/Wuji-web/pages/developpeurs/">
+<link rel="alternate" hreflang="en" href="https://black0s.github.io/Wuji-web/en/pages/developpeurs/">
+<link rel="alternate" hreflang="x-default" href="https://black0s.github.io/Wuji-web/pages/developpeurs/">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, home">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Features</a>
+      <a href="../../pages/blocage/">Blocking</a>
+      <a href="../../pages/confidentialite/">Privacy</a>
+      <a href="../../pages/developpeurs/" aria-current="page">Developers</a>
+      <a href="../../pages/raccourcis/">Shortcuts</a>
+      <a href="../../pages/installer/">Install</a>
+    </nav>
+    <a class="nav-lang" href="../../../pages/developpeurs/" hreflang="fr" lang="fr">Français</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="All pages">
+    <a href="../../pages/naviguer/">Browsing</a>
+    <a href="../../pages/lire/">Reading and keeping</a>
+    <a href="../../pages/blocage/">Blocking</a>
+    <a href="../../pages/confidentialite/">Privacy</a>
+    <a href="../../pages/mots-de-passe/">Passwords</a>
+    <a href="../../pages/sites/">Sites and security</a>
+    <a href="../../pages/developpeurs/" aria-current="page">Developers</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Shortcuts</a>
+    <a href="../../pages/installer/">Install</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Developers</span></p>
+    <h1>Developers</h1>
+    <p class="lede">Developer tools inside the window and in Wuji's style, and scripts that run as they do in Chrome. What they can't do is written down too.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="On this page">
+      <h2>On this page</h2>
+      <ul class="toc-page">
+      <li><a href="#outils">The developer tools</a></li>
+      <li><a href="#en-direct">Your site, live</a></li>
+      <li><a href="#appareil">Device mode</a></li>
+      <li><a href="#scripts">User scripts</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="All pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Browsing</a></li>
+      <li><a href="../../pages/lire/">Reading and keeping</a></li>
+      <li><a href="../../pages/blocage/">Blocking</a></li>
+      <li><a href="../../pages/confidentialite/">Privacy</a></li>
+      <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+      <li><a href="../../pages/sites/">Sites and security</a></li>
+      <li><a href="../../pages/developpeurs/" aria-current="page">Developers</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+      <li><a href="../../pages/installer/">Install</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="outils">
+  <h2>The developer tools</h2>
+<figure class="figure">
+  <img src="../../../assets/captures/outils.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="The developer tools under WebKit&#x27;s page: the heading picked in the page, its HTML being edited in the tree, its styles on the right.">
+  <figcaption><kbd>⌥⌘I</kbd> — the tools sit under the page; double-click to edit a node.</figcaption>
+</figure>
+<figure class="figure">
+  <img src="../../../assets/captures/outils-fenetre.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="The developer tools in their own window: the document&#x27;s full tree, a node being edited, the styles and their sources.">
+  <figcaption>Detached, the tools get a window of their own.</figcaption>
+</figure>
+<figure class="figure">
+  <img src="../../../assets/captures/reseau.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="The Network tab: webkit.org&#x27;s requests grouped, the timeline, and the document&#x27;s details — durations, sizes, full address.">
+  <figcaption>Network — repeated requests are grouped; the details show durations and sizes.</figcaption>
+</figure>
+<figure class="figure">
+  <img src="../../../assets/captures/reseau-requetes.png" width="2000" height="1263" loading="lazy" data-zoom
+       alt="The Network tab without grouping: fifty requests, including the repeated calls of an analytics script, each on the timeline.">
+  <figcaption>Without grouping, each call has its own row and its place on the timeline.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Inside the window</h3><p><kbd>⌥⌘I</kbd>, or “Inspect Element” on right-click. The panel sits over the bottom of the page without resizing it, follows the tab you're looking at, and detaches into a window of its own.</p></div>
+    <div class="feature"><h3>Elements</h3><p>The document tree, kept up to date; search by selector, text, tag or attribute; the breadcrumb. Hovering highlights margin, border, padding and content. The arrow keys walk the tree, ← goes up to the parent without collapsing anything.</p></div>
+    <div class="feature"><h3>Editing in place</h3><p>A double-click opens the line in color: the whole node if it's small, its opening tag if it's large. <kbd>⌘S</kbd> saves, Escape gives up — and the element is adjusted in place, not recreated.</p></div>
+    <div class="feature"><h3>Styles, computed, box, listeners</h3><p>Rules as they're written — including those from a style sheet on another site —, computed values, the box, and the listeners of the element and its ancestors with their file and line.</p></div>
+    <div class="feature"><h3>Console</h3><p>What the page writes, its errors with their stack, objects you can expand, <code>console.table</code> as a table, <code>$0</code> for the selected element, and a line to evaluate in the page — or in a frame.</p></div>
+    <div class="feature"><h3>Sources</h3><p>Scripts and style sheets, formatted and colored, across the whole file: a 3.6 MB script reads in full, with search and line wrapping.</p></div>
+    <div class="feature"><h3>Network</h3><p>Each resource, its status, its size, its time and its timeline; method and headers for <code>fetch</code> and <code>XMLHttpRequest</code>; reload without the cache.</p></div>
+    <div class="feature"><h3>Storage</h3><p>Cookies — <code>HttpOnly</code> included —, which can be written and edited; local and session storage; IndexedDB databases and their tables; Cache Storage and service workers.</p></div>
+    <div class="feature"><h3>What comes before opening</h3><p>The last three hundred messages, the last three hundred requests and all listeners are kept before you open the panel — less than a microsecond per listener.</p></div>
+    <div class="feature"><h3>Frames, even from another site</h3><p>An <code>&lt;iframe&gt;</code> expands in the tree; an element picked in a frame takes the console there.</p></div>
+  </div>
+</section>
+
+<section id="en-direct">
+  <h2>Your site, live</h2>
+  <p class="section-lede">You write your site in your editor, you watch it in Wuji — and it reloads on every save, without a development server.</p>
+  <div class="features">
+    <div class="feature"><h3>From disk</h3><p><code>file:///Users/…/index.html</code> typed in the bar, or the path your editor copies — <code>/Users/…</code>, <code>~/…</code>. The Finder's “Open With” offers Wuji for an HTML page.</p></div>
+    <div class="feature"><h3>On every save</h3><p>The page, its style sheet, its script, an image: when a project file changes, its tabs reload — once per save, without injecting anything into the page or opening a port.</p></div>
+    <div class="feature"><h3>The project folder</h3><p>A page in <code>pages/naviguer/</code> finds its style sheet in <code>../../styles/</code>: Wuji opens access to the project — the folder containing <code>.git</code>, <code>.vscode</code> or <code>package.json</code> —, never to the home folder or the rest of the disk.</p></div>
+    <div class="feature"><h3>Links as on a server</h3><p>A link to a folder opens its <code>index.html</code>. What isn't the site — <code>.git</code>, <code>.DS_Store</code>, the editor's working files — reloads nothing.</p></div>
+  </div>
+</section>
+
+<section id="appareil">
+  <h2>Device mode</h2>
+  <div class="features">
+    <div class="feature"><h3>A phone inside the window</h3><p>iPhone 16 Pro Max, 16 and SE, Pixel 9, Galaxy S24, iPad mini, iPad and iPad Pro 13, or a custom size, rotatable. The page is laid out at the device's width and gets its browser's identity.</p></div>
+    <div class="feature"><h3>The mouse becomes a finger</h3><p><code>maxTouchPoints</code>, <code>ontouchstart</code>, the <code>touchstart</code> and <code>touchend</code> events, a round cursor. A screen larger than the available space is scaled down, and the panel says by how much.</p></div>
+  </div>
+</section>
+
+<section id="scripts">
+  <h2>User scripts</h2>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/scripts.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Settings › Scripts: YouTube A/B Loop installed and active, and the field to install from an address.">
+  <figcaption>Settings › Scripts — a script installs from its .user.js address.</figcaption>
+</figure>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/script.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="A script&#x27;s page: where it runs, the powers it asks for, the site it can reach, and its code with line numbers.">
+  <figcaption>Each access is granted here, site by site; the code can be reread and touched up in the page.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Install</h3><p>From a <code>.user.js</code> address — the Greasemonkey convention — or from a page that turns out to be a script. Its scope is shown before you accept, every site counted; updating happens on request, and asks again if it targets more sites or powers. A script never runs in Wuji's own pages.</p></div>
+    <div class="feature"><h3>Writing</h3><p>A colored editor, in Settings › Scripts, to write or touch them up.</p></div>
+    <div class="feature"><h3>Once per document</h3><p>A script runs once, and follows page changes itself — Tampermonkey's contract. On YouTube, which changes video without reloading, it is set when arriving on the page it targets, never twice.</p></div>
+    <div class="feature"><h3>Nothing when nothing runs</h3><p>With no active script, nothing is set in pages. The icon stays in the bar, faded when nothing runs here.</p></div>
+  </div>
+</section>
+<div class="note">
+  <h3>What the tools can't do</h3>
+  <ul>
+    <li><strong>No breakpoints, no stepping.</strong> That's a debugger's job, which WebKit doesn't lend to an app.</li>
+    <li><strong>In device mode, <code>@media (pointer: coarse)</code> doesn't change</strong>: WebKit takes it from the hardware.</li>
+    <li><strong>A style sheet a site refuses</strong> even to the page's own request, and that the archive didn't keep, stays unreadable — and it says so.</li>
+  </ul>
+</div>
+<nav class="pager" aria-label="Neighboring pages"><a class="prev" href="../../pages/sites/"><small>Previous</small>Sites and security</a><a class="next" href="../../pages/performance/"><small>Next</small>Performance</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>A browser for macOS, written in Swift and AppKit, built on WebKit. Nothing leaves your Mac unless you asked.</p>
+      </div>
+      <div>
+        <h2>The browser</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Browsing</a></li>
+        <li><a href="../../pages/lire/">Reading and keeping</a></li>
+        <li><a href="../../pages/sites/">Sites and security</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocking</a></li>
+        <li><a href="../../pages/confidentialite/">Privacy</a></li>
+        <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Developers</a></li>
+        <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+        <li><a href="../../pages/installer/">Install</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">All versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Blocking lists</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 1.0.0 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>

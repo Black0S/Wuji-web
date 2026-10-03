@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Wuji</title>
+<meta name="description" content="Private window, cookies, tracking, trackers in links, HTTPS first, site data: what Wuji refuses for you, and what it never does.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="../../../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../../../assets/wuji-icon-512.png">
+<link rel="stylesheet" href="../../../styles/css/base.css">
+<link rel="stylesheet" href="../../../styles/css/layout.css">
+<link rel="stylesheet" href="../../../styles/css/components.css">
+<script src="../../../styles/js/site.js" defer></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy — Wuji">
+<meta property="og:description" content="Private window, cookies, tracking, trackers in links, HTTPS first, site data: what Wuji refuses for you, and what it never does.">
+<meta property="og:image" content="../../../assets/captures/fenetre.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="fr" href="https://black0s.github.io/Wuji-web/pages/confidentialite/">
+<link rel="alternate" hreflang="en" href="https://black0s.github.io/Wuji-web/en/pages/confidentialite/">
+<link rel="alternate" hreflang="x-default" href="https://black0s.github.io/Wuji-web/pages/confidentialite/">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Wuji, home">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="wordmark">Wuji</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="../../pages/naviguer/">Features</a>
+      <a href="../../pages/blocage/">Blocking</a>
+      <a href="../../pages/confidentialite/" aria-current="page">Privacy</a>
+      <a href="../../pages/developpeurs/">Developers</a>
+      <a href="../../pages/raccourcis/">Shortcuts</a>
+      <a href="../../pages/installer/">Install</a>
+    </nav>
+    <a class="nav-lang" href="../../../pages/confidentialite/" hreflang="fr" lang="fr">Français</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 5.5h13M2.5 12.5h13"/></svg>
+    </button>
+    <a class="nav-cta" href="https://github.com/Black0S/Wuji-web/releases/latest/download/Wuji.dmg">Download</a>
+  </div>
+  <nav class="nav-menu wrap" id="menu" aria-label="All pages">
+    <a href="../../pages/naviguer/">Browsing</a>
+    <a href="../../pages/lire/">Reading and keeping</a>
+    <a href="../../pages/blocage/">Blocking</a>
+    <a href="../../pages/confidentialite/" aria-current="page">Privacy</a>
+    <a href="../../pages/mots-de-passe/">Passwords</a>
+    <a href="../../pages/sites/">Sites and security</a>
+    <a href="../../pages/developpeurs/">Developers</a>
+    <a href="../../pages/performance/">Performance</a>
+    <a href="../../pages/raccourcis/">Shortcuts</a>
+    <a href="../../pages/installer/">Install</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="../../">Wuji</a><span aria-hidden="true">›</span><span>Privacy</span></p>
+    <h1>Privacy</h1>
+    <p class="lede">Nothing leaves this machine unless you asked. What can be set has its tab in the settings; what can't is simply absent.</p>
+  </div>
+</div>
+<div class="wrap doc">
+  <aside class="doc-side">
+    <nav aria-label="On this page">
+      <h2>On this page</h2>
+      <ul class="toc-page">
+      <li><a href="#privee">The private window</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#pistage">Tracking</a></li>
+      <li><a href="#liens">Links and redirects</a></li>
+      <li><a href="#donnees">Data and history</a></li>
+      <li><a href="#jamais">What never happens</a></li>
+      </ul>
+    </nav>
+    <nav class="toc-site" aria-label="All pages">
+      <h2>Wuji</h2>
+      <ul>
+      <li><a href="../../pages/naviguer/">Browsing</a></li>
+      <li><a href="../../pages/lire/">Reading and keeping</a></li>
+      <li><a href="../../pages/blocage/">Blocking</a></li>
+      <li><a href="../../pages/confidentialite/" aria-current="page">Privacy</a></li>
+      <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+      <li><a href="../../pages/sites/">Sites and security</a></li>
+      <li><a href="../../pages/developpeurs/">Developers</a></li>
+      <li><a href="../../pages/performance/">Performance</a></li>
+      <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+      <li><a href="../../pages/installer/">Install</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="doc-main">
+<section id="privee">
+  <h2>The private window</h2>
+  <div class="features">
+    <div class="feature"><h3>A window, not a toggle</h3><p><kbd>⇧⌘N</kbd>. Everything in it is private — its tabs and its spaces —, without history, never written to the session. A private/normal toggle would lie both ways.</p></div>
+    <div class="feature"><h3>An ephemeral data store</h3><p>Its tabs share a data store that disappears with the window: you sign in in one, the link opened next to it is signed in too, then nothing remains.</p></div>
+    <div class="feature"><h3>Nothing through the side doors</h3><p>A closed private tab doesn't come back with <kbd>⇧⌘T</kbd>, a site's zoom stays in memory, a permission only counts for this once, favicons don't go to disk, a saved file doesn't keep the address it came from, and the window isn't handed to macOS's window restoration.</p></div>
+    <div class="feature"><h3>The page's window decides</h3><p>A private page that finishes loading while you're looking at an ordinary window doesn't enter the history. A link coming from another app goes to a normal window, and a window opened by a private page stays private.</p></div>
+  </div>
+</section>
+
+<section id="cookies">
+  <h2>Cookies</h2>
+<figure class="figure narrow">
+  <img src="../../../assets/captures/confidentialite.png" width="1600" height="1204" loading="lazy" data-zoom
+       alt="Settings › Privacy: cookie banners, third-party cookies, cross-site tracking, tracking scripts, click measurement, do not sell my data, link trackers and redirects, all turned on.">
+  <figcaption>Settings › Privacy — everything is on by default.</figcaption>
+</figure>
+  <div class="features">
+    <div class="feature"><h3>Rejecting banners</h3><p>Wuji clicks “Reject all” — or calls the interface meant for it — on the consent tools it knows: Didomi, OneTrust, Cookiebot, Usercentrics, Sirdata, CookieYes, Complianz, Google, YouTube, Bing, Amazon… Rejecting, not hiding: a hidden banner leaves the decision pending.</p></div>
+    <div class="feature"><h3>Never at random</h3><p>Only a banner waiting for an answer, never a choice already made, and no general heuristic: a click in the wrong place would accept on your behalf. “Accept or subscribe” walls stay visible — they offer no way to refuse.</p></div>
+    <div class="feature"><h3>Blocking third-party cookies</h3><p>A site embedded in another's page — an ad, a “Like” button, a player — neither sets nor reads a cookie. Turned off, an embedded payment that needs one works.</p></div>
+    <div class="feature"><h3>Site by site</h3><p>In the padlock menu: block third-party cookies or all cookies for this site alone, and erase what it left behind.</p></div>
+  </div>
+</section>
+
+<section id="pistage">
+  <h2>Tracking</h2>
+  <div class="features">
+    <div class="feature"><h3>Preventing cross-site tracking</h3><p>WebKit's tracking prevention, the one in Safari.</p></div>
+    <div class="feature"><h3>Slowing tracking scripts</h3><p>WebKit's protection against scripts recognized as trackers.</p></div>
+    <div class="feature"><h3>Private click measurement</h3><p>On, as in Safari; off, no ad attribution report leaves.</p></div>
+    <div class="feature"><h3>Do not sell or share my data</h3><p>The full Global Privacy Control signal, set by WebKit: the <code>Sec-GPC: 1</code> header on every request — the one California law and websites read — and <code>navigator.globalPrivacyControl</code> in every frame.</p></div>
+  </div>
+</section>
+
+<section id="liens">
+  <h2>Links and redirects</h2>
+  <div class="features">
+    <div class="feature"><h3>Removing trackers from links</h3><p>WebKit only removes three. Wuji also removes those from HubSpot, Mailchimp, Marketo, Instagram, TikTok, Yandex, Twitter, LinkedIn and the <code>utm_*</code>, before the page loads. Neither <code>ref</code> nor Amazon's <code>tag</code>: those are intended referrals.</p></div>
+    <div class="feature"><h3>Skipping tracking redirects</h3><p>A link from Google, Facebook, YouTube, Reddit, Steam, DuckDuckGo, LinkedIn, Slack or VK no longer goes through them first: the destination is in the address, so you go straight there.</p></div>
+    <div class="feature"><h3>Holding back unrequested redirects</h3><p>A click on an empty spot of a page — or on a transparent layer laid over it — no longer takes the tab to an advertiser. A real link or button always goes through.</p></div>
+    <div class="feature"><h3>HTTPS first</h3><p>An <code>http://</code> address is tried first as <code>https://</code>, and falls back on request if the site doesn't allow it.</p></div>
+  </div>
+</section>
+
+<section id="donnees">
+  <h2>Data and history</h2>
+  <div class="features">
+    <div class="feature"><h3>Site by site</h3><p>Privacy lists each domain with what it left behind — cookies, storage, cache —, a field to find it, one button per row. Erasing a row signs you out of that site, and that site only.</p></div>
+    <div class="feature"><h3>On quit</h3><p>Site data can be erased each time you quit; Wuji waits for WebKit to finish before quitting.</p></div>
+    <div class="feature"><h3>The history you keep</h3><p>Its duration can be set; beyond it, pages are erased at the next launch. Erasing it also erases what told its story: the favicons of visited sites, the sites you typed, and WebKit's records that list domains — HSTS, tracking prevention.</p></div>
+    <div class="feature"><h3>Your files, readable</h3><p>Favorites, session, reading list: JSON files in <code>~/Library/Application Support/Wuji</code> that you can read and edit by hand. Only the vault is encrypted.</p></div>
+  </div>
+</section>
+
+<section id="jamais">
+  <h2>What never happens</h2>
+  <div class="features">
+    <div class="feature"><h3>No telemetry</h3><p>The only request Wuji makes on its own behalf is the version check — without an identifier, without saying which one you use, and only on a click, unless you allow it at launch.</p></div>
+    <div class="feature"><h3>No search engine suggestions</h3><p>They mean sending every keystroke to a third party, including what you erase before pressing Return. The palette searches only on your Mac.</p></div>
+    <div class="feature"><h3>Favicons come from the site</h3><p>Never from a third-party service that would learn along the way what you visit.</p></div>
+    <div class="feature"><h3>Only Wuji's pages talk to Wuji</h3><p>What sets, erases or installs only answers to the main frame of a <code>wuji://</code> page. An ordinary page can't turn anything off with a message.</p></div>
+    <div class="feature"><h3>Pre-warming, knowingly</h3><p>Pre-warming connections saves about 150 ms, but the site knows you're coming before your click. It only targets sites you've already visited, never from a private window, and can be turned off in Performance.</p></div>
+  </div>
+</section>
+
+<nav class="pager" aria-label="Neighboring pages"><a class="prev" href="../../pages/blocage/"><small>Previous</small>Blocking</a><a class="next" href="../../pages/mots-de-passe/"><small>Next</small>Passwords</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../../"><span class="ring" aria-hidden="true"></span><span class="wordmark">Wuji</span></a>
+        <p>A browser for macOS, written in Swift and AppKit, built on WebKit. Nothing leaves your Mac unless you asked.</p>
+      </div>
+      <div>
+        <h2>The browser</h2>
+        <ul>
+        <li><a href="../../pages/naviguer/">Browsing</a></li>
+        <li><a href="../../pages/lire/">Reading and keeping</a></li>
+        <li><a href="../../pages/sites/">Sites and security</a></li>
+        <li><a href="../../pages/performance/">Performance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Protection</h2>
+        <ul>
+        <li><a href="../../pages/blocage/">Blocking</a></li>
+        <li><a href="../../pages/confidentialite/">Privacy</a></li>
+        <li><a href="../../pages/mots-de-passe/">Passwords</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+        <li><a href="../../pages/developpeurs/">Developers</a></li>
+        <li><a href="../../pages/raccourcis/">Shortcuts</a></li>
+        <li><a href="../../pages/installer/">Install</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-web/releases">All versions</a></li>
+        <li><a href="https://github.com/Black0S/Wuji-Rules-List">Blocking lists</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">© 2026 Liam Jutteau (Black0S) · Wuji 1.0.0 · GPL-3.0</p>
+  </div>
+</footer>
+
+</body>
+</html>
