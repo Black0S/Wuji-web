@@ -73,7 +73,7 @@ Le dépôt du code est privé : **les versions se publient ici.** Une release de
 - les boutons « Télécharger » visent `releases/latest/download/Wuji.dmg` — la dernière release,
   sans rien à changer dans les pages ;
 - la vérification de version de l'application lit la dernière release de ce dépôt ;
-  l'étiquette doit porter le numéro, `v0.7.5` par exemple.
+  l'étiquette doit porter le numéro, `v1.0.0` par exemple.
 
 Le numéro de version écrit dans les pages (l'accueil, « Installer », le pied) se met à jour à
 la main.
