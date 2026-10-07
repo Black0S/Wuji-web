@@ -165,3 +165,13 @@ html.k-azerty .k-qwerty, html.k-qwerty .k-azerty, html.k-azerty .k-alt, html.k-q
 .pager a:hover { background: var(--hover); }
 .pager small { display: block; font-size: 12px; color: var(--muted-2); margin-bottom: 2px; }
 .pager .next { text-align: right; grid-column: 2; }
+
+/* Un lien discret en tête de page, en pastille comme le choix de langue. */
+.notice {
+  display: inline-block; margin: 0 0 22px; padding: 5px 14px;
+  font-size: 13px; color: var(--muted); text-decoration: none;
+  border: 1px solid var(--line-soft); border-radius: 999px; background: var(--tint);
+  transition: color .15s ease, border-color .15s ease;
+}
+.notice strong { color: var(--text); font-weight: 600; }
+.notice:hover { color: var(--text); border-color: var(--muted); }
